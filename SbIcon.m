@@ -11,6 +11,6 @@
 
 @implementation SbIcon
 
-@synthesize iconModDate, bundleIdentifier, displayIdentifier;
+@synthesize iconModDate, bundleIdentifier, displayIdentifier, node;
 
 @end

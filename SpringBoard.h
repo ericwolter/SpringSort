@@ -18,5 +18,6 @@
 -(id)init;
 -(void)dealloc;
 - (void)fillWith:(plist_t) plist;
+- (plist_t)export;
 
 @end

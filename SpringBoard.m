@@ -50,6 +50,8 @@
         icon.bundleIdentifier = [NSString stringWithUTF8String:val];
     }
     
+    icon.node = plist_copy(item);
+    
     return [icon autorelease];
 }
 
@@ -95,6 +97,46 @@
         
         [container release];
     }
+}
+
+- (plist_t)export
+{
+    plist_t plist = plist_new_array();
+    
+    for(SbContainer *page in self.pages)
+    {
+        plist_t plist_page = plist_new_array();
+        
+        for (SbItem *item in page.items)
+        {
+            if([item isKindOfClass:[SbContainer class]])
+            {   
+                SbContainer *folder = (SbContainer *)item;
+                plist_t plist_folder = plist_new_dict();
+                plist_dict_insert_item(plist_folder, "displayName", plist_new_string([item.displayName cStringUsingEncoding:NSUTF8StringEncoding]));
+                
+                plist_t plist_folderContainer = plist_new_array();
+                plist_t plist_folderItems = plist_new_array();
+                
+                for(SbIcon *icon in folder.items)
+                {
+                    plist_array_append_item(plist_folderItems, plist_copy(icon.node));
+                }
+                
+                plist_array_append_item(plist_folderContainer, plist_folderItems);
+                plist_dict_insert_item(plist_folder, "iconLists", plist_folderContainer);
+            }
+            else if([item isKindOfClass:[SbIcon class]])
+            {
+                SbIcon *icon = (SbIcon *)item;
+                plist_array_append_item(plist_page, plist_copy(icon.node));
+            }
+        }
+        
+        plist_array_append_item(plist, plist_page);
+    }
+        
+    return plist;
 }
 
 
