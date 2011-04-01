@@ -18,10 +18,14 @@
 	// Insert code here to initialize your application 
     Device *d = [[Device alloc] initWithUuid:[Device getFirstDevice]];
     
-    SpringBoard *b = [[SpringBoard alloc] init];
-    [b fillWith:[d device_sbs_get_iconstate]];
+    if (d)
+    {
+        SpringBoard *b = [[SpringBoard alloc] init];
+        [b fillWith:[d device_sbs_get_iconstate]];
     
-    [b release];
+        [b release];
+    }
+    
     [d release];
 }
 
