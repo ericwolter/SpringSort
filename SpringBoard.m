@@ -61,41 +61,45 @@
     int pageIndex;
     for (pageIndex = 0; pageIndex < pagesCount; pageIndex++)
     {
-        plist_t page = plist_array_get_item(plist, pageIndex);
+        plist_t plist_page = plist_array_get_item(plist, pageIndex);
         
-        SbContainer *container = [[SbContainer alloc] init];
-        [self.pages addObject:container];
+        SbContainer *page = [[SbContainer alloc] init];
+        [self.pages addObject:page];
         
-        int pageSize = plist_array_get_size(page);
+        int pageSize = plist_array_get_size(plist_page);
         int itemIndex;
         for (itemIndex = 0; itemIndex < pageSize; itemIndex++)
         {
-            plist_t item = plist_array_get_item(page, itemIndex);
-            plist_t folder = plist_dict_get_item(item, "iconLists");
+            plist_t plist_item = plist_array_get_item(plist_page, itemIndex);
+            plist_t plist_folder = plist_dict_get_item(plist_item, "iconLists");
             
-            if (!folder)
+            if (!plist_folder)
             {
-                [container.items addObject:[self createIcon: item]];
+                [page.items addObject:[self createIcon: plist_item]];
             }
             else
             {
                 SbContainer *folder = [[SbContainer alloc] init];
-                [self.pages addObject:folder];
                 
-                int folderSize = plist_array_get_size(folder);
+                char *val = NULL;
+                plist_get_string_val(plist_dict_get_item(plist_item, "displayName"), &val);
+                folder.displayName = [NSString stringWithUTF8String:val];
+                
+                plist_t plist_folder_items = plist_array_get_item(plist_folder, 0);
+                int folderSize = plist_array_get_size(plist_folder_items);
                 int folderItemIndex;
                 for (folderItemIndex = 0; folderItemIndex < folderSize; folderItemIndex++)
                 {
-                    plist_t folderItem = plist_array_get_item(folder, folderItemIndex);
-                    
-                    [folder.items addObject:[self createIcon:folderItem]];
+                    plist_t plist_folder_item = plist_array_get_item(plist_folder_items, folderItemIndex);
+                    [folder.items addObject:[self createIcon:plist_folder_item]];
                 }
                 
+                [page.items addObject:folder];
                 [folder release];
             }
         }
         
-        [container release];
+        [page release];
     }
 }
 
@@ -113,7 +117,7 @@
             {   
                 SbContainer *folder = (SbContainer *)item;
                 plist_t plist_folder = plist_new_dict();
-                plist_dict_insert_item(plist_folder, "displayName", plist_new_string([item.displayName cStringUsingEncoding:NSUTF8StringEncoding]));
+                plist_dict_insert_item(plist_folder, "displayName", plist_new_string([folder.displayName cStringUsingEncoding:NSUTF8StringEncoding]));
                 
                 plist_t plist_folderContainer = plist_new_array();
                 plist_t plist_folderItems = plist_new_array();
@@ -125,6 +129,7 @@
                 
                 plist_array_append_item(plist_folderContainer, plist_folderItems);
                 plist_dict_insert_item(plist_folder, "iconLists", plist_folderContainer);
+                plist_array_append_item(plist_page, plist_folder);
             }
             else if([item isKindOfClass:[SbIcon class]])
             {
