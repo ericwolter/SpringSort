@@ -10,6 +10,7 @@
 #import "Device.h"
 #import "SpringBoard.h"
 #import "PListUtility.h"
+#import "SortAlgorithms.h"
 
 @implementation SpringSortAppDelegate
 
@@ -37,10 +38,14 @@
         }
         else
         {
-            NSLog(old_xml);
+            NSLog(@"%@", old_xml);
             NSLog(@"#########################");
-            NSLog(new_xml);
+            NSLog(@"%@", new_xml);
         }
+        
+        b.pages = [SortAlgorithms alphabetically:b.pages];
+        
+        [d device_sbs_set_iconstate:[b export]];
     
         [b release];
     }   

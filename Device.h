@@ -19,6 +19,7 @@
 - (void) dealloc;
 
 - (plist_t) device_sbs_get_iconstate;
+- (BOOL)device_sbs_set_iconstate:(plist_t)plist;
 
 + (const char*) getFirstDevice;
 

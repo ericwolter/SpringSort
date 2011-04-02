@@ -116,4 +116,14 @@ leave_cleanup:
     return iconstate;
 }
 
+- (BOOL)device_sbs_set_iconstate:(plist_t)plist
+{
+    if (sbservices_set_icon_state(client, plist) != SBSERVICES_E_SUCCESS)
+    {
+        NSLog(@"Could not set new icon state!");
+        return NO;
+    }
+    
+    return YES;
+}
 @end
