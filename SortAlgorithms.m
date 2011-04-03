@@ -39,7 +39,7 @@
     
     NSSortDescriptor *sortDescriptor;
     sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"displayName"
-                                                  ascending:YES] autorelease];
+                                                  ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)] autorelease];
     NSArray *sortDescriptors = [NSArray arrayWithObject:sortDescriptor];
     NSArray *sortedArray;
     sortedArray = [flatten sortedArrayUsingDescriptors:sortDescriptors];
@@ -57,6 +57,7 @@
             [result addObject:page];
             [page release];
         }
+        NSLog(@"%@",icon.displayName);
         [page.items addObject:icon];
         count++;
     }
