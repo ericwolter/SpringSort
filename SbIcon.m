@@ -8,9 +8,28 @@
 
 #import "SbIcon.h"
 
-
 @implementation SbIcon
 
-@synthesize iconModDate, bundleIdentifier, displayIdentifier, node;
+@synthesize node;
+
++(SbIcon *)initFromPlist:(plist_t)plist
+{
+    SbIcon *icon = [[SbIcon alloc] init];
+    icon.node = plist_copy(plist);
+    return icon;
+}
+
+-(void)dealloc
+{
+    if(self.node) {
+        plist_free(node);
+    }
+    [super dealloc];
+}
+
+-(plist_t)toPlist;
+{
+    return plist_copy(self.node);
+}
 
 @end

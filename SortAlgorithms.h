@@ -13,6 +13,7 @@
 
 }
 
-+(NSMutableArray *)alphabetically:(NSMutableArray *)state;
++(NSMutableArray *)alphabetically:(NSMutableArray *)pages;
++(NSMutableArray *)alphabeticallyInFolders:(NSMutableArray *)pages;
 
 @end

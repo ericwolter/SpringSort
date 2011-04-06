@@ -7,8 +7,9 @@
 //
 
 #import "SpringSortAppDelegate.h"
+#import "UsbUtility.h"
 #import "Device.h"
-#import "SpringBoard.h"
+#import "SbState.h"
 #import "PListUtility.h"
 #import "SortAlgorithms.h"
 
@@ -17,20 +18,18 @@
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
-	// Insert code here to initialize your application 
-    Device *d = [[Device alloc] initWithUuid:[Device getFirstDevice]];
+	// Insert code here to initialize your application
+    Device *d = [[Device alloc] initWithUuid:[UsbUtility firstDeviceUuid]];
     
     if (d)
     {
-        SpringBoard *b = [[SpringBoard alloc] init];
+        plist_t old_state = [d.springBoardService queryState];
+        SbState *state = [SbState initFromPlist:old_state];
         
-        plist_t old_iconstate = [d device_sbs_get_iconstate];
-        [b fillWith:old_iconstate];
+        plist_t new_state = [state toPlist];
         
-        plist_t new_iconstate = [b export];
-        
-        NSString* old_xml = [PListUtility toXml:old_iconstate];
-        NSString* new_xml = [PListUtility toXml:new_iconstate];
+        NSString* old_xml = [PListUtility toString:old_state];
+        NSString* new_xml = [PListUtility toString:new_state];
         
         if ([old_xml isEqualToString:new_xml])
         {
@@ -42,15 +41,10 @@
             NSLog(@"#########################");
             NSLog(@"%@", new_xml);
         }
-        
-        b.pages = [SortAlgorithms alphabetically:b.pages];
-        
-        [d device_sbs_set_iconstate:[b export]];
-    
-        [b release];
     }   
     
     [d release];
+    NSLog(@"DONE!");
 }
 
 @end

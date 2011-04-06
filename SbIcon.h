@@ -8,15 +8,16 @@
 
 #import <Foundation/Foundation.h>
 #import <plist/plist.h>
-#import "SbItem.h"
 
-@interface SbIcon : SbItem {
+@interface SbIcon : NSObject {
 
 }
 
-@property (nonatomic, retain) NSDate* iconModDate; 
-@property (nonatomic, retain) NSString* bundleIdentifier; 
-@property (nonatomic, retain) NSString* displayIdentifier; 
 @property (nonatomic, assign) plist_t node;
+
++(SbIcon *)initFromPlist:(plist_t)plist;
+
+-(void)dealloc;
+-(plist_t)toPlist;
 
 @end

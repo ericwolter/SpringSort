@@ -7,25 +7,40 @@
 //
 
 #import "SbContainer.h"
+#import "SbState.h"
 
 @implementation SbContainer
 
 @synthesize items;
 
-- (id)init
++(SbContainer *)initFromPlist:(plist_t)plist
 {
-    self = [super init];
-    if (self)
+    SbContainer *container = [[SbContainer alloc] init];
+    container.items = [NSMutableArray array];
+  
+    int count = plist_array_get_size(plist);
+    for (int i = 0; i < count; i++)
     {
-        self.items = [[NSMutableArray alloc] init];
+        [container.items addObject:[SbState switchSbType:plist_array_get_item(plist, i)]];
     }
-    return self;
+                                   
+    return container; 
 }
 
-- (void)dealloc
+-(void)dealloc
 {
-    [self.items release];
+    self.items = nil;
     [super dealloc];
+}
+
+-(plist_t)toPlist
+{
+    plist_t pContainer = plist_new_array();
+    for (id item in self.items)
+    {
+        plist_array_append_item(pContainer, [item toPlist]);
+    }
+    return pContainer;
 }
 
 @end

@@ -13,6 +13,6 @@
     
 }
 
-+(NSString *)toXml:(plist_t)plist;
++(NSString *)toString:(plist_t)plist;
 
 @end

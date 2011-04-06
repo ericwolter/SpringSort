@@ -9,15 +9,18 @@
 #import <Foundation/Foundation.h>
 #import <libimobiledevice/sbservices.h>
 
-@interface SpringBoard : NSObject {
+#import "SbContainer.h"
+
+@interface SbState : NSObject {
     
 }
 
-@property (nonatomic, assign) NSMutableArray *pages;
+@property (nonatomic, retain) SbContainer *mainContainer;
 
--(id)init;
--(void)dealloc;
-- (void)fillWith:(plist_t) plist;
-- (plist_t)export;
++(SbState*)initFromPlist:(plist_t)plist;
+
+-(plist_t)toPlist;
+
++(plist_t)switchSbType:(plist_t)plist;
 
 @end

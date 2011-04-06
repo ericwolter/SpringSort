@@ -7,20 +7,32 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <libimobiledevice/sbservices.h>
+
 #import <libimobiledevice/lockdown.h>
+#import <libimobiledevice/sbservices.h>
+#import <libimobiledevice/house_arrest.h>
+
+#import "SpringBoardService.h"
+#import "HouseArrestService.h"
 
 @interface Device : NSObject {
-    sbservices_client_t client;
+    idevice_t _device;
+    lockdownd_client_t _lockdownd;
+    sbservices_client_t _springBoardClient;
+    house_arrest_client_t _houseArrestClient;
 }
 
-- (id) initWithUuid: (const char *)uuid;
-- (id) init;
-- (void) dealloc;
+@property (nonatomic, copy) NSString* uuid;
+@property (nonatomic, retain) SpringBoardService* springBoardService;
+@property (nonatomic, retain) HouseArrestService* houseArrestService;
 
-- (plist_t) device_sbs_get_iconstate;
-- (BOOL)device_sbs_set_iconstate:(plist_t)plist;
-
-+ (const char*) getFirstDevice;
+-(id)initWithUuid: (NSString *)theUuid;
+-(void)dealloc;
+-(BOOL)restart;
+-(void)clean;
+-(void)deviceStart;
+-(void)lockdownStart;
+-(void)springBoardStart;
+-(void)houseArrestStart;
 
 @end

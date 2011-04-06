@@ -11,7 +11,7 @@
 
 @implementation PListUtility
 
-+(NSString *)toXml:(plist_t)plist
++(NSString *)toString:(plist_t)plist
 {
     char *xml = NULL;
     uint32_t length = 0;

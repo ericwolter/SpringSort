@@ -2,21 +2,21 @@
 //  SbFolder.h
 //  SpringSort
 //
-//  Created by Eric Wolter on 18.03.11.
+//  Created by Eric Wolter on 06.04.11.
 //  Copyright 2011 private. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>
-
 #import <plist/plist.h>
 
-@interface SbContainer : NSObject {
+@interface SbFolder : NSObject {
     
 }
 
 @property (nonatomic, retain) NSMutableArray *items;
+@property (nonatomic, copy) NSString *displayName;
 
-+(SbContainer *)initFromPlist:(plist_t)plist;
++(SbFolder *)initFromPlist:(plist_t)plist;
 
 -(void)dealloc;
 -(plist_t)toPlist;
