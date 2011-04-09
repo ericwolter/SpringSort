@@ -27,6 +27,16 @@
     return container; 
 }
 
+-(id)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.items = [[NSMutableArray alloc] init];
+    }
+    return self;    
+}
+
 -(void)dealloc
 {
     self.items = nil;

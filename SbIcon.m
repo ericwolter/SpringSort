@@ -10,7 +10,7 @@
 
 @implementation SbIcon
 
-@synthesize node;
+@synthesize node, genreIds;
 
 +(SbIcon *)initFromPlist:(plist_t)plist
 {
@@ -30,6 +30,20 @@
 -(plist_t)toPlist;
 {
     return plist_copy(self.node);
+}
+
+-(NSString *)displayName
+{
+    char *val = NULL;
+    plist_get_string_val(plist_dict_get_item(self.node, "displayName"), &val);
+    return [NSString stringWithUTF8String:val];
+}
+
+-(NSString *)bundleIdentifier
+{
+    char *val = NULL;
+    plist_get_string_val(plist_dict_get_item(self.node, "bundleIdentifier"), &val);
+    return [NSString stringWithUTF8String:val];
 }
 
 @end

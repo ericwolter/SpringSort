@@ -41,6 +41,11 @@
             NSLog(@"#########################");
             NSLog(@"%@", new_xml);
         }
+        
+        [SortAlgorithms alphabetically:state];
+        [d.springBoardService writeState:[state toPlist]];
+        
+        [state release];
     }   
     
     [d release];

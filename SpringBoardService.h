@@ -17,5 +17,6 @@
 
 -(id)initWithSpringBoardClient:(sbservices_client_t)theClient;
 -(plist_t)queryState;
+-(void)writeState:(plist_t)plist;
 
 @end

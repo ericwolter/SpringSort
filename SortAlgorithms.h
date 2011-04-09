@@ -7,13 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SbContainer.h"
+#import "SbState.h"
 
 @interface SortAlgorithms : NSObject {
 
 }
 
-+(NSMutableArray *)alphabetically:(NSMutableArray *)pages;
++(void)flatten:(SbContainer *)container IntoArray:(NSMutableArray *)flat;
++(void)alphabetically:(SbState *)pages;
 +(NSMutableArray *)alphabeticallyInFolders:(NSMutableArray *)pages;
 
 @end

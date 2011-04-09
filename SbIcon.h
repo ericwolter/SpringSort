@@ -14,6 +14,9 @@
 }
 
 @property (nonatomic, assign) plist_t node;
+@property (nonatomic, readonly) NSString* displayName;
+@property (nonatomic, readonly) NSString* bundleIdentifier;
+@property (nonatomic, retain) NSArray* genreIds; 
 
 +(SbIcon *)initFromPlist:(plist_t)plist;
 

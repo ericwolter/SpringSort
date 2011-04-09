@@ -38,4 +38,13 @@
     return state;    
 }
 
+
+-(void)writeState:(plist_t)plist
+{
+    if (sbservices_set_icon_state(_client, plist) != SBSERVICES_E_SUCCESS)
+    {
+        NSLog(@"Could not set new icon state!");
+    }
+}
+
 @end
