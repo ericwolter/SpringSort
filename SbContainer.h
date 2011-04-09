@@ -15,8 +15,7 @@
 
 @property (nonatomic, retain) NSMutableArray *items;
 
-+(SbContainer *)initFromPlist:(plist_t)plist;
-
+-(id)initFromPlist:(plist_t)plist;
 -(void)dealloc;
 -(plist_t)toPlist;
 

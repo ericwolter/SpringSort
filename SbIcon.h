@@ -18,8 +18,7 @@
 @property (nonatomic, readonly) NSString* bundleIdentifier;
 @property (nonatomic, retain) NSArray* genreIds; 
 
-+(SbIcon *)initFromPlist:(plist_t)plist;
-
+-(id)initFromPlist:(plist_t)plist;
 -(void)dealloc;
 -(plist_t)toPlist;
 

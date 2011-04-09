@@ -12,11 +12,14 @@
 
 @synthesize node, genreIds;
 
-+(SbIcon *)initFromPlist:(plist_t)plist
+-(id)initFromPlist:(plist_t)plist
 {
-    SbIcon *icon = [[SbIcon alloc] init];
-    icon.node = plist_copy(plist);
-    return icon;
+    self = [super init];
+    if (self)
+    {
+        self.node = plist_copy(plist);
+    }
+    return self;
 }
 
 -(void)dealloc

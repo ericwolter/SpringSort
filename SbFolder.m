@@ -13,26 +13,6 @@
 
 @synthesize displayName, items;
 
-+(SbFolder *)initFromPlist:(plist_t)plist
-{
-    SbFolder *folder = [[SbFolder alloc] init];
-    folder.items = [NSMutableArray array];
-    
-    char *val = NULL;
-    plist_get_string_val(plist_dict_get_item(plist, "displayName"), &val);
-    folder.displayName = [NSString stringWithUTF8String:val];
-    
-    plist_t folderContent = plist_dict_get_item(plist, "iconLists");
-    
-    int count = plist_array_get_size(folderContent);
-    for (int i = 0; i < count; i++)
-    {
-        [folder.items addObject:[SbState switchSbType:plist_array_get_item(folderContent, i)]];
-    }
-    
-    return folder; 
-}
-
 -(id)init
 {
     self = [super init];
@@ -41,6 +21,28 @@
         self.items = [[NSMutableArray alloc] init];
     }
     return self;    
+}
+
+-(id)initFromPlist:(plist_t)plist
+{
+    self = [super init];
+    if(self)
+    {
+        self.items = [NSMutableArray array];
+        
+        char *val = NULL;
+        plist_get_string_val(plist_dict_get_item(plist, "displayName"), &val);
+        self.displayName = [NSString stringWithUTF8String:val];
+        
+        plist_t folderContent = plist_dict_get_item(plist, "iconLists");
+        
+        int count = plist_array_get_size(folderContent);
+        for (int i = 0; i < count; i++)
+        {
+            [self.items addObject:[SbState switchSbType:plist_array_get_item(folderContent, i)]];
+        }
+    }
+    return self;
 }
 
 -(void)dealloc

@@ -15,12 +15,13 @@
 
 @synthesize mainContainer;
 
-+(SbState*)initFromPlist:(plist_t)plist
+-(id)initFromPlist:(plist_t)plist
 {
-    SbState* state = [[SbState alloc] init];
-    state.mainContainer = [SbState switchSbType:plist];    
-    
-    return state;
+	self = [super init];
+	if (self) {
+		self.mainContainer = [SbState switchSbType:plist];
+	}
+	return self;
 }
 
 - (void)dealloc
@@ -37,15 +38,15 @@
 +(plist_t)switchSbType:(plist_t)plist
 {
     if (plist_get_node_type(plist) == PLIST_ARRAY) {
-        return [SbContainer initFromPlist:plist];
+        return [[SbContainer alloc] initFromPlist:plist];
     }
     else {
         if(plist_dict_get_item(plist, "iconLists")) {
-            return [SbFolder initFromPlist:plist];
+            return [[SbFolder alloc] initFromPlist:plist];
         }
         else
         {
-            return [SbIcon initFromPlist:plist];
+            return [[SbIcon alloc] initFromPlist:plist];
         }
     }
         

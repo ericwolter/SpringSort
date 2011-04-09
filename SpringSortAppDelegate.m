@@ -25,7 +25,7 @@
     if (d)
     {
         plist_t old_state = [d.springBoardService queryState];
-        SbState *state = [SbState initFromPlist:old_state];
+        SbState *state = [[SbState alloc] initFromPlist:old_state];
         
         NSMutableArray *flat = [NSMutableArray array];
         [SortAlgorithms flatten:state.mainContainer IntoArray:flat];

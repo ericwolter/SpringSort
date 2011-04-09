@@ -16,8 +16,7 @@
 @property (nonatomic, retain) NSMutableArray *items;
 @property (nonatomic, copy) NSString *displayName;
 
-+(SbFolder *)initFromPlist:(plist_t)plist;
-
+-(id)initFromPlist:(plist_t)plist;
 -(id)init;
 -(void)dealloc;
 -(plist_t)toPlist;

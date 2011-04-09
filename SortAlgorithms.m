@@ -65,15 +65,13 @@
 
 +(void)byGenreInFolders:(SbState *)state
 {
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"GenreID-en" ofType:@"plist"];
-    NSDictionary *genres = [[NSDictionary alloc] initWithContentsOfFile:path];
-    [path release];
-    
     NSMutableArray *flatten = [NSMutableArray array];
     for (int i = 2; i < [state.mainContainer.items count]; i++) {
         [SortAlgorithms flatten:[state.mainContainer.items objectAtIndex:i] IntoArray:flatten];
     }    
     
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"GenreID-en" ofType:@"plist"];
+    NSDictionary *genres = [[NSDictionary alloc] initWithContentsOfFile:path];
     NSMutableDictionary *byGenre = [NSMutableDictionary dictionary];
     for (SbIcon *icon in flatten) {
         if ([icon.genreIds count] > 0) {
@@ -91,16 +89,20 @@
             [[byGenre objectForKey:@"Uncategorized"] addObject:icon];
         }
     }
+	[genres release];
     
     SbContainer *newContainer = [[SbContainer alloc] init];
     [newContainer.items addObject:[state.mainContainer.items objectAtIndex:0]];
     [newContainer.items addObject:[state.mainContainer.items objectAtIndex:1]];
     
-    NSArray* genreKeys = [NSArray arrayWithArray:[byGenre allKeys]]; 
-    NSSortDescriptor *desc = [[[NSSortDescriptor alloc]
-                               initWithKey:nil ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)] autorelease]; 
+    NSArray* genreKeys = [NSArray arrayWithArray:[byGenre allKeys]];
+    NSSortDescriptor *desc = [[NSSortDescriptor alloc]
+                               initWithKey:nil ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)]; 
     NSArray *sortedGenres = [genreKeys sortedArrayUsingDescriptors:[NSArray arrayWithObject:desc]];
-
+    [desc release];
+    
+    NSSortDescriptor *iconSort = [[[NSSortDescriptor alloc] initWithKey:@"displayName"
+                                                              ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)] autorelease];
     int count = 0;
     SbContainer *page;
     for(NSString *genre in sortedGenres)
@@ -113,7 +115,8 @@
         }
         SbContainer *folderContent;
         int folderCount = 0;
-        for (SbIcon *icon in [byGenre objectForKey:genre])
+		NSArray *genreItems = [[byGenre objectForKey:genre] sortedArrayUsingDescriptors:[NSArray arrayWithObject:iconSort]];
+        for (SbIcon *icon in genreItems)
         {
             if (folderCount % 12 == 0)
             {
@@ -133,8 +136,6 @@
     
     state.mainContainer = newContainer;
     
-    [sortedGenres release];
-    [genres release];
 }
 
 +(NSMutableArray *)alphabeticallyInFolders:(NSMutableArray *)pages
