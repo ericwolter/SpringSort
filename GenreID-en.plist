@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>6000</key>
+	<string>Business</string>
+	<key>6001</key>
+	<string>Weather</string>
+	<key>6002</key>
+	<string>Utilities</string>
+	<key>6003</key>
+	<string>Travel</string>
+	<key>6004</key>
+	<string>Sports</string>
+	<key>6005</key>
+	<string>Social Networking</string>
+	<key>6006</key>
+	<string>Reference</string>
+	<key>6007</key>
+	<string>Productivity</string>
+	<key>6008</key>
+	<string>Photography</string>
+	<key>6009</key>
+	<string>News</string>
+	<key>6010</key>
+	<string>Navigation</string>
+	<key>6011</key>
+	<string>Music</string>
+	<key>6012</key>
+	<string>Lifestyle</string>
+	<key>6013</key>
+	<string>Healthcare &amp; Fitness</string>
+	<key>6014</key>
+	<string>Games</string>
+	<key>6015</key>
+	<string>Finance</string>
+	<key>6016</key>
+	<string>Enterainment</string>
+	<key>6017</key>
+	<string>Education</string>
+	<key>6018</key>
+	<string>Book</string>
+	<key>6019</key>
+	<string>?</string>
+	<key>6020</key>
+	<string>Medical</string>
+	<key>7001</key>
+	<string>Action</string>
+	<key>7002</key>
+	<string>Adventure</string>
+	<key>7003</key>
+	<string>Arcade</string>
+	<key>7004</key>
+	<string>Board</string>
+	<key>7005</key>
+	<string>Card</string>
+	<key>7006</key>
+	<string>Casino</string>
+	<key>7007</key>
+	<string>Dice</string>
+	<key>7008</key>
+	<string>Educational</string>
+	<key>7009</key>
+	<string>Family</string>
+	<key>7010</key>
+	<string>Kids</string>
+	<key>7011</key>
+	<string>Music</string>
+	<key>7012</key>
+	<string>Puzzle</string>
+	<key>7013</key>
+	<string>Racing</string>
+	<key>7014</key>
+	<string>Role Playing</string>
+	<key>7015</key>
+	<string>Simulation</string>
+	<key>7016</key>
+	<string>Sports</string>
+	<key>7017</key>
+	<string>Strategy</string>
+	<key>7018</key>
+	<string>Trivia</string>
+	<key>7019</key>
+	<string>Word</string>
+</dict>
+</plist>

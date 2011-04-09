@@ -15,7 +15,7 @@
 }
 
 -(id)initWithHouseArrestClient:(house_arrest_client_t)theClient;
--(NSArray *)getGenres;
+-(NSArray *)getGenres:(NSString *)bundleIdentifier;
 -(plist_t)getMetadata:(const char *)bundleIdentifier;
 
 @end

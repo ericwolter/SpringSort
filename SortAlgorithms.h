@@ -15,7 +15,8 @@
 }
 
 +(void)flatten:(SbContainer *)container IntoArray:(NSMutableArray *)flat;
-+(void)alphabetically:(SbState *)pages;
++(void)alphabetically:(SbState *)state;
++(void)byGenreInFolders:(SbState *)state;
 +(NSMutableArray *)alphabeticallyInFolders:(NSMutableArray *)pages;
 
 @end

@@ -18,6 +18,7 @@
 
 +(SbFolder *)initFromPlist:(plist_t)plist;
 
+-(id)init;
 -(void)dealloc;
 -(plist_t)toPlist;
 

@@ -35,15 +35,24 @@
 -(NSString *)displayName
 {
     char *val = NULL;
-    plist_get_string_val(plist_dict_get_item(self.node, "displayName"), &val);
-    return [NSString stringWithUTF8String:val];
+    plist_t item = plist_dict_get_item(self.node, "displayName");
+    if (item) {
+        plist_get_string_val(item, &val);
+        return [NSString stringWithUTF8String:val];    
+    }
+    return nil;
 }
 
 -(NSString *)bundleIdentifier
 {
     char *val = NULL;
-    plist_get_string_val(plist_dict_get_item(self.node, "bundleIdentifier"), &val);
-    return [NSString stringWithUTF8String:val];
+    plist_t item = plist_dict_get_item(self.node, "bundleIdentifier");
+    if (item) {
+        plist_get_string_val(item, &val);
+        return [NSString stringWithUTF8String:val];    
+    }
+    return nil;
+    
 }
 
 @end

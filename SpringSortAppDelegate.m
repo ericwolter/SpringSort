@@ -12,6 +12,7 @@
 #import "SbState.h"
 #import "PListUtility.h"
 #import "SortAlgorithms.h"
+#import "SbIcon.h"
 
 @implementation SpringSortAppDelegate
 
@@ -26,25 +27,20 @@
         plist_t old_state = [d.springBoardService queryState];
         SbState *state = [SbState initFromPlist:old_state];
         
-        plist_t new_state = [state toPlist];
+        NSMutableArray *flat = [NSMutableArray array];
+        [SortAlgorithms flatten:state.mainContainer IntoArray:flat];
         
-        NSString* old_xml = [PListUtility toString:old_state];
-        NSString* new_xml = [PListUtility toString:new_state];
-        
-        if ([old_xml isEqualToString:new_xml])
-        {
-            NSLog(@"MATCH!");
-        }
-        else
-        {
-            NSLog(@"%@", old_xml);
-            NSLog(@"#########################");
-            NSLog(@"%@", new_xml);
+        for (SbIcon *icon in flat) {
+            icon.genreIds = [d.houseArrestService getGenres:icon.bundleIdentifier];
+            [d houseArrestRestart];
         }
         
-        [SortAlgorithms alphabetically:state];
+        [SortAlgorithms byGenreInFolders:state];
+        
+        NSLog(@"%@",[PListUtility toString:[state toPlist]]);
+        
         [d.springBoardService writeState:[state toPlist]];
-        
+            
         [state release];
     }   
     

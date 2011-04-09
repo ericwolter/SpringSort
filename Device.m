@@ -128,4 +128,14 @@
         NSLog(@"Could not connect to housearrest service!");
     }
 }
+
+-(void)houseArrestRestart
+{
+    if(_houseArrestClient) {
+        house_arrest_client_free(_houseArrestClient);
+    }
+    [self houseArrestStart];
+    
+    self.houseArrestService = [[HouseArrestService alloc] initWithHouseArrestClient:_houseArrestClient];
+}
 @end

@@ -34,5 +34,6 @@
 -(void)lockdownStart;
 -(void)springBoardStart;
 -(void)houseArrestStart;
+-(void)houseArrestRestart;
 
 @end

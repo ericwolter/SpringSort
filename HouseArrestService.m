@@ -9,6 +9,7 @@
 #import "HouseArrestService.h"
 #import <libimobiledevice/house_arrest.h>
 #import <libimobiledevice/afc.h>
+#import "PListUtility.h"
 
 @implementation HouseArrestService
 
@@ -57,16 +58,19 @@
 
 -(plist_t)getMetadata:(const char *)bundleIdentifier
 {
+    if(!bundleIdentifier)
+        return nil;
+    
     if (house_arrest_send_command(_client, "VendContainer", bundleIdentifier) != HOUSE_ARREST_E_SUCCESS)
     {
-        NSLog(@"client, command, or appid is invalid, or incorrect mode!");
+        NSLog(@"client, command, or appid is invalid, or incorrect mode!: %s", bundleIdentifier);
         return nil;
     }
     
     plist_t response = NULL;
     if (house_arrest_get_result(_client, &response))
     {
-        NSLog(@"could not get vendor container");
+        NSLog(@"could not get vendor container: %s", bundleIdentifier);
         return nil;
     }
     plist_free(response);
@@ -74,14 +78,14 @@
     afc_client_t afcClient = NULL;
     if(afc_client_new_from_house_arrest_client(_client, &afcClient) != AFC_E_SUCCESS)
     {
-        NSLog(@"could not get afc client");
+        NSLog(@"could not get afc client: %s", bundleIdentifier);
         return nil;
     }
     
     char **fileInfo = NULL;
     if ((afc_get_file_info(afcClient, "iTunesMetadata.plist", &fileInfo) != AFC_E_SUCCESS) || !fileInfo)
     {
-        NSLog(@"could not get file info");
+        NSLog(@"could not get file info: %s", bundleIdentifier);
         afc_client_free(afcClient);
         return nil;
     }
@@ -105,7 +109,7 @@
     
     if (afc_file_open(afcClient, "iTunesMetadata.plist", AFC_FOPEN_RDONLY, &handle) != AFC_E_SUCCESS)
     {
-        NSLog(@"could not open file");
+        NSLog(@"could not open metadata file: %s", bundleIdentifier);
         afc_client_free(afcClient);
         return nil;
     }
@@ -116,7 +120,7 @@
     uint32_t amount = 0;
     if (afc_file_read(afcClient, handle, plistString, fileSize, &amount) != AFC_E_SUCCESS)
     {
-        NSLog(@"could not read file");
+        NSLog(@"could not read metadata file: %s", bundleIdentifier);
         afc_client_free(afcClient);
         free(plistString);
         return nil;

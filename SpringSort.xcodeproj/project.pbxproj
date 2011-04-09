@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0706B0C413504F1F00F4C9EC /* GenreID-de.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0706B0C313504F1F00F4C9EC /* GenreID-de.plist */; };
 		0706BB0D133360DA000C1CFA /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 0706BB0C133360DA000C1CFA /* Device.m */; };
 		0706BB1A1333981E000C1CFA /* SbIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0706BB191333981E000C1CFA /* SbIcon.m */; };
 		0706BB1D13339830000C1CFA /* SbContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0706BB1C13339830000C1CFA /* SbContainer.m */; };
 		073EBEEE1346F7F600512869 /* PListUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EBEED1346F7F600512869 /* PListUtility.m */; };
 		073EBEF11347187700512869 /* SortAlgorithms.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EBEF01347187700512869 /* SortAlgorithms.m */; };
+		075D2A8B13504943009450C2 /* GenreID-en.plist in Resources */ = {isa = PBXBuildFile; fileRef = 075D2A8A13504943009450C2 /* GenreID-en.plist */; };
 		076ECA75133A8F4E00813884 /* SbState.m in Sources */ = {isa = PBXBuildFile; fileRef = 076ECA74133A8F4E00813884 /* SbState.m */; };
 		0792B460134A3684002523E5 /* UsbUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792B45F134A3683002523E5 /* UsbUtility.m */; };
 		0792B467134A4334002523E5 /* HouseArrestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792B466134A4334002523E5 /* HouseArrestService.m */; };
@@ -25,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0706B0C313504F1F00F4C9EC /* GenreID-de.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GenreID-de.plist"; sourceTree = "<group>"; };
 		0706BB0B133360DA000C1CFA /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		0706BB0C133360DA000C1CFA /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		0706BB181333981E000C1CFA /* SbIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbIcon.h; sourceTree = "<group>"; };
@@ -35,6 +38,7 @@
 		073EBEED1346F7F600512869 /* PListUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PListUtility.m; sourceTree = "<group>"; };
 		073EBEEF1347187700512869 /* SortAlgorithms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortAlgorithms.h; sourceTree = "<group>"; };
 		073EBEF01347187700512869 /* SortAlgorithms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortAlgorithms.m; sourceTree = "<group>"; };
+		075D2A8A13504943009450C2 /* GenreID-en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GenreID-en.plist"; sourceTree = "<group>"; };
 		076ECA73133A8F4E00813884 /* SbState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbState.h; sourceTree = "<group>"; };
 		076ECA74133A8F4E00813884 /* SbState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbState.m; sourceTree = "<group>"; };
 		0792B45E134A3682002523E5 /* UsbUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsbUtility.h; sourceTree = "<group>"; };
@@ -169,6 +173,8 @@
 				8D1107310486CEB800E47090 /* SpringSort-Info.plist */,
 				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
 				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
+				075D2A8A13504943009450C2 /* GenreID-en.plist */,
+				0706B0C313504F1F00F4C9EC /* GenreID-de.plist */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -234,6 +240,8 @@
 			files = (
 				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
 				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
+				075D2A8B13504943009450C2 /* GenreID-en.plist in Resources */,
+				0706B0C413504F1F00F4C9EC /* GenreID-de.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
