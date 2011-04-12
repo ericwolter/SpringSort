@@ -16,28 +16,20 @@
 #import "HouseArrestService.h"
 
 @interface Device : NSObject {
-    idevice_t _device;
-    lockdownd_client_t _lockdownd;
-    sbservices_client_t _springBoardClient;
-    house_arrest_client_t _houseArrestClient;
-	
-	NSString* uuid;
+@private
+	NSString *uuid;
+	idevice_t idevice;
 	SpringBoardService* springBoardService;
 	HouseArrestService* houseArrestService;
 }
 
 @property (nonatomic, copy) NSString* uuid;
+@property (nonatomic, readonly) idevice_t idevice;
 @property (nonatomic, retain) SpringBoardService* springBoardService;
 @property (nonatomic, retain) HouseArrestService* houseArrestService;
 
 -(id)initWithUuid: (NSString *)theUuid;
 -(void)dealloc;
--(BOOL)restart;
--(void)clean;
--(void)deviceStart;
--(void)lockdownStart;
--(void)springBoardStart;
--(void)houseArrestStart;
--(void)houseArrestRestart;
+-(void)start;
 
 @end

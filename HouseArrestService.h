@@ -10,12 +10,15 @@
 #import <libimobiledevice/house_arrest.h>
 #import <plist/plist.h>
 
+@class Device;
+
 @interface HouseArrestService : NSObject {
-    house_arrest_client_t _client;
+@private
+	Device *device;
+	int port;	
 }
 
--(id)initWithHouseArrestClient:(house_arrest_client_t)theClient;
--(NSArray *)getGenres:(NSString *)bundleIdentifier;
+-(id)initOnDevice:(Device *)theDevice atPort:(int)thePort;
 -(plist_t)getMetadata:(const char *)bundleIdentifier;
 
 @end

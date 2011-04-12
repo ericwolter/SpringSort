@@ -6,10 +6,9 @@
 //  Copyright 2011 private. All rights reserved.
 //
 
-#import "PListUtility.h"
+#import "PlistUtility.h"
 
-
-@implementation PListUtility
+@implementation PlistUtility
 
 +(NSString *)toString:(plist_t)plist
 {

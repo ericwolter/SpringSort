@@ -9,14 +9,17 @@
 #import <Foundation/Foundation.h>
 #import <libimobiledevice/sbservices.h>
 
-#import "SbState.h"
+@class Device;
 
 @interface SpringBoardService : NSObject {
-    sbservices_client_t _client;
+@private
+	Device *device;
+	int port;	
 }
 
--(id)initWithSpringBoardClient:(sbservices_client_t)theClient;
--(plist_t)queryState;
--(void)writeState:(plist_t)plist;
+-(id)initOnDevice:(Device *)theDevice atPort:(int)thePort;
+-(plist_t)getState;
+-(void)setState:(plist_t)plist;
+-(NSImage* )getWallpaper;
 
 @end

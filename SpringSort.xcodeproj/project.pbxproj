@@ -11,7 +11,6 @@
 		0706BB0D133360DA000C1CFA /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 0706BB0C133360DA000C1CFA /* Device.m */; };
 		0706BB1A1333981E000C1CFA /* SbIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0706BB191333981E000C1CFA /* SbIcon.m */; };
 		0706BB1D13339830000C1CFA /* SbContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0706BB1C13339830000C1CFA /* SbContainer.m */; };
-		073EBEEE1346F7F600512869 /* PListUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EBEED1346F7F600512869 /* PListUtility.m */; };
 		073EBEF11347187700512869 /* SortAlgorithms.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EBEF01347187700512869 /* SortAlgorithms.m */; };
 		075D2A8B13504943009450C2 /* GenreID-en.plist in Resources */ = {isa = PBXBuildFile; fileRef = 075D2A8A13504943009450C2 /* GenreID-en.plist */; };
 		076ECA75133A8F4E00813884 /* SbState.m in Sources */ = {isa = PBXBuildFile; fileRef = 076ECA74133A8F4E00813884 /* SbState.m */; };
@@ -19,6 +18,9 @@
 		0792B467134A4334002523E5 /* HouseArrestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792B466134A4334002523E5 /* HouseArrestService.m */; };
 		0792B46D134A435D002523E5 /* SpringBoardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792B46C134A435D002523E5 /* SpringBoardService.m */; };
 		0792B470134CB034002523E5 /* SbFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792B46F134CB032002523E5 /* SbFolder.m */; };
+		079406C51354AE5D00AA9208 /* SpringBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 079406C41354AE5D00AA9208 /* SpringBoardView.m */; };
+		079406C81354BEDE00AA9208 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 079406C71354BED900AA9208 /* Utilities.m */; };
+		079406CC1354C8B900AA9208 /* PlistUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 079406CB1354C8B900AA9208 /* PlistUtility.m */; };
 		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
 		256AC3DA0F4B6AC300CF3369 /* SpringSortAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* SpringSortAppDelegate.m */; };
 		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
@@ -34,8 +36,6 @@
 		0706BB191333981E000C1CFA /* SbIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbIcon.m; sourceTree = "<group>"; };
 		0706BB1B13339830000C1CFA /* SbContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbContainer.h; sourceTree = "<group>"; };
 		0706BB1C13339830000C1CFA /* SbContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbContainer.m; sourceTree = "<group>"; };
-		073EBEEC1346F7F600512869 /* PListUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PListUtility.h; sourceTree = "<group>"; };
-		073EBEED1346F7F600512869 /* PListUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PListUtility.m; sourceTree = "<group>"; };
 		073EBEEF1347187700512869 /* SortAlgorithms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortAlgorithms.h; sourceTree = "<group>"; };
 		073EBEF01347187700512869 /* SortAlgorithms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortAlgorithms.m; sourceTree = "<group>"; };
 		075D2A8A13504943009450C2 /* GenreID-en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GenreID-en.plist"; sourceTree = "<group>"; };
@@ -49,6 +49,12 @@
 		0792B46C134A435D002523E5 /* SpringBoardService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringBoardService.m; sourceTree = "<group>"; };
 		0792B46E134CB030002523E5 /* SbFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbFolder.h; sourceTree = "<group>"; };
 		0792B46F134CB032002523E5 /* SbFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbFolder.m; sourceTree = "<group>"; };
+		079406C31354AE5D00AA9208 /* SpringBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringBoardView.h; sourceTree = "<group>"; };
+		079406C41354AE5D00AA9208 /* SpringBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringBoardView.m; sourceTree = "<group>"; };
+		079406C61354BED800AA9208 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		079406C71354BED900AA9208 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		079406CA1354C8B900AA9208 /* PlistUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistUtility.h; sourceTree = "<group>"; };
+		079406CB1354C8B900AA9208 /* PlistUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistUtility.m; sourceTree = "<group>"; };
 		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
@@ -75,7 +81,7 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0792B45D134A33EC002523E5 /* SpringBoard */ = {
+		0792B45D134A33EC002523E5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
 				076ECA73133A8F4E00813884 /* SbState.h */,
@@ -87,10 +93,10 @@
 				0706BB181333981E000C1CFA /* SbIcon.h */,
 				0706BB191333981E000C1CFA /* SbIcon.m */,
 			);
-			name = SpringBoard;
+			name = Model;
 			sourceTree = "<group>";
 		};
-		0792B461134A4300002523E5 /* Device */ = {
+		0792B461134A4300002523E5 /* Hardware */ = {
 			isa = PBXGroup;
 			children = (
 				0706BB0B133360DA000C1CFA /* Device.h */,
@@ -100,22 +106,42 @@
 				0792B46B134A435D002523E5 /* SpringBoardService.h */,
 				0792B46C134A435D002523E5 /* SpringBoardService.m */,
 			);
-			name = Device;
+			name = Hardware;
+			sourceTree = "<group>";
+		};
+		079406C91354C70D00AA9208 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				079406CA1354C8B900AA9208 /* PlistUtility.h */,
+				079406CB1354C8B900AA9208 /* PlistUtility.m */,
+				0792B45E134A3682002523E5 /* UsbUtility.h */,
+				0792B45F134A3683002523E5 /* UsbUtility.m */,
+				079406C61354BED800AA9208 /* Utilities.h */,
+				079406C71354BED900AA9208 /* Utilities.m */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		079406CD1354D53500AA9208 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				079406C31354AE5D00AA9208 /* SpringBoardView.h */,
+				079406C41354AE5D00AA9208 /* SpringBoardView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 		080E96DDFE201D6D7F000001 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
-				0792B461134A4300002523E5 /* Device */,
-				0792B45D134A33EC002523E5 /* SpringBoard */,
+				0792B461134A4300002523E5 /* Hardware */,
+				0792B45D134A33EC002523E5 /* Model */,
 				256AC3D80F4B6AC300CF3369 /* SpringSortAppDelegate.h */,
 				256AC3D90F4B6AC300CF3369 /* SpringSortAppDelegate.m */,
-				073EBEEC1346F7F600512869 /* PListUtility.h */,
-				073EBEED1346F7F600512869 /* PListUtility.m */,
 				073EBEEF1347187700512869 /* SortAlgorithms.h */,
 				073EBEF01347187700512869 /* SortAlgorithms.m */,
-				0792B45E134A3682002523E5 /* UsbUtility.h */,
-				0792B45F134A3683002523E5 /* UsbUtility.m */,
+				079406CD1354D53500AA9208 /* View */,
+				079406C91354C70D00AA9208 /* Helper */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
@@ -258,12 +284,14 @@
 				0706BB1A1333981E000C1CFA /* SbIcon.m in Sources */,
 				0706BB1D13339830000C1CFA /* SbContainer.m in Sources */,
 				076ECA75133A8F4E00813884 /* SbState.m in Sources */,
-				073EBEEE1346F7F600512869 /* PListUtility.m in Sources */,
 				073EBEF11347187700512869 /* SortAlgorithms.m in Sources */,
 				0792B460134A3684002523E5 /* UsbUtility.m in Sources */,
 				0792B467134A4334002523E5 /* HouseArrestService.m in Sources */,
 				0792B46D134A435D002523E5 /* SpringBoardService.m in Sources */,
 				0792B470134CB034002523E5 /* SbFolder.m in Sources */,
+				079406C51354AE5D00AA9208 /* SpringBoardView.m in Sources */,
+				079406C81354BEDE00AA9208 /* Utilities.m in Sources */,
+				079406CC1354C8B900AA9208 /* PlistUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

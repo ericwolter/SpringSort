@@ -7,7 +7,7 @@
 //
 
 #import "SbContainer.h"
-#import "SbState.h"
+#import "Utilities.h"
 
 @implementation SbContainer
 
@@ -23,7 +23,7 @@
 		int count = plist_array_get_size(plist);
 		for (int i = 0; i < count; i++)
 		{
-			[self.items addObject:[SbState switchSbType:plist_array_get_item(plist, i)]];
+			[self.items addObject:[Utilities switchSbType:plist_array_get_item(plist, i)]];
 		}
     }
     return self;    

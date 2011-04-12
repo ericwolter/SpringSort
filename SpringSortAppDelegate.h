@@ -8,10 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+#import "SpringBoardView.h"
+
 @interface SpringSortAppDelegate : NSObject <NSApplicationDelegate> {
     NSWindow *window;
+	SpringBoardView *springBoardView;
 }
-
+@property (assign) IBOutlet SpringBoardView *springBoardView;
 @property (assign) IBOutlet NSWindow *window;
 
 @end

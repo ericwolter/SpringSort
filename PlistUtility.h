@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <plist/plist.h>
 
-@interface PListUtility : NSObject {
+@interface PlistUtility : NSObject {
     
 }
 

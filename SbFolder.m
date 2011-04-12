@@ -7,7 +7,7 @@
 //
 
 #import "SbFolder.h"
-#import "SbState.h"
+#import "Utilities.h"
 
 @implementation SbFolder
 
@@ -39,7 +39,7 @@
         int count = plist_array_get_size(folderContent);
         for (int i = 0; i < count; i++)
         {
-            [self.items addObject:[SbState switchSbType:plist_array_get_item(folderContent, i)]];
+            [self.items addObject:[Utilities switchSbType:plist_array_get_item(folderContent, i)]];
         }
     }
     return self;

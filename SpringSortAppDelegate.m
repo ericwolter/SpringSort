@@ -16,6 +16,7 @@
 
 @implementation SpringSortAppDelegate
 
+@synthesize springBoardView;
 @synthesize window;
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification {
@@ -23,26 +24,30 @@
     Device *d = [[Device alloc] initWithUuid:[UsbUtility firstDeviceUuid]];
     
     if (d)
-    {
-        plist_t old_state = [d.springBoardService queryState];
-        SbState *state = [[SbState alloc] initFromPlist:old_state];
-        
-        NSMutableArray *flat = [NSMutableArray array];
-        [SortAlgorithms flatten:state.mainContainer IntoArray:flat];
-        
-        for (SbIcon *icon in flat) {
-            icon.genreIds = [d.houseArrestService getGenres:icon.bundleIdentifier];
-            [d houseArrestRestart];
-        }
-        
-        [SortAlgorithms alphabetically:state];
-//        [SortAlgorithms byGenreInFolders:state];
-        
-        NSLog(@"%@",[PListUtility toString:[state toPlist]]);
-        
-        [d.springBoardService writeState:[state toPlist]];
-            
-        [state release];
+	{
+		NSImage *i = [d.springBoardService getWallpaper];
+		
+		springBoardView.image = i;
+		[springBoardView setNeedsDisplay:YES];
+//        plist_t old_state = [d.springBoardService queryState];
+//        SbState *state = [[SbState alloc] initFromPlist:old_state];
+//        
+//        NSMutableArray *flat = [NSMutableArray array];
+//        [SortAlgorithms flatten:state.mainContainer IntoArray:flat];
+//        
+//        for (SbIcon *icon in flat) {
+//            icon.genreIds = [d.houseArrestService getGenres:icon.bundleIdentifier];
+//            [d houseArrestRestart];
+//        }
+//        
+//        [SortAlgorithms alphabetically:state];
+////        [SortAlgorithms byGenreInFolders:state];
+//        
+//        NSLog(@"%@",[PListUtility toString:[state toPlist]]);
+//        
+//        [d.springBoardService writeState:[state toPlist]];
+//            
+//        [state release];
     }   
     
     [d release];

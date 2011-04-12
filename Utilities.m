@@ -1,39 +1,28 @@
 //
-//  SpringBoard.m
+//  Utilities.m
 //  SpringSort
 //
-//  Created by Eric Wolter on 23.03.11.
+//  Created by Eric Wolter on 12.04.11.
 //  Copyright 2011 private. All rights reserved.
 //
 
-#import "SbState.h"
-#import "SbContainer.h"
-#import "SbFolder.h"
-#import "SbIcon.h"
 #import "Utilities.h"
 
-@implementation SbState
+@implementation Utilities
 
-@synthesize mainContainer;
-
--(id)initFromPlist:(plist_t)plist
++(void)flatten:(SbContainer *)container IntoArray:(NSMutableArray *)flat
 {
-	self = [super init];
-	if (self) {
-		self.mainContainer = [Utilities switchSbType:plist];
-	}
-	return self;
-}
-
-- (void)dealloc
-{
-    self.mainContainer = nil;
-    [super dealloc];
-}
-
--(plist_t)toPlist
-{
-    return [self.mainContainer toPlist];
+    for (id item in container.items) {
+        if ([item isKindOfClass:[SbContainer class]]) {
+            [self flatten:item IntoArray:flat];
+        }
+        else if ([item isKindOfClass:[SbFolder class]]) {
+            [self flatten:item IntoArray:flat];
+        }
+        else {
+            [flat addObject:item];
+        }
+    }
 }
 
 +(plist_t)switchSbType:(plist_t)plist
@@ -50,7 +39,7 @@
             return [[SbIcon alloc] initFromPlist:plist];
         }
     }
-        
+	
 }
 
 @end
