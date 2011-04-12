@@ -10,7 +10,8 @@
 #import <plist/plist.h>
 
 @interface SbIcon : NSObject {
-
+	plist_t node;
+	NSArray* genreIds;
 }
 
 @property (nonatomic, assign) plist_t node;

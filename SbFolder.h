@@ -10,7 +10,8 @@
 #import <plist/plist.h>
 
 @interface SbFolder : NSObject {
-    
+    NSMutableArray* items;
+	NSString* displayName;
 }
 
 @property (nonatomic, retain) NSMutableArray *items;

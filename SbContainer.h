@@ -10,7 +10,7 @@
 #import <plist/plist.h>
 
 @interface SbContainer : NSObject {
-    
+    NSMutableArray* items;
 }
 
 @property (nonatomic, retain) NSMutableArray *items;

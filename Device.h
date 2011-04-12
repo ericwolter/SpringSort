@@ -20,6 +20,10 @@
     lockdownd_client_t _lockdownd;
     sbservices_client_t _springBoardClient;
     house_arrest_client_t _houseArrestClient;
+	
+	NSString* uuid;
+	SpringBoardService* springBoardService;
+	HouseArrestService* houseArrestService;
 }
 
 @property (nonatomic, copy) NSString* uuid;

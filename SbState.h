@@ -12,7 +12,7 @@
 #import "SbContainer.h"
 
 @interface SbState : NSObject {
-    
+	SbContainer* mainContainer;
 }
 
 @property (nonatomic, retain) SbContainer *mainContainer;

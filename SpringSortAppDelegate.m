@@ -35,7 +35,8 @@
             [d houseArrestRestart];
         }
         
-        [SortAlgorithms byGenreInFolders:state];
+        [SortAlgorithms alphabetically:state];
+//        [SortAlgorithms byGenreInFolders:state];
         
         NSLog(@"%@",[PListUtility toString:[state toPlist]]);
         
