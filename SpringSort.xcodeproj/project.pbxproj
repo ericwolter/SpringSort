@@ -3,418 +3,587 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 45;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0706B0C413504F1F00F4C9EC /* GenreID-de.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0706B0C313504F1F00F4C9EC /* GenreID-de.plist */; };
-		0706BB0D133360DA000C1CFA /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 0706BB0C133360DA000C1CFA /* Device.m */; };
-		0706BB1A1333981E000C1CFA /* SbIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 0706BB191333981E000C1CFA /* SbIcon.m */; };
-		0706BB1D13339830000C1CFA /* SbContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 0706BB1C13339830000C1CFA /* SbContainer.m */; };
-		073EBEF11347187700512869 /* SortAlgorithms.m in Sources */ = {isa = PBXBuildFile; fileRef = 073EBEF01347187700512869 /* SortAlgorithms.m */; };
-		075D2A8B13504943009450C2 /* GenreID-en.plist in Resources */ = {isa = PBXBuildFile; fileRef = 075D2A8A13504943009450C2 /* GenreID-en.plist */; };
-		076ECA75133A8F4E00813884 /* SbState.m in Sources */ = {isa = PBXBuildFile; fileRef = 076ECA74133A8F4E00813884 /* SbState.m */; };
-		0792B460134A3684002523E5 /* UsbUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792B45F134A3683002523E5 /* UsbUtility.m */; };
-		0792B467134A4334002523E5 /* HouseArrestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792B466134A4334002523E5 /* HouseArrestService.m */; };
-		0792B46D134A435D002523E5 /* SpringBoardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792B46C134A435D002523E5 /* SpringBoardService.m */; };
-		0792B470134CB034002523E5 /* SbFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 0792B46F134CB032002523E5 /* SbFolder.m */; };
-		079406C51354AE5D00AA9208 /* SpringBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 079406C41354AE5D00AA9208 /* SpringBoardView.m */; };
-		079406C81354BEDE00AA9208 /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 079406C71354BED900AA9208 /* Utilities.m */; };
-		079406CC1354C8B900AA9208 /* PlistUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 079406CB1354C8B900AA9208 /* PlistUtility.m */; };
-		1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1DDD58140DA1D0A300B32029 /* MainMenu.xib */; };
-		256AC3DA0F4B6AC300CF3369 /* SpringSortAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 256AC3D90F4B6AC300CF3369 /* SpringSortAppDelegate.m */; };
-		8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 089C165CFE840E0CC02AAC07 /* InfoPlist.strings */; };
-		8D11072D0486CEB800E47090 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 29B97316FDCFA39411CA2CEA /* main.m */; settings = {ATTRIBUTES = (); }; };
-		8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */; };
+		070F3BB31355CD8A0060D04D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070F3BB21355CD8A0060D04D /* Cocoa.framework */; };
+		070F3BBD1355CD8A0060D04D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BBB1355CD8A0060D04D /* InfoPlist.strings */; };
+		070F3BC01355CD8A0060D04D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BBF1355CD8A0060D04D /* main.m */; };
+		070F3BC31355CD8A0060D04D /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BC11355CD8A0060D04D /* Credits.rtf */; };
+		070F3BC61355CD8A0060D04D /* SpringSortAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BC51355CD8A0060D04D /* SpringSortAppDelegate.m */; };
+		070F3BC91355CD8B0060D04D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BC71355CD8B0060D04D /* MainMenu.xib */; };
+		070F3BD01355CD8B0060D04D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070F3BB21355CD8A0060D04D /* Cocoa.framework */; };
+		070F3BD81355CD8B0060D04D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BD61355CD8B0060D04D /* InfoPlist.strings */; };
+		070F3BDB1355CD8B0060D04D /* SpringSortTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BDA1355CD8B0060D04D /* SpringSortTests.h */; };
+		070F3BDD1355CD8B0060D04D /* SpringSortTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BDC1355CD8B0060D04D /* SpringSortTests.m */; };
+		070F3BE81355CDA80060D04D /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BE71355CDA80060D04D /* Device.m */; };
+		070F3BED1355CDB30060D04D /* GenreID-de.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BE91355CDB30060D04D /* GenreID-de.plist */; };
+		070F3BEE1355CDB30060D04D /* GenreID-en.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BEA1355CDB30060D04D /* GenreID-en.plist */; };
+		070F3BEF1355CDB30060D04D /* HouseArrestService.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BEC1355CDB30060D04D /* HouseArrestService.m */; };
+		070F3BF21355CDBE0060D04D /* PlistUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BF11355CDBE0060D04D /* PlistUtility.m */; };
+		070F3C011355CDD00060D04D /* SbContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BF41355CDD00060D04D /* SbContainer.m */; };
+		070F3C021355CDD00060D04D /* SbFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BF61355CDD00060D04D /* SbFolder.m */; };
+		070F3C031355CDD00060D04D /* SbIcon.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BF81355CDD00060D04D /* SbIcon.m */; };
+		070F3C041355CDD00060D04D /* SbState.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BFA1355CDD00060D04D /* SbState.m */; };
+		070F3C051355CDD00060D04D /* SortAlgorithms.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BFC1355CDD00060D04D /* SortAlgorithms.m */; };
+		070F3C061355CDD00060D04D /* SpringBoardService.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BFE1355CDD00060D04D /* SpringBoardService.m */; };
+		070F3C071355CDD00060D04D /* SpringBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3C001355CDD00060D04D /* SpringBoardView.m */; };
+		070F3C0C1355CDDE0060D04D /* UsbUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3C091355CDDE0060D04D /* UsbUtility.m */; };
+		070F3C0D1355CDDE0060D04D /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3C0B1355CDDE0060D04D /* Utilities.m */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		070F3BD11355CD8B0060D04D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 070F3BA51355CD8A0060D04D /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 070F3BAD1355CD8A0060D04D;
+			remoteInfo = SpringSort;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		0706B0C313504F1F00F4C9EC /* GenreID-de.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GenreID-de.plist"; sourceTree = "<group>"; };
-		0706BB0B133360DA000C1CFA /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
-		0706BB0C133360DA000C1CFA /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
-		0706BB181333981E000C1CFA /* SbIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbIcon.h; sourceTree = "<group>"; };
-		0706BB191333981E000C1CFA /* SbIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbIcon.m; sourceTree = "<group>"; };
-		0706BB1B13339830000C1CFA /* SbContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbContainer.h; sourceTree = "<group>"; };
-		0706BB1C13339830000C1CFA /* SbContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbContainer.m; sourceTree = "<group>"; };
-		073EBEEF1347187700512869 /* SortAlgorithms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortAlgorithms.h; sourceTree = "<group>"; };
-		073EBEF01347187700512869 /* SortAlgorithms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortAlgorithms.m; sourceTree = "<group>"; };
-		075D2A8A13504943009450C2 /* GenreID-en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GenreID-en.plist"; sourceTree = "<group>"; };
-		076ECA73133A8F4E00813884 /* SbState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbState.h; sourceTree = "<group>"; };
-		076ECA74133A8F4E00813884 /* SbState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbState.m; sourceTree = "<group>"; };
-		0792B45E134A3682002523E5 /* UsbUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsbUtility.h; sourceTree = "<group>"; };
-		0792B45F134A3683002523E5 /* UsbUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsbUtility.m; sourceTree = "<group>"; };
-		0792B465134A4334002523E5 /* HouseArrestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseArrestService.h; sourceTree = "<group>"; };
-		0792B466134A4334002523E5 /* HouseArrestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseArrestService.m; sourceTree = "<group>"; };
-		0792B46B134A435D002523E5 /* SpringBoardService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringBoardService.h; sourceTree = "<group>"; };
-		0792B46C134A435D002523E5 /* SpringBoardService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringBoardService.m; sourceTree = "<group>"; };
-		0792B46E134CB030002523E5 /* SbFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbFolder.h; sourceTree = "<group>"; };
-		0792B46F134CB032002523E5 /* SbFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbFolder.m; sourceTree = "<group>"; };
-		079406C31354AE5D00AA9208 /* SpringBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringBoardView.h; sourceTree = "<group>"; };
-		079406C41354AE5D00AA9208 /* SpringBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringBoardView.m; sourceTree = "<group>"; };
-		079406C61354BED800AA9208 /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
-		079406C71354BED900AA9208 /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
-		079406CA1354C8B900AA9208 /* PlistUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistUtility.h; sourceTree = "<group>"; };
-		079406CB1354C8B900AA9208 /* PlistUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistUtility.m; sourceTree = "<group>"; };
-		089C165DFE840E0CC02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
-		13E42FB307B3F0F600E4EEF1 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = /System/Library/Frameworks/CoreData.framework; sourceTree = "<absolute>"; };
-		1DDD58150DA1D0A300B32029 /* English */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = English; path = English.lproj/MainMenu.xib; sourceTree = "<group>"; };
-		256AC3D80F4B6AC300CF3369 /* SpringSortAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringSortAppDelegate.h; sourceTree = "<group>"; };
-		256AC3D90F4B6AC300CF3369 /* SpringSortAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringSortAppDelegate.m; sourceTree = "<group>"; };
-		256AC3F00F4B6AF500CF3369 /* SpringSort_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringSort_Prefix.pch; sourceTree = "<group>"; };
-		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		29B97324FDCFA39411CA2CEA /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
-		29B97325FDCFA39411CA2CEA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
-		8D1107310486CEB800E47090 /* SpringSort-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "SpringSort-Info.plist"; sourceTree = "<group>"; };
-		8D1107320486CEB800E47090 /* SpringSort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpringSort.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		070F3BAE1355CD8A0060D04D /* SpringSort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpringSort.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		070F3BB21355CD8A0060D04D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		070F3BB51355CD8A0060D04D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
+		070F3BB61355CD8A0060D04D /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		070F3BB71355CD8A0060D04D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		070F3BBA1355CD8A0060D04D /* SpringSort-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpringSort-Info.plist"; sourceTree = "<group>"; };
+		070F3BBC1355CD8A0060D04D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		070F3BBE1355CD8A0060D04D /* SpringSort-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpringSort-Prefix.pch"; sourceTree = "<group>"; };
+		070F3BBF1355CD8A0060D04D /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		070F3BC21355CD8A0060D04D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; name = en; path = en.lproj/Credits.rtf; sourceTree = "<group>"; };
+		070F3BC41355CD8A0060D04D /* SpringSortAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpringSortAppDelegate.h; sourceTree = "<group>"; };
+		070F3BC51355CD8A0060D04D /* SpringSortAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpringSortAppDelegate.m; sourceTree = "<group>"; };
+		070F3BC81355CD8B0060D04D /* en */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = en; path = en.lproj/MainMenu.xib; sourceTree = "<group>"; };
+		070F3BCF1355CD8B0060D04D /* SpringSortTests.octest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpringSortTests.octest; sourceTree = BUILT_PRODUCTS_DIR; };
+		070F3BD51355CD8B0060D04D /* SpringSortTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpringSortTests-Info.plist"; sourceTree = "<group>"; };
+		070F3BD71355CD8B0060D04D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		070F3BD91355CD8B0060D04D /* SpringSortTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpringSortTests-Prefix.pch"; sourceTree = "<group>"; };
+		070F3BDA1355CD8B0060D04D /* SpringSortTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpringSortTests.h; sourceTree = "<group>"; };
+		070F3BDC1355CD8B0060D04D /* SpringSortTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpringSortTests.m; sourceTree = "<group>"; };
+		070F3BE61355CDA80060D04D /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
+		070F3BE71355CDA80060D04D /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
+		070F3BE91355CDB30060D04D /* GenreID-de.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GenreID-de.plist"; sourceTree = "<group>"; };
+		070F3BEA1355CDB30060D04D /* GenreID-en.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GenreID-en.plist"; sourceTree = "<group>"; };
+		070F3BEB1355CDB30060D04D /* HouseArrestService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HouseArrestService.h; sourceTree = "<group>"; };
+		070F3BEC1355CDB30060D04D /* HouseArrestService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HouseArrestService.m; sourceTree = "<group>"; };
+		070F3BF01355CDBE0060D04D /* PlistUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PlistUtility.h; sourceTree = "<group>"; };
+		070F3BF11355CDBE0060D04D /* PlistUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PlistUtility.m; sourceTree = "<group>"; };
+		070F3BF31355CDD00060D04D /* SbContainer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbContainer.h; sourceTree = "<group>"; };
+		070F3BF41355CDD00060D04D /* SbContainer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbContainer.m; sourceTree = "<group>"; };
+		070F3BF51355CDD00060D04D /* SbFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbFolder.h; sourceTree = "<group>"; };
+		070F3BF61355CDD00060D04D /* SbFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbFolder.m; sourceTree = "<group>"; };
+		070F3BF71355CDD00060D04D /* SbIcon.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbIcon.h; sourceTree = "<group>"; };
+		070F3BF81355CDD00060D04D /* SbIcon.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbIcon.m; sourceTree = "<group>"; };
+		070F3BF91355CDD00060D04D /* SbState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbState.h; sourceTree = "<group>"; };
+		070F3BFA1355CDD00060D04D /* SbState.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbState.m; sourceTree = "<group>"; };
+		070F3BFB1355CDD00060D04D /* SortAlgorithms.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortAlgorithms.h; sourceTree = "<group>"; };
+		070F3BFC1355CDD00060D04D /* SortAlgorithms.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortAlgorithms.m; sourceTree = "<group>"; };
+		070F3BFD1355CDD00060D04D /* SpringBoardService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringBoardService.h; sourceTree = "<group>"; };
+		070F3BFE1355CDD00060D04D /* SpringBoardService.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringBoardService.m; sourceTree = "<group>"; };
+		070F3BFF1355CDD00060D04D /* SpringBoardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringBoardView.h; sourceTree = "<group>"; };
+		070F3C001355CDD00060D04D /* SpringBoardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringBoardView.m; sourceTree = "<group>"; };
+		070F3C081355CDDE0060D04D /* UsbUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UsbUtility.h; sourceTree = "<group>"; };
+		070F3C091355CDDE0060D04D /* UsbUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsbUtility.m; sourceTree = "<group>"; };
+		070F3C0A1355CDDE0060D04D /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
+		070F3C0B1355CDDE0060D04D /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		8D11072E0486CEB800E47090 /* Frameworks */ = {
+		070F3BAB1355CD8A0060D04D /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072F0486CEB800E47090 /* Cocoa.framework in Frameworks */,
+				070F3BB31355CD8A0060D04D /* Cocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		070F3BCB1355CD8B0060D04D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				070F3BD01355CD8B0060D04D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0792B45D134A33EC002523E5 /* Model */ = {
+		070F3BA31355CD8A0060D04D = {
 			isa = PBXGroup;
 			children = (
-				076ECA73133A8F4E00813884 /* SbState.h */,
-				076ECA74133A8F4E00813884 /* SbState.m */,
-				0706BB1B13339830000C1CFA /* SbContainer.h */,
-				0706BB1C13339830000C1CFA /* SbContainer.m */,
-				0792B46E134CB030002523E5 /* SbFolder.h */,
-				0792B46F134CB032002523E5 /* SbFolder.m */,
-				0706BB181333981E000C1CFA /* SbIcon.h */,
-				0706BB191333981E000C1CFA /* SbIcon.m */,
+				070F3BB81355CD8A0060D04D /* SpringSort */,
+				070F3BD31355CD8B0060D04D /* SpringSortTests */,
+				070F3BB11355CD8A0060D04D /* Frameworks */,
+				070F3BAF1355CD8A0060D04D /* Products */,
 			);
-			name = Model;
 			sourceTree = "<group>";
 		};
-		0792B461134A4300002523E5 /* Hardware */ = {
+		070F3BAF1355CD8A0060D04D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0706BB0B133360DA000C1CFA /* Device.h */,
-				0706BB0C133360DA000C1CFA /* Device.m */,
-				0792B465134A4334002523E5 /* HouseArrestService.h */,
-				0792B466134A4334002523E5 /* HouseArrestService.m */,
-				0792B46B134A435D002523E5 /* SpringBoardService.h */,
-				0792B46C134A435D002523E5 /* SpringBoardService.m */,
-			);
-			name = Hardware;
-			sourceTree = "<group>";
-		};
-		079406C91354C70D00AA9208 /* Helper */ = {
-			isa = PBXGroup;
-			children = (
-				079406CA1354C8B900AA9208 /* PlistUtility.h */,
-				079406CB1354C8B900AA9208 /* PlistUtility.m */,
-				0792B45E134A3682002523E5 /* UsbUtility.h */,
-				0792B45F134A3683002523E5 /* UsbUtility.m */,
-				079406C61354BED800AA9208 /* Utilities.h */,
-				079406C71354BED900AA9208 /* Utilities.m */,
-			);
-			name = Helper;
-			sourceTree = "<group>";
-		};
-		079406CD1354D53500AA9208 /* View */ = {
-			isa = PBXGroup;
-			children = (
-				079406C31354AE5D00AA9208 /* SpringBoardView.h */,
-				079406C41354AE5D00AA9208 /* SpringBoardView.m */,
-			);
-			name = View;
-			sourceTree = "<group>";
-		};
-		080E96DDFE201D6D7F000001 /* Classes */ = {
-			isa = PBXGroup;
-			children = (
-				0792B461134A4300002523E5 /* Hardware */,
-				0792B45D134A33EC002523E5 /* Model */,
-				256AC3D80F4B6AC300CF3369 /* SpringSortAppDelegate.h */,
-				256AC3D90F4B6AC300CF3369 /* SpringSortAppDelegate.m */,
-				073EBEEF1347187700512869 /* SortAlgorithms.h */,
-				073EBEF01347187700512869 /* SortAlgorithms.m */,
-				079406CD1354D53500AA9208 /* View */,
-				079406C91354C70D00AA9208 /* Helper */,
-			);
-			name = Classes;
-			sourceTree = "<group>";
-		};
-		1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7A1FEA54F0111CA2CBB /* Cocoa.framework */,
-			);
-			name = "Linked Frameworks";
-			sourceTree = "<group>";
-		};
-		1058C7A2FEA54F0111CA2CBB /* Other Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				29B97324FDCFA39411CA2CEA /* AppKit.framework */,
-				13E42FB307B3F0F600E4EEF1 /* CoreData.framework */,
-				29B97325FDCFA39411CA2CEA /* Foundation.framework */,
-			);
-			name = "Other Frameworks";
-			sourceTree = "<group>";
-		};
-		19C28FACFE9D520D11CA2CBB /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				8D1107320486CEB800E47090 /* SpringSort.app */,
+				070F3BAE1355CD8A0060D04D /* SpringSort.app */,
+				070F3BCF1355CD8B0060D04D /* SpringSortTests.octest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		29B97314FDCFA39411CA2CEA /* SpringSort */ = {
+		070F3BB11355CD8A0060D04D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				080E96DDFE201D6D7F000001 /* Classes */,
-				29B97315FDCFA39411CA2CEA /* Other Sources */,
-				29B97317FDCFA39411CA2CEA /* Resources */,
-				29B97323FDCFA39411CA2CEA /* Frameworks */,
-				19C28FACFE9D520D11CA2CBB /* Products */,
-			);
-			name = SpringSort;
-			sourceTree = "<group>";
-		};
-		29B97315FDCFA39411CA2CEA /* Other Sources */ = {
-			isa = PBXGroup;
-			children = (
-				256AC3F00F4B6AF500CF3369 /* SpringSort_Prefix.pch */,
-				29B97316FDCFA39411CA2CEA /* main.m */,
-			);
-			name = "Other Sources";
-			sourceTree = "<group>";
-		};
-		29B97317FDCFA39411CA2CEA /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				8D1107310486CEB800E47090 /* SpringSort-Info.plist */,
-				089C165CFE840E0CC02AAC07 /* InfoPlist.strings */,
-				1DDD58140DA1D0A300B32029 /* MainMenu.xib */,
-				075D2A8A13504943009450C2 /* GenreID-en.plist */,
-				0706B0C313504F1F00F4C9EC /* GenreID-de.plist */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				1058C7A0FEA54F0111CA2CBB /* Linked Frameworks */,
-				1058C7A2FEA54F0111CA2CBB /* Other Frameworks */,
+				070F3BB21355CD8A0060D04D /* Cocoa.framework */,
+				070F3BB41355CD8A0060D04D /* Other Frameworks */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		070F3BB41355CD8A0060D04D /* Other Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				070F3BB51355CD8A0060D04D /* AppKit.framework */,
+				070F3BB61355CD8A0060D04D /* CoreData.framework */,
+				070F3BB71355CD8A0060D04D /* Foundation.framework */,
+			);
+			name = "Other Frameworks";
+			sourceTree = "<group>";
+		};
+		070F3BB81355CD8A0060D04D /* SpringSort */ = {
+			isa = PBXGroup;
+			children = (
+				070F3C121355CE360060D04D /* View */,
+				070F3C111355CE200060D04D /* Model */,
+				070F3C0F1355CDFB0060D04D /* Hardware */,
+				070F3C101355CE0F0060D04D /* Utilities */,
+				070F3BFB1355CDD00060D04D /* SortAlgorithms.h */,
+				070F3BFC1355CDD00060D04D /* SortAlgorithms.m */,
+				070F3BC41355CD8A0060D04D /* SpringSortAppDelegate.h */,
+				070F3BC51355CD8A0060D04D /* SpringSortAppDelegate.m */,
+				070F3BC71355CD8B0060D04D /* MainMenu.xib */,
+				070F3BB91355CD8A0060D04D /* Supporting Files */,
+			);
+			path = SpringSort;
+			sourceTree = "<group>";
+		};
+		070F3BB91355CD8A0060D04D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				070F3BBA1355CD8A0060D04D /* SpringSort-Info.plist */,
+				070F3BBB1355CD8A0060D04D /* InfoPlist.strings */,
+				070F3BBE1355CD8A0060D04D /* SpringSort-Prefix.pch */,
+				070F3BBF1355CD8A0060D04D /* main.m */,
+				070F3BC11355CD8A0060D04D /* Credits.rtf */,
+				070F3BE91355CDB30060D04D /* GenreID-de.plist */,
+				070F3BEA1355CDB30060D04D /* GenreID-en.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		070F3BD31355CD8B0060D04D /* SpringSortTests */ = {
+			isa = PBXGroup;
+			children = (
+				070F3BDA1355CD8B0060D04D /* SpringSortTests.h */,
+				070F3BDC1355CD8B0060D04D /* SpringSortTests.m */,
+				070F3BD41355CD8B0060D04D /* Supporting Files */,
+			);
+			path = SpringSortTests;
+			sourceTree = "<group>";
+		};
+		070F3BD41355CD8B0060D04D /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				070F3BD51355CD8B0060D04D /* SpringSortTests-Info.plist */,
+				070F3BD61355CD8B0060D04D /* InfoPlist.strings */,
+				070F3BD91355CD8B0060D04D /* SpringSortTests-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		070F3C0F1355CDFB0060D04D /* Hardware */ = {
+			isa = PBXGroup;
+			children = (
+				070F3BFD1355CDD00060D04D /* SpringBoardService.h */,
+				070F3BFE1355CDD00060D04D /* SpringBoardService.m */,
+				070F3BEB1355CDB30060D04D /* HouseArrestService.h */,
+				070F3BEC1355CDB30060D04D /* HouseArrestService.m */,
+				070F3BE61355CDA80060D04D /* Device.h */,
+				070F3BE71355CDA80060D04D /* Device.m */,
+			);
+			name = Hardware;
+			sourceTree = "<group>";
+		};
+		070F3C101355CE0F0060D04D /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				070F3C081355CDDE0060D04D /* UsbUtility.h */,
+				070F3C091355CDDE0060D04D /* UsbUtility.m */,
+				070F3C0A1355CDDE0060D04D /* Utilities.h */,
+				070F3C0B1355CDDE0060D04D /* Utilities.m */,
+				070F3BF01355CDBE0060D04D /* PlistUtility.h */,
+				070F3BF11355CDBE0060D04D /* PlistUtility.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		070F3C111355CE200060D04D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				070F3BF31355CDD00060D04D /* SbContainer.h */,
+				070F3BF41355CDD00060D04D /* SbContainer.m */,
+				070F3BF51355CDD00060D04D /* SbFolder.h */,
+				070F3BF61355CDD00060D04D /* SbFolder.m */,
+				070F3BF71355CDD00060D04D /* SbIcon.h */,
+				070F3BF81355CDD00060D04D /* SbIcon.m */,
+				070F3BF91355CDD00060D04D /* SbState.h */,
+				070F3BFA1355CDD00060D04D /* SbState.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		070F3C121355CE360060D04D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				070F3BFF1355CDD00060D04D /* SpringBoardView.h */,
+				070F3C001355CDD00060D04D /* SpringBoardView.m */,
+			);
+			name = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		8D1107260486CEB800E47090 /* SpringSort */ = {
+		070F3BAD1355CD8A0060D04D /* SpringSort */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "SpringSort" */;
+			buildConfigurationList = 070F3BE01355CD8B0060D04D /* Build configuration list for PBXNativeTarget "SpringSort" */;
 			buildPhases = (
-				8D1107290486CEB800E47090 /* Resources */,
-				8D11072C0486CEB800E47090 /* Sources */,
-				8D11072E0486CEB800E47090 /* Frameworks */,
+				070F3BAA1355CD8A0060D04D /* Sources */,
+				070F3BAB1355CD8A0060D04D /* Frameworks */,
+				070F3BAC1355CD8A0060D04D /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = SpringSort;
-			productInstallPath = "$(HOME)/Applications";
 			productName = SpringSort;
-			productReference = 8D1107320486CEB800E47090 /* SpringSort.app */;
+			productReference = 070F3BAE1355CD8A0060D04D /* SpringSort.app */;
 			productType = "com.apple.product-type.application";
+		};
+		070F3BCE1355CD8B0060D04D /* SpringSortTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 070F3BE31355CD8B0060D04D /* Build configuration list for PBXNativeTarget "SpringSortTests" */;
+			buildPhases = (
+				070F3BCA1355CD8B0060D04D /* Sources */,
+				070F3BCB1355CD8B0060D04D /* Frameworks */,
+				070F3BCC1355CD8B0060D04D /* Resources */,
+				070F3BCD1355CD8B0060D04D /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				070F3BD21355CD8B0060D04D /* PBXTargetDependency */,
+			);
+			name = SpringSortTests;
+			productName = SpringSortTests;
+			productReference = 070F3BCF1355CD8B0060D04D /* SpringSortTests.octest */;
+			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		29B97313FDCFA39411CA2CEA /* Project object */ = {
+		070F3BA51355CD8A0060D04D /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SpringSort" */;
-			compatibilityVersion = "Xcode 3.1";
+			attributes = {
+				ORGANIZATIONNAME = private;
+			};
+			buildConfigurationList = 070F3BA81355CD8A0060D04D /* Build configuration list for PBXProject "SpringSort" */;
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
-			hasScannedForEncodings = 1;
+			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				en,
 			);
-			mainGroup = 29B97314FDCFA39411CA2CEA /* SpringSort */;
+			mainGroup = 070F3BA31355CD8A0060D04D;
+			productRefGroup = 070F3BAF1355CD8A0060D04D /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D1107260486CEB800E47090 /* SpringSort */,
+				070F3BAD1355CD8A0060D04D /* SpringSort */,
+				070F3BCE1355CD8B0060D04D /* SpringSortTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		8D1107290486CEB800E47090 /* Resources */ = {
+		070F3BAC1355CD8A0060D04D /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072B0486CEB800E47090 /* InfoPlist.strings in Resources */,
-				1DDD58160DA1D0A300B32029 /* MainMenu.xib in Resources */,
-				075D2A8B13504943009450C2 /* GenreID-en.plist in Resources */,
-				0706B0C413504F1F00F4C9EC /* GenreID-de.plist in Resources */,
+				070F3BBD1355CD8A0060D04D /* InfoPlist.strings in Resources */,
+				070F3BC31355CD8A0060D04D /* Credits.rtf in Resources */,
+				070F3BC91355CD8B0060D04D /* MainMenu.xib in Resources */,
+				070F3BED1355CDB30060D04D /* GenreID-de.plist in Resources */,
+				070F3BEE1355CDB30060D04D /* GenreID-en.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		070F3BCC1355CD8B0060D04D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				070F3BD81355CD8B0060D04D /* InfoPlist.strings in Resources */,
+				070F3BDB1355CD8B0060D04D /* SpringSortTests.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		070F3BCD1355CD8B0060D04D /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
-		8D11072C0486CEB800E47090 /* Sources */ = {
+		070F3BAA1355CD8A0060D04D /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8D11072D0486CEB800E47090 /* main.m in Sources */,
-				256AC3DA0F4B6AC300CF3369 /* SpringSortAppDelegate.m in Sources */,
-				0706BB0D133360DA000C1CFA /* Device.m in Sources */,
-				0706BB1A1333981E000C1CFA /* SbIcon.m in Sources */,
-				0706BB1D13339830000C1CFA /* SbContainer.m in Sources */,
-				076ECA75133A8F4E00813884 /* SbState.m in Sources */,
-				073EBEF11347187700512869 /* SortAlgorithms.m in Sources */,
-				0792B460134A3684002523E5 /* UsbUtility.m in Sources */,
-				0792B467134A4334002523E5 /* HouseArrestService.m in Sources */,
-				0792B46D134A435D002523E5 /* SpringBoardService.m in Sources */,
-				0792B470134CB034002523E5 /* SbFolder.m in Sources */,
-				079406C51354AE5D00AA9208 /* SpringBoardView.m in Sources */,
-				079406C81354BEDE00AA9208 /* Utilities.m in Sources */,
-				079406CC1354C8B900AA9208 /* PlistUtility.m in Sources */,
+				070F3BC01355CD8A0060D04D /* main.m in Sources */,
+				070F3BC61355CD8A0060D04D /* SpringSortAppDelegate.m in Sources */,
+				070F3BE81355CDA80060D04D /* Device.m in Sources */,
+				070F3BEF1355CDB30060D04D /* HouseArrestService.m in Sources */,
+				070F3BF21355CDBE0060D04D /* PlistUtility.m in Sources */,
+				070F3C011355CDD00060D04D /* SbContainer.m in Sources */,
+				070F3C021355CDD00060D04D /* SbFolder.m in Sources */,
+				070F3C031355CDD00060D04D /* SbIcon.m in Sources */,
+				070F3C041355CDD00060D04D /* SbState.m in Sources */,
+				070F3C051355CDD00060D04D /* SortAlgorithms.m in Sources */,
+				070F3C061355CDD00060D04D /* SpringBoardService.m in Sources */,
+				070F3C071355CDD00060D04D /* SpringBoardView.m in Sources */,
+				070F3C0C1355CDDE0060D04D /* UsbUtility.m in Sources */,
+				070F3C0D1355CDDE0060D04D /* Utilities.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		070F3BCA1355CD8B0060D04D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				070F3BDD1355CD8B0060D04D /* SpringSortTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		070F3BD21355CD8B0060D04D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 070F3BAD1355CD8A0060D04D /* SpringSort */;
+			targetProxy = 070F3BD11355CD8B0060D04D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
-		089C165CFE840E0CC02AAC07 /* InfoPlist.strings */ = {
+		070F3BBB1355CD8A0060D04D /* InfoPlist.strings */ = {
 			isa = PBXVariantGroup;
 			children = (
-				089C165DFE840E0CC02AAC07 /* English */,
+				070F3BBC1355CD8A0060D04D /* en */,
 			);
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		1DDD58140DA1D0A300B32029 /* MainMenu.xib */ = {
+		070F3BC11355CD8A0060D04D /* Credits.rtf */ = {
 			isa = PBXVariantGroup;
 			children = (
-				1DDD58150DA1D0A300B32029 /* English */,
+				070F3BC21355CD8A0060D04D /* en */,
+			);
+			name = Credits.rtf;
+			sourceTree = "<group>";
+		};
+		070F3BC71355CD8B0060D04D /* MainMenu.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				070F3BC81355CD8B0060D04D /* en */,
 			);
 			name = MainMenu.xib;
+			sourceTree = "<group>";
+		};
+		070F3BD61355CD8B0060D04D /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				070F3BD71355CD8B0060D04D /* en */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		C01FCF4B08A954540054247B /* Debug */ = {
+		070F3BDE1355CD8B0060D04D /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				COPY_PHASE_STRIP = NO;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_ENABLE_FIX_AND_CONTINUE = YES;
-				GCC_MODEL_TUNING = G5;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = SpringSort_Prefix.pch;
-				INFOPLIST_FILE = "SpringSort-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = SpringSort;
-			};
-			name = Debug;
-		};
-		C01FCF4C08A954540054247B /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				GCC_MODEL_TUNING = G5;
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = SpringSort_Prefix.pch;
-				INFOPLIST_FILE = "SpringSort-Info.plist";
-				INSTALL_PATH = "$(HOME)/Applications";
-				PRODUCT_NAME = SpringSort;
-			};
-			name = Release;
-		};
-		C01FCF4F08A954540054247B /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_VERSION = 4.2;
+				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
-					"/Users/eric/Coding/c++/iphonesort/libs/libplist/include/",
 					"/Users/eric/Coding/c++/iphonesort/libs/libimobiledevice/include/",
+					"/Users/eric/Coding/c++/iphonesort/libs/libplist/include/",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-limobiledevice",
 					"-lplist",
 				);
-				PREBINDING = NO;
-				SDKROOT = macosx10.6;
-				VALID_ARCHS = x86_64;
+				SDKROOT = macosx;
 			};
 			name = Debug;
 		};
-		C01FCF5008A954540054247B /* Release */ = {
+		070F3BDF1355CD8B0060D04D /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = (
 					"/Users/eric/Coding/c++/iphonesort/libs/libimobiledevice/include/",
 					"/Users/eric/Coding/c++/iphonesort/libs/libplist/include/",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				OTHER_LDFLAGS = (
 					"-limobiledevice",
 					"-lplist",
 				);
-				PREBINDING = NO;
-				SDKROOT = macosx10.6;
-				VALID_ARCHS = x86_64;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		070F3BE11355CD8B0060D04D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpringSort/SpringSort-Prefix.pch";
+				INFOPLIST_FILE = "SpringSort/SpringSort-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		070F3BE21355CD8B0060D04D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpringSort/SpringSort-Prefix.pch";
+				INFOPLIST_FILE = "SpringSort/SpringSort-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		070F3BE41355CD8B0060D04D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpringSort.app/Contents/MacOS/SpringSort";
+				COPY_PHASE_STRIP = NO;
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpringSortTests/SpringSortTests-Prefix.pch";
+				INFOPLIST_FILE = "SpringSortTests/SpringSortTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
+			};
+			name = Debug;
+		};
+		070F3BE51355CD8B0060D04D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/SpringSort.app/Contents/MacOS/SpringSort";
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				FRAMEWORK_SEARCH_PATHS = "$(DEVELOPER_LIBRARY_DIR)/Frameworks";
+				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "SpringSortTests/SpringSortTests-Prefix.pch";
+				INFOPLIST_FILE = "SpringSortTests/SpringSortTests-Info.plist";
+				OTHER_LDFLAGS = (
+					"-framework",
+					SenTestingKit,
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = octest;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		C01FCF4A08A954540054247B /* Build configuration list for PBXNativeTarget "SpringSort" */ = {
+		070F3BA81355CD8A0060D04D /* Build configuration list for PBXProject "SpringSort" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C01FCF4B08A954540054247B /* Debug */,
-				C01FCF4C08A954540054247B /* Release */,
+				070F3BDE1355CD8B0060D04D /* Debug */,
+				070F3BDF1355CD8B0060D04D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		C01FCF4E08A954540054247B /* Build configuration list for PBXProject "SpringSort" */ = {
+		070F3BE01355CD8B0060D04D /* Build configuration list for PBXNativeTarget "SpringSort" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C01FCF4F08A954540054247B /* Debug */,
-				C01FCF5008A954540054247B /* Release */,
+				070F3BE11355CD8B0060D04D /* Debug */,
+				070F3BE21355CD8B0060D04D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+		};
+		070F3BE31355CD8B0060D04D /* Build configuration list for PBXNativeTarget "SpringSortTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				070F3BE41355CD8B0060D04D /* Debug */,
+				070F3BE51355CD8B0060D04D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 29B97313FDCFA39411CA2CEA /* Project object */;
+	rootObject = 070F3BA51355CD8A0060D04D /* Project object */;
 }
