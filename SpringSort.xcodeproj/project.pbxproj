@@ -15,8 +15,8 @@
 		070F3BC91355CD8B0060D04D /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BC71355CD8B0060D04D /* MainMenu.xib */; };
 		070F3BD01355CD8B0060D04D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070F3BB21355CD8A0060D04D /* Cocoa.framework */; };
 		070F3BD81355CD8B0060D04D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BD61355CD8B0060D04D /* InfoPlist.strings */; };
-		070F3BDB1355CD8B0060D04D /* SpringSortTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BDA1355CD8B0060D04D /* SpringSortTests.h */; };
-		070F3BDD1355CD8B0060D04D /* SpringSortTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BDC1355CD8B0060D04D /* SpringSortTests.m */; };
+		070F3BDB1355CD8B0060D04D /* SbIconTests.h in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BDA1355CD8B0060D04D /* SbIconTests.h */; };
+		070F3BDD1355CD8B0060D04D /* SbIconTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BDC1355CD8B0060D04D /* SbIconTests.m */; };
 		070F3BE81355CDA80060D04D /* Device.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BE71355CDA80060D04D /* Device.m */; };
 		070F3BED1355CDB30060D04D /* GenreID-de.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BE91355CDB30060D04D /* GenreID-de.plist */; };
 		070F3BEE1355CDB30060D04D /* GenreID-en.plist in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BEA1355CDB30060D04D /* GenreID-en.plist */; };
@@ -31,6 +31,9 @@
 		070F3C071355CDD00060D04D /* SpringBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3C001355CDD00060D04D /* SpringBoardView.m */; };
 		070F3C0C1355CDDE0060D04D /* UsbUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3C091355CDDE0060D04D /* UsbUtility.m */; };
 		070F3C0D1355CDDE0060D04D /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3C0B1355CDDE0060D04D /* Utilities.m */; };
+		0747142213576E070016472B /* SbIcon_StoreApp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0747142113576E070016472B /* SbIcon_StoreApp.plist */; };
+		0747142613576EC00016472B /* SbState_Complete.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0747142513576EC00016472B /* SbState_Complete.plist */; };
+		0747142913576FCA0016472B /* TestUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0747142813576FC90016472B /* TestUtility.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,8 +64,8 @@
 		070F3BD51355CD8B0060D04D /* SpringSortTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "SpringSortTests-Info.plist"; sourceTree = "<group>"; };
 		070F3BD71355CD8B0060D04D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		070F3BD91355CD8B0060D04D /* SpringSortTests-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SpringSortTests-Prefix.pch"; sourceTree = "<group>"; };
-		070F3BDA1355CD8B0060D04D /* SpringSortTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SpringSortTests.h; sourceTree = "<group>"; };
-		070F3BDC1355CD8B0060D04D /* SpringSortTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpringSortTests.m; sourceTree = "<group>"; };
+		070F3BDA1355CD8B0060D04D /* SbIconTests.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SbIconTests.h; sourceTree = "<group>"; };
+		070F3BDC1355CD8B0060D04D /* SbIconTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SbIconTests.m; sourceTree = "<group>"; };
 		070F3BE61355CDA80060D04D /* Device.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Device.h; sourceTree = "<group>"; };
 		070F3BE71355CDA80060D04D /* Device.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Device.m; sourceTree = "<group>"; };
 		070F3BE91355CDB30060D04D /* GenreID-de.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GenreID-de.plist"; sourceTree = "<group>"; };
@@ -89,6 +92,10 @@
 		070F3C091355CDDE0060D04D /* UsbUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsbUtility.m; sourceTree = "<group>"; };
 		070F3C0A1355CDDE0060D04D /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		070F3C0B1355CDDE0060D04D /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
+		0747142113576E070016472B /* SbIcon_StoreApp.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SbIcon_StoreApp.plist; sourceTree = "<group>"; };
+		0747142513576EC00016472B /* SbState_Complete.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SbState_Complete.plist; sourceTree = "<group>"; };
+		0747142713576FC90016472B /* TestUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUtility.h; sourceTree = "<group>"; };
+		0747142813576FC90016472B /* TestUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUtility.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -183,8 +190,11 @@
 		070F3BD31355CD8B0060D04D /* SpringSortTests */ = {
 			isa = PBXGroup;
 			children = (
-				070F3BDA1355CD8B0060D04D /* SpringSortTests.h */,
-				070F3BDC1355CD8B0060D04D /* SpringSortTests.m */,
+				0747141F13576D860016472B /* TestFiles */,
+				070F3BDA1355CD8B0060D04D /* SbIconTests.h */,
+				070F3BDC1355CD8B0060D04D /* SbIconTests.m */,
+				0747142713576FC90016472B /* TestUtility.h */,
+				0747142813576FC90016472B /* TestUtility.m */,
 				070F3BD41355CD8B0060D04D /* Supporting Files */,
 			);
 			path = SpringSortTests;
@@ -248,6 +258,15 @@
 				070F3C001355CDD00060D04D /* SpringBoardView.m */,
 			);
 			name = View;
+			sourceTree = "<group>";
+		};
+		0747141F13576D860016472B /* TestFiles */ = {
+			isa = PBXGroup;
+			children = (
+				0747142113576E070016472B /* SbIcon_StoreApp.plist */,
+				0747142513576EC00016472B /* SbState_Complete.plist */,
+			);
+			name = TestFiles;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -325,6 +344,8 @@
 				070F3BC91355CD8B0060D04D /* MainMenu.xib in Resources */,
 				070F3BED1355CDB30060D04D /* GenreID-de.plist in Resources */,
 				070F3BEE1355CDB30060D04D /* GenreID-en.plist in Resources */,
+				0747142213576E070016472B /* SbIcon_StoreApp.plist in Resources */,
+				0747142613576EC00016472B /* SbState_Complete.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -333,7 +354,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				070F3BD81355CD8B0060D04D /* InfoPlist.strings in Resources */,
-				070F3BDB1355CD8B0060D04D /* SpringSortTests.h in Resources */,
+				070F3BDB1355CD8B0060D04D /* SbIconTests.h in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -374,6 +395,7 @@
 				070F3C071355CDD00060D04D /* SpringBoardView.m in Sources */,
 				070F3C0C1355CDDE0060D04D /* UsbUtility.m in Sources */,
 				070F3C0D1355CDDE0060D04D /* Utilities.m in Sources */,
+				0747142913576FCA0016472B /* TestUtility.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -381,7 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				070F3BDD1355CD8B0060D04D /* SpringSortTests.m in Sources */,
+				070F3BDD1355CD8B0060D04D /* SbIconTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -574,6 +596,7 @@
 				070F3BE21355CD8B0060D04D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		070F3BE31355CD8B0060D04D /* Build configuration list for PBXNativeTarget "SpringSortTests" */ = {
 			isa = XCConfigurationList;
@@ -582,6 +605,7 @@
 				070F3BE51355CD8B0060D04D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

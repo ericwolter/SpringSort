@@ -9,7 +9,7 @@
 #import <SenTestingKit/SenTestingKit.h>
 
 
-@interface SpringSortTests : SenTestCase {
+@interface SbIconTests : SenTestCase {
 @private
     
 }
