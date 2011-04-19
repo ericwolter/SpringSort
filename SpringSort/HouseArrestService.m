@@ -12,11 +12,13 @@
 #import "Device.h"
 
 @interface HouseArrestService()
+-(void)getNewPort;
 -(house_arrest_client_t)connect;
 -(void)disconnect:(house_arrest_client_t)client;
 -(afc_client_t)connectAfc:(const char *)bundleIdentifier;
 -(void)disconnectAfc:(afc_client_t)clientAfc;
 -(uint32_t)getFileSize:(afc_client_t)clientAfc;
+-(plist_t)getMetadata:(const char *)bundleIdentifier;
 @end
 
 @implementation HouseArrestService
@@ -30,6 +32,11 @@
 		port = thePort;
     }
     return self;
+}
+
+-(void)getNewPort
+{
+	port = [device startHouseArrest];
 }
 
 -(afc_client_t)connectAfc:(const char*)bundleIdentifier
@@ -127,9 +134,42 @@
 	return metadata;
 }
 
+-(NSArray *)getGenres:(const char *)bundleIdentifier
+{
+	plist_t metadata = [self getMetadata:bundleIdentifier];
+	
+	NSMutableArray *genreIds = [NSMutableArray array];
+	if (!metadata) {
+		return genreIds;
+	}
+	
+	plist_t pGenreId = plist_dict_get_item(metadata, "genreId");
+	
+	if(pGenreId) {
+		uint64_t val = 0;
+		plist_get_uint_val(pGenreId, &val);
+		[genreIds addObject:[NSNumber numberWithLong:val]];
+	}
+	
+	plist_t pSubGenres = plist_dict_get_item(metadata, "subgenres");
+	if(pSubGenres) {
+		int count = plist_array_get_size(pSubGenres);
+		for (int i = 0; i < count; i++) {
+			plist_t pSubGenre = plist_array_get_item(pSubGenres, i);
+			uint64_t val = 0;
+			plist_get_uint_val(plist_dict_get_item(pSubGenre, "genreId"), &val);
+			[genreIds addObject:[NSNumber numberWithLong:val]];
+		}
+	}
+	
+	plist_free(metadata);
+	
+	return genreIds;
+}
+
 -(house_arrest_client_t)connect
 {
-	house_arrest_client_t client;
+	house_arrest_client_t client = NULL;
     if (house_arrest_client_new(device.idevice, port, &client) != HOUSE_ARREST_E_SUCCESS)
         NSLog(@"Could not connect to springboard service!");
 	
@@ -141,38 +181,5 @@
 	if(client)
 		house_arrest_client_free(client);
 }
-
-//-(NSArray *)getGenres:(NSString *)bundleIdentifier
-//{
-//    // TODO: check for apple apps and web clips
-//    plist_t metadata = [self getMetadata:[bundleIdentifier cStringUsingEncoding:NSUTF8StringEncoding]];
-//    
-//    NSMutableArray *genreIds = [NSMutableArray array];
-//    if (!metadata) {
-//        return genreIds;
-//    }
-//    
-//    plist_t pGenreId = plist_dict_get_item(metadata, "genreId");
-//    if(pGenreId) {
-//        uint64_t val = 0;
-//        plist_get_uint_val(pGenreId, &val);
-//        [genreIds addObject:[NSNumber numberWithInt:val]];
-//    }
-//    
-//    plist_t pSubGenres = plist_dict_get_item(metadata, "subgenres");
-//    if(pSubGenres) {
-//        int count = plist_array_get_size(pSubGenres);
-//        for (int i = 0; i < count; i++) {
-//            plist_t pSubGenre = plist_array_get_item(pSubGenres, i);
-//            uint64_t val = 0;
-//            plist_get_uint_val(plist_dict_get_item(pSubGenre, "genreId"), &val);
-//            [genreIds addObject:[NSNumber numberWithInt:val]];
-//        }
-//    }
-//    
-//    plist_free(metadata);
-//    
-//    return genreIds;
-//}
 
 @end

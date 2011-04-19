@@ -21,5 +21,6 @@
 -(plist_t)getState;
 -(void)setState:(plist_t)plist;
 -(NSImage* )getWallpaper;
+-(NSImage*)getIcon:(const char *)bundleIdentifier;
 
 @end

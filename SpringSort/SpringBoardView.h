@@ -8,12 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+@class SpringSortController;
 
 @interface SpringBoardView : NSView {
 @private
-    
+    SpringSortController *controller;
 }
 
-@property (nonatomic, retain) NSImage *image;
+@property (nonatomic, retain) SpringSortController *controller;
 
 @end

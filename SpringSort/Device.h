@@ -31,5 +31,7 @@
 -(id)initWithUuid: (NSString *)theUuid;
 -(void)dealloc;
 -(void)start;
+-(uint16_t)startSpringBoard;
+-(uint16_t)startHouseArrest;
 
 @end

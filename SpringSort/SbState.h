@@ -20,6 +20,5 @@
 -(id)initFromPlist:(plist_t)plist;
 -(void)dealloc;
 -(plist_t)toPlist;
-+(plist_t)switchSbType:(plist_t)plist;
 
 @end

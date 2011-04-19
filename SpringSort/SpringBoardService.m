@@ -10,6 +10,7 @@
 #import "Device.h"
 
 @interface SpringBoardService()
+-(void)getNewPort;
 -(sbservices_client_t)connect;
 -(void)disconnect:(sbservices_client_t)client;
 @end
@@ -75,9 +76,37 @@
 	return [image autorelease];
 }
 
+-(NSImage*)getIcon:(const char *)bundleIdentifier
+{
+	NSImage *image;
+	
+	sbservices_client_t client = [self connect];
+	if(client) {
+		char *pngData = NULL;
+		uint64_t pngSize = 0;
+		
+		if(sbservices_get_icon_pngdata(client, bundleIdentifier, &pngData, &pngSize) != SBSERVICES_E_SUCCESS || pngSize <= 0) {
+			NSLog(@"Could not get icon for %s", bundleIdentifier);
+		} else {
+			image = [[NSImage alloc] initWithData:[NSData dataWithBytes:pngData length:pngSize]];
+			free(pngData);
+		}
+	}
+	[self disconnect:client];	   
+	
+	return [image autorelease];
+}
+
+-(void)getNewPort
+{
+	port = [device startSpringBoard];
+}
+
 -(sbservices_client_t)connect
 {
-	sbservices_client_t client;
+	[self getNewPort];
+	
+	sbservices_client_t client = NULL;
     if (sbservices_client_new(device.idevice, port, &client) != SBSERVICES_E_SUCCESS)
         NSLog(@"Could not connect to springboard service!");
 	
