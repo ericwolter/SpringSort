@@ -30,7 +30,7 @@
 
 -(plist_t)getState
 {
-	plist_t state;
+	plist_t state = NULL;
 	
 	sbservices_client_t client = [self connect];
 	if (client) {
@@ -57,7 +57,7 @@
 
 -(NSImage* )getWallpaper
 {
-	NSImage *image;
+	NSImage *image = nil;
 	
 	sbservices_client_t client = [self connect];
 	if (client) {
@@ -76,17 +76,17 @@
 	return [image autorelease];
 }
 
--(NSImage*)getIcon:(const char *)bundleIdentifier
+-(NSImage*)getIcon:(const char *)displayIdentifier
 {
-	NSImage *image;
+	NSImage *image = nil;
 	
 	sbservices_client_t client = [self connect];
 	if(client) {
 		char *pngData = NULL;
 		uint64_t pngSize = 0;
 		
-		if(sbservices_get_icon_pngdata(client, bundleIdentifier, &pngData, &pngSize) != SBSERVICES_E_SUCCESS || pngSize <= 0) {
-			NSLog(@"Could not get icon for %s", bundleIdentifier);
+		if(sbservices_get_icon_pngdata(client, displayIdentifier, &pngData, &pngSize) != SBSERVICES_E_SUCCESS || pngSize <= 0) {
+			NSLog(@"Could not get icon for %s", displayIdentifier);
 		} else {
 			image = [[NSImage alloc] initWithData:[NSData dataWithBytes:pngData length:pngSize]];
 			free(pngData);

@@ -27,8 +27,8 @@
 	
 	self.springBoardView.controller = controller;
 	[self.springBoardView setNeedsDisplay:YES];
-	
 	[controller release];
+	[d release];
 }
 
 @end

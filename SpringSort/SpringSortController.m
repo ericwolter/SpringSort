@@ -42,6 +42,7 @@
 {
 	if (!wallpaper) {
 		wallpaper = [self.device.springBoardService getWallpaper];
+		[wallpaper retain];
 	}
 	
 	return wallpaper;
@@ -49,11 +50,11 @@
 
 -(NSImage *)getImageForIcon:(SbIcon *)icon
 {
-	NSImage *image = [cacheIcons objectForKey:icon.bundleIdentifier];
+	NSImage *image = [cacheIcons objectForKey:icon.displayIdentifier];
 	
 	if(!image) {
-		image = [self.device.springBoardService getIcon:[icon.bundleIdentifier cStringUsingEncoding:NSUTF8StringEncoding]];
-		[cacheIcons setObject:image forKey:icon.bundleIdentifier]; 
+		image = [self.device.springBoardService getIcon:[icon.displayIdentifier cStringUsingEncoding:NSUTF8StringEncoding]];
+		[cacheIcons setObject:image forKey:icon.displayIdentifier]; 
 	}
 	
 	return image;

@@ -41,7 +41,7 @@
 
 -(afc_client_t)connectAfc:(const char*)bundleIdentifier
 {
-	afc_client_t clientAfc;
+	afc_client_t clientAfc = NULL;
 	
 	house_arrest_client_t client = [self connect];
 	if(client) {
@@ -99,7 +99,7 @@
 
 -(plist_t)getMetadata:(const char *)bundleIdentifier
 {
-	plist_t metadata;
+	plist_t metadata = NULL;
 	
 	afc_client_t clientAfc = [self connectAfc:bundleIdentifier];
 	if(clientAfc) {
