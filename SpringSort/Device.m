@@ -46,8 +46,8 @@
 {
 	uint16_t port = 0;
 	
-	lockdownd_client_t clientLockdown;
-	if (lockdownd_client_new_with_handshake(self.idevice, &clientLockdown, "springsort") == LOCKDOWN_E_SUCCESS) {
+	lockdownd_client_t clientLockdown = NULL;
+	if (lockdownd_client_new_with_handshake(self.idevice, &clientLockdown, "springsort_springboard") == LOCKDOWN_E_SUCCESS) {
 		if ((lockdownd_start_service(clientLockdown, "com.apple.springboardservices", &port) != LOCKDOWN_E_SUCCESS) || !port) {
 			NSLog(@"Could not start springboard service!");
 		}
@@ -65,8 +65,8 @@
 {
 	uint16_t port = 0;
 	
-	lockdownd_client_t clientLockdown;
-	if (lockdownd_client_new_with_handshake(self.idevice, &clientLockdown, "springsort") == LOCKDOWN_E_SUCCESS) {
+	lockdownd_client_t clientLockdown = NULL;
+	if (lockdownd_client_new_with_handshake(self.idevice, &clientLockdown, "springsort_housearrest") == LOCKDOWN_E_SUCCESS) {
 		if ((lockdownd_start_service(clientLockdown, "com.apple.mobile.house_arrest", &port) != LOCKDOWN_E_SUCCESS) || !port) {
 			NSLog(@"Could not connect to housearrest service!");
 		}

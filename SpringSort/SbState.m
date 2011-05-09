@@ -25,6 +25,18 @@
 	return self;
 }
 
+-(id)init
+{
+    self = [super init];
+    if (self)
+    {
+        self.mainContainer = [[SbContainer alloc] init];
+    }
+    return self;    
+}
+
+
+
 - (void)dealloc
 {
     self.mainContainer = nil;

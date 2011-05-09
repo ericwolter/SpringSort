@@ -7,6 +7,7 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SpringSortController.h"
 
 @class SpringBoardView;
 
@@ -14,9 +15,13 @@
 @private
 	NSWindow *window;
 	SpringBoardView *springBoardView;
+	SpringSortController *springSortController;
 }
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet SpringBoardView *springBoardView;
+@property (retain) SpringSortController *springSortController;
 
+- (IBAction)sortByAlphabet:(NSButton *)sender;
+- (IBAction)sortByGenre:(NSButton *)sender;
 @end

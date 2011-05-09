@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <plist/plist.h>
+#import "SortingStrategy.h"
 
 @class Device;
 @class SbState;
@@ -20,6 +21,7 @@
 	SbState *state;
 	NSMutableDictionary *cacheIcons;
 	NSMutableDictionary *cacheGenres;
+	NSMutableSet *ignoredPages;
 	
 	NSImage *wallpaper;
 }
@@ -33,4 +35,9 @@
 -(NSArray *)getGenresforIcon:(SbIcon *)icon;
 -(NSImage *)getWallpaper;
 
+-(void)writeState;
+-(NSArray *)getIconsToSort;
+
+-(void)toggleIgnoredPage:(int)pageIndex;
+-(BOOL)isPageIgnored:(int)pageIndex;
 @end

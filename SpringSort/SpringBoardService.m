@@ -67,7 +67,7 @@
 		if(sbservices_get_home_screen_wallpaper_pngdata(client, &pngData, &pngSize) != SBSERVICES_E_SUCCESS || pngSize <= 0) {
 			NSLog(@"Could not get home screen wallpaper");
 		} else {
-			image = [[NSImage alloc] initWithData:[NSData dataWithBytes:pngData length:pngSize]];
+			image = [[NSImage alloc] initWithData:[NSData dataWithBytes:pngData length:(NSUInteger)pngSize]];
 			free(pngData);
 		}
 	}
@@ -88,7 +88,7 @@
 		if(sbservices_get_icon_pngdata(client, displayIdentifier, &pngData, &pngSize) != SBSERVICES_E_SUCCESS || pngSize <= 0) {
 			NSLog(@"Could not get icon for %s", displayIdentifier);
 		} else {
-			image = [[NSImage alloc] initWithData:[NSData dataWithBytes:pngData length:pngSize]];
+			image = [[NSImage alloc] initWithData:[NSData dataWithBytes:pngData length:(NSUInteger)pngSize]];
 			free(pngData);
 		}
 	}

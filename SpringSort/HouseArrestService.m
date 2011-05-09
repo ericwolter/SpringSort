@@ -15,7 +15,7 @@
 -(void)getNewPort;
 -(house_arrest_client_t)connect;
 -(void)disconnect:(house_arrest_client_t)client;
--(afc_client_t)connectAfc:(const char *)bundleIdentifier;
+-(afc_client_t)connectAfc:(const char *)bundleIdentifier withHouseArrestClient:(house_arrest_client_t)client;
 -(void)disconnectAfc:(afc_client_t)clientAfc;
 -(uint32_t)getFileSize:(afc_client_t)clientAfc;
 -(plist_t)getMetadata:(const char *)bundleIdentifier;
@@ -39,16 +39,15 @@
 	port = [device startHouseArrest];
 }
 
--(afc_client_t)connectAfc:(const char*)bundleIdentifier
+-(afc_client_t)connectAfc:(const char*)bundleIdentifier withHouseArrestClient:(house_arrest_client_t)client
 {
 	afc_client_t clientAfc = NULL;
 	
-	house_arrest_client_t client = [self connect];
 	if(client) {
 		if(house_arrest_send_command(client, "VendContainer", bundleIdentifier) != HOUSE_ARREST_E_SUCCESS) {
-			NSLog(@"client, command, or appid is invalid, or incorrect mode!: %s", bundleIdentifier);
+//			NSLog(@"client, command, or appid is invalid, or incorrect mode!: %s", bundleIdentifier);
 		} else {
-			plist_t result;
+			plist_t result = NULL;
 			if(house_arrest_get_result(client, &result) != HOUSE_ARREST_E_SUCCESS || !result) {
 				NSLog(@"could not get vendor container: %s", bundleIdentifier);
 			} else {
@@ -58,8 +57,6 @@
 			}
 		}
 	}
-	
-	[self disconnect:client];
 	
 	return clientAfc;
 }
@@ -75,9 +72,9 @@
 {
 	uint32_t fileSize = 0;
 	
-	char **fileInfo;
+	char **fileInfo = NULL;
 	if ((afc_get_file_info(clientAfc, "iTunesMetadata.plist", &fileInfo) != AFC_E_SUCCESS) || !fileInfo) {
-		NSLog(@"could not get file info");
+//		NSLog(@"could not get file info");
 	} else {
 		for (int i = 0; fileInfo[i]; i+=2) {
 			if (!strcmp(fileInfo[i], "st_size")) {
@@ -101,17 +98,18 @@
 {
 	plist_t metadata = NULL;
 	
-	afc_client_t clientAfc = [self connectAfc:bundleIdentifier];
+	house_arrest_client_t client = [self connect];
+	afc_client_t clientAfc = [self connectAfc:bundleIdentifier withHouseArrestClient:client];
 	if(clientAfc) {
 		uint32_t fileSize = [self getFileSize:clientAfc];
 		if(fileSize > 0) {
-			uint64_t handle;
+			uint64_t handle = 0;
 			if(afc_file_open(clientAfc, "iTunesMetadata.plist", AFC_FOPEN_RDONLY, &handle) != AFC_E_SUCCESS) {
 				NSLog(@"could not open metadata file: %s", bundleIdentifier);
 			} else {
-				char *plist;
+				char *plist = NULL;
 				plist = (char *) malloc(sizeof(char) * (fileSize + 1));
-				uint32_t amount;
+				uint32_t amount = 0;
 				if (afc_file_read(clientAfc, handle, plist, fileSize, &amount) != AFC_E_SUCCESS) {
 					NSLog(@"could not read metadata file: %s", bundleIdentifier);
 				} else {
@@ -130,6 +128,7 @@
 	}
 	
 	[self disconnectAfc:clientAfc];
+	[self disconnect:client];
 	
 	return metadata;
 }
@@ -148,7 +147,7 @@
 	if(pGenreId) {
 		uint64_t val = 0;
 		plist_get_uint_val(pGenreId, &val);
-		[genreIds addObject:[NSNumber numberWithLong:val]];
+		[genreIds addObject:[NSNumber numberWithLongLong:val]];
 	}
 	
 	plist_t pSubGenres = plist_dict_get_item(metadata, "subgenres");
@@ -158,7 +157,7 @@
 			plist_t pSubGenre = plist_array_get_item(pSubGenres, i);
 			uint64_t val = 0;
 			plist_get_uint_val(plist_dict_get_item(pSubGenre, "genreId"), &val);
-			[genreIds addObject:[NSNumber numberWithLong:val]];
+			[genreIds addObject:[NSNumber numberWithLongLong:val]];
 		}
 	}
 	
@@ -169,9 +168,11 @@
 
 -(house_arrest_client_t)connect
 {
+	[self getNewPort];
+
 	house_arrest_client_t client = NULL;
     if (house_arrest_client_new(device.idevice, port, &client) != HOUSE_ARREST_E_SUCCESS)
-        NSLog(@"Could not connect to springboard service!");
+        NSLog(@"Could not connect to housearrest service!");
 	
 	return client;
 }

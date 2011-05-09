@@ -10,7 +10,7 @@
 
 @implementation SbIcon
 
-@synthesize node, genreIds;
+@synthesize node;
 
 -(id)initFromPlist:(plist_t)plist
 {

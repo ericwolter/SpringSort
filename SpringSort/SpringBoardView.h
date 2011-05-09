@@ -7,14 +7,17 @@
 //
 
 #import <Cocoa/Cocoa.h>
+#import "SbState.h"
 
 @class SpringSortController;
 
 @interface SpringBoardView : NSView {
 @private
     SpringSortController *controller;
+	SbState *state;
 }
 
 @property (nonatomic, retain) SpringSortController *controller;
+@property (nonatomic, assign) SbState *state;
 
 @end

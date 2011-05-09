@@ -17,7 +17,7 @@
 {
     self = [super init];
     if (self)
-    {
+    {	
 		self.items = [NSMutableArray array];
 		
 		int count = plist_array_get_size(plist);
@@ -43,6 +43,11 @@
 {
     self.items = nil;
     [super dealloc];
+}
+
+-(SbContainer *)copy
+{
+	return [[SbContainer alloc] initFromPlist:[self toPlist]];
 }
 
 -(plist_t)toPlist
