@@ -12,19 +12,15 @@
 
 @implementation SortingByGenre
 
-- (id)init
+- (id)initWithController:(SpringSortController *)theController;
 {
-    self = [super init];
+    self = [super initWithController:theController];
     if (self) {
-        // Initialization code here.
+		self.name = @"ByGenre";
+		self.description = @"Sorts by Genre";
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    [super dealloc];
 }
 
 -(SbState *)newSortedState:(SbState *)sourceState

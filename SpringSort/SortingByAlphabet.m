@@ -11,19 +11,15 @@
 
 @implementation SortingByAlphabet
 
-- (id)init
+- (id)initWithController:(SpringSortController *)theController;
 {
-    self = [super init];
+    self = [super initWithController:theController];
     if (self) {
-        // Initialization code here.
+		self.name = @"ByAlphabet";
+		self.description = @"Sorts by Alphabet";
     }
     
     return self;
-}
-
-- (void)dealloc
-{
-    [super dealloc];
 }
 
 - (SbState *)newSortedState:(SbState *)sourceState

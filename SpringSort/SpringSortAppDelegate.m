@@ -20,8 +20,10 @@
 @implementation SpringSortAppDelegate
 
 @synthesize window, springBoardView, springSortController;
+@synthesize sortingStrategies;
 
-- (void)applicationWillFinishLaunching:(NSNotification *)aNotification{
+- (void)applicationWillFinishLaunching:(NSNotification *)aNotification
+{
 	[self.window setBackgroundColor:[NSColor colorWithCalibratedRed:56.0f/255.0f green:56.0f/255.0f blue:56.0f/255.0f alpha:1.0f]];
 }
 
@@ -37,6 +39,16 @@
 	
 	self.springSortController = controller;
 	[controller release];
+	
+	NSMutableArray *ss = [NSMutableArray array];
+	SortingStrategy *s = [[SortingByAlphabet alloc] initWithController:self.springSortController];
+	[ss addObject:s];
+	[s release];
+	s = [[SortingByGenre alloc] initWithController:self.springSortController];
+	[ss addObject:s];
+	[s release];
+	
+	self.sortingStrategies = ss;
 	
 	[self.springBoardView setNeedsDisplay:YES];
 }
@@ -65,6 +77,22 @@
 	[s release];
 	
 	[self.springBoardView setNeedsDisplay:YES];
+}
+
+-(void)insertObject:(SortingStrategy *)s inSortingStrategiesAtIndex:(NSUInteger)index {
+    [sortingStrategies insertObject:s atIndex:index];
+}
+
+-(void)removeObjectFromSortingStrategiesAtIndex:(NSUInteger)index {
+    [sortingStrategies removeObjectAtIndex:index];
+}
+
+-(void)setSortingStrategies:(NSMutableArray *)a {
+    sortingStrategies = a;
+}
+
+-(NSArray*)sortingStrategies {
+    return sortingStrategies;
 }
 
 @end

@@ -56,7 +56,7 @@ static NSColor *backgroundColor;
 	slotHorizontalFill	= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerSlotHorizontalFill.tif"]];
 	slotRight			= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerSlotRight.tif"]];
 	
-	backgroundColor		= [[NSColor colorWithCalibratedWhite:0.13 alpha:0.855] retain];
+	backgroundColor		= [[NSColor colorWithCalibratedRed:56.0f/255.0f green:56.0f/255.0f blue:56.0f/255.0f alpha:1.0f] retain];
 	
 	minKnobHeight = knobTop.size.height + knobVerticalFill.size.height + knobBottom.size.height + 10;
 	minKnobWidth = knobLeft.size.width + knobHorizontalFill.size.width + knobRight.size.width + 10;

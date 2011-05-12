@@ -20,8 +20,8 @@
 }
 
 @property (nonatomic, assign) SpringSortController *controller;
-@property (nonatomic, copy) NSString *name;
-@property (nonatomic, copy) NSString *description;
+@property (retain, readwrite) NSString *name;
+@property (retain, readwrite) NSString *description;
 
 - (id)initWithController:(SpringSortController *)theController;
 - (SbState *)newSortedState:(SbState *)sourceState;

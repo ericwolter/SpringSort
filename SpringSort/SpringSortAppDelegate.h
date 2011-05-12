@@ -20,7 +20,8 @@
 
 @property (assign) IBOutlet NSWindow *window;
 @property (assign) IBOutlet SpringBoardView *springBoardView;
-@property (retain) SpringSortController *springSortController;
+@property (nonatomic, retain) SpringSortController *springSortController;
+@property (nonatomic, retain) NSMutableArray *sortingStrategies;
 
 - (IBAction)sortByAlphabet:(NSButton *)sender;
 - (IBAction)sortByGenre:(NSButton *)sender;

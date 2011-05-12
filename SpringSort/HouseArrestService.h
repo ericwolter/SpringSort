@@ -19,6 +19,6 @@
 }
 
 -(id)initOnDevice:(Device *)theDevice atPort:(int)thePort;
--(NSArray *)getGenres:(const char *)bundleIdentifier;
+-(plist_t)getMetadata:(const char *)bundleIdentifier;
 
 @end

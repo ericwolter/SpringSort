@@ -11,13 +11,18 @@
 #import "SbState.h"
 #import "SbIcon.h"
 #import "Utilities.h"
+#import "PlistUtility.h"
 
-static NSString *cachePathImages;
+static NSString *cachePath;
 
 @interface SpringSortController()
 -(NSString *)getCachePathForIconImage:(SbIcon *)icon;
 -(NSImage *)getImageFromFileSystemCache:(SbIcon *)icon;
 -(void)saveImageToFileSystemCache:(NSImage *)image toPath:(NSString *)path;
+-(NSArray *)getGenresFromFileSystemCache:(SbIcon*)icon;
+-(NSArray *)parseGenres:(plist_t)metadata;
+-(void)saveMetadataToFileSystemCache:(plist_t)metadata toPath:(NSString *)path;
+-(NSString *)getCachePathForIconMetadata:(SbIcon *)icon;
 @end
 
 @implementation SpringSortController
@@ -40,17 +45,15 @@ static NSString *cachePathImages;
 		{
 			NSString *bundleName =
 			[[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"];
-			cachePathImages = [[paths objectAtIndex:0] stringByAppendingPathComponent:bundleName];
+			cachePath = [[paths objectAtIndex:0] stringByAppendingPathComponent:bundleName];
 		}
 		
-		cachePathImages = [cachePathImages stringByAppendingPathComponent:@"images"];
-		
 		NSFileManager *fileManager= [NSFileManager defaultManager]; 
-		if(![fileManager fileExistsAtPath:cachePathImages isDirectory:nil])
-			if(![fileManager createDirectoryAtPath:cachePathImages withIntermediateDirectories:YES attributes:nil error:NULL])
-				NSLog(@"Error: Create folder failed %@", cachePathImages);
+		if(![fileManager fileExistsAtPath:cachePath isDirectory:nil])
+			if(![fileManager createDirectoryAtPath:cachePath withIntermediateDirectories:YES attributes:nil error:NULL])
+				NSLog(@"Error: Create folder failed %@", cachePath);
 		
-		[cachePathImages retain];
+		[cachePath retain];
 		
 		ignoredPages = [[NSMutableSet alloc] init];
 		[ignoredPages addObject:[NSNumber numberWithInt:0]];
@@ -61,7 +64,7 @@ static NSString *cachePathImages;
 
 - (void)dealloc
 {
-	[cachePathImages release];
+	[cachePath release];
 	[cacheIcons release];
 	[cacheGenres release];
 	[wallpaper release];
@@ -81,8 +84,30 @@ static NSString *cachePathImages;
 
 -(NSString *)getCachePathForIconImage:(SbIcon *)icon
 {
-	NSString *filePath = [cachePathImages stringByAppendingPathComponent:icon.displayIdentifier];
+	NSString *filePath = [cachePath stringByAppendingPathComponent:icon.displayIdentifier];
+	
+	NSFileManager *fileManager= [NSFileManager defaultManager]; 
+	if(![fileManager fileExistsAtPath:filePath isDirectory:nil])
+		if(![fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:NULL])
+			NSLog(@"Error: Create folder failed %@", filePath);
+
+	filePath = [filePath stringByAppendingPathComponent:@"artwork"];
 	filePath = [filePath stringByAppendingPathExtension:@"png"];
+	
+	return filePath;
+}
+
+-(NSString *)getCachePathForIconMetadata:(SbIcon *)icon
+{
+	NSString *filePath = [cachePath stringByAppendingPathComponent:icon.displayIdentifier];
+	
+	NSFileManager *fileManager= [NSFileManager defaultManager]; 
+	if(![fileManager fileExistsAtPath:filePath isDirectory:nil])
+		if(![fileManager createDirectoryAtPath:filePath withIntermediateDirectories:YES attributes:nil error:NULL])
+			NSLog(@"Error: Create folder failed %@", filePath);
+	
+	filePath = [filePath stringByAppendingPathComponent:@"metadata"];
+	filePath = [filePath stringByAppendingPathExtension:@"plist"];
 	
 	return filePath;
 }
@@ -103,6 +128,12 @@ static NSString *cachePathImages;
 	NSData *bitmapData = [NSBitmapImageRep representationOfImageRepsInArray:[image representations] usingType:NSPNGFileType properties:nil];
 	
 	[bitmapData writeToFile:path atomically:YES];
+}
+
+-(void)saveMetadataToFileSystemCache:(plist_t)metadata toPath:(NSString *)path
+{
+	NSString *xml = [PlistUtility toString:metadata];
+	[xml writeToFile:path atomically:YES encoding:NSUTF8StringEncoding error:nil];
 }
 
 -(NSImage *)getImageForIcon:(SbIcon *)icon
@@ -129,21 +160,87 @@ static NSString *cachePathImages;
 	NSDictionary *translate = [[NSDictionary alloc] initWithContentsOfFile:path];
 	
 	if(!genres) {
-		NSArray *genreIDs = [self.device.houseArrestService getGenres:[icon.bundleIdentifier cStringUsingEncoding:NSUTF8StringEncoding]];
-		genres = [NSMutableArray array];
-		for (NSNumber *genreId in genreIDs) {
-			NSString *test = [translate objectForKey:[genreId stringValue]];
-			[genres addObject:test];
+		NSArray *genreIDs = [[NSMutableArray alloc] init];
+		
+		genreIDs = [self getGenresFromFileSystemCache:icon];
+		if (!genreIDs) {
+			plist_t metadata = [self.device.houseArrestService getMetadata:[icon.bundleIdentifier cStringUsingEncoding:NSUTF8StringEncoding]];
+			if (metadata) {
+				genreIDs = [self parseGenres:metadata];
+				[self saveMetadataToFileSystemCache:metadata toPath:[self getCachePathForIconMetadata:icon]];
+				plist_free(metadata);
+			}
 		}
 		
-		if ([genres count] > 0) {
+		if ([genreIDs count] > 0) {
+			genres = [NSMutableArray array];
+			for (NSNumber *genreId in genreIDs) {
+				NSString *genreText = [translate objectForKey:[genreId stringValue]];
+				[genres addObject:genreText];
+			}
+			
 			[cacheGenres setObject:genres forKey:icon.bundleIdentifier];
-		}
+		}	
+		
+		[genreIDs release];
 	}
 										   
 	[translate release];
 	
 	return genres;
+}
+
+-(NSArray *)getGenresFromFileSystemCache:(SbIcon*)icon
+{
+	NSString *metadataPath = [self getCachePathForIconMetadata:icon];
+	if([[NSFileManager defaultManager] fileExistsAtPath:metadataPath]) {
+		NSDictionary *metadata = [[NSDictionary alloc] initWithContentsOfFile:metadataPath];
+		NSMutableArray *genreIds = [NSMutableArray array];
+		
+		if ([metadata objectForKey:@"genreId"]) {
+			[genreIds addObject:[metadata objectForKey:@"genreId"]];
+		}
+		
+		if ([metadata objectForKey:@"subgenres"]) {
+			for (id subgenre in [metadata objectForKey:@"subgenres"]) {
+				[genreIds addObject:subgenre];
+			}
+		}
+		
+		[metadata release];
+		return genreIds;
+	} else {
+		return nil;
+	}
+}
+
+-(NSArray *)parseGenres:(plist_t)metadata
+{
+	NSMutableArray *genreIds = [NSMutableArray array];
+	if (!metadata) {
+		return genreIds;
+	}
+	
+	plist_t pGenreId = plist_dict_get_item(metadata, "genreId");
+	
+	if(pGenreId) {
+		uint64_t val = 0;
+		plist_get_uint_val(pGenreId, &val);
+		[genreIds addObject:[NSNumber numberWithLongLong:val]];
+	}
+	
+	plist_t pSubGenres = plist_dict_get_item(metadata, "subgenres");
+	if(pSubGenres) {
+		int count = plist_array_get_size(pSubGenres);
+		for (int i = 0; i < count; i++) {
+			plist_t pSubGenre = plist_array_get_item(pSubGenres, i);
+			uint64_t val = 0;
+			plist_get_uint_val(plist_dict_get_item(pSubGenre, "genreId"), &val);
+			[genreIds addObject:[NSNumber numberWithLongLong:val]];
+		}
+	}
+	
+	return genreIds;
 }
 
 -(NSArray *)getIconsToSort

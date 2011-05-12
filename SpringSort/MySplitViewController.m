@@ -8,7 +8,6 @@
 
 #import "MySplitViewController.h"
 
-
 @implementation MySplitViewController
 
 @synthesize mySplitView;
@@ -44,13 +43,12 @@
 	 
  -(void)collapseRightView
  {	 
-	 NSView *left  = [[[self mySplitView] subviews] objectAtIndex:0];
+//	 NSView *left  = [[[self mySplitView] subviews] objectAtIndex:0];
 	 NSView *right = [[[self mySplitView] subviews] objectAtIndex:1];
-	 NSRect leftFrame = [left frame];
+//	 NSRect leftFrame = [left frame];
 	 NSRect rightFrame = [right frame];
 	 [NSAnimationContext beginGrouping];
 	 [[NSAnimationContext currentContext] setDuration:0.2];
-	 [[left animator] setFrameSize:NSMakeSize(711, leftFrame.size.height)];
 	 [[right animator] setFrameSize:NSMakeSize(0, rightFrame.size.height)];
 	 [NSAnimationContext endGrouping];
  }
@@ -63,7 +61,7 @@
 	NSRect rightFrame = [right frame];
 	[NSAnimationContext beginGrouping];
 	[[NSAnimationContext currentContext] setDuration:0.2];
-	[[left animator] setFrameSize:NSMakeSize(419, leftFrame.size.height)];
+	[[left animator] setFrameSize:NSMakeSize(560, leftFrame.size.height)];
 	[[right animator] setFrameSize:NSMakeSize(292, rightFrame.size.height)];
 	[NSAnimationContext endGrouping];
 }

@@ -18,7 +18,7 @@ static NSImage *folderBackground;
 static NSDictionary *textStyleAttributes;
 
 static CGFloat pageWidth = 320;
-static CGFloat pageHeight = 396;
+static CGFloat pageHeight = 377;
 
 static CGFloat iconWidth = 59;
 static CGFloat iconHeight = 62;
@@ -30,6 +30,7 @@ static CGFloat folderIconHeight = 12.5;
 static CGFloat folderIconGapWidth = 3.5;
 static CGFloat folderIconGapHeight = 3.5;
 
+static NSColor *pageBackgroundColor, *pageBorderColor, *pageSeperatorColor;
 @interface SpringBoardView()
 -(void)drawSbPage:(SbContainer *)page inRect:(NSRect)rect;
 -(void)drawSbIcon:(SbIcon *)icon inRect:(NSRect)rect;
@@ -50,14 +51,24 @@ static CGFloat folderIconGapHeight = 3.5;
 	
 	NSMutableParagraphStyle *textStyle = [[NSMutableParagraphStyle alloc] init];
 	[textStyle setAlignment:NSCenterTextAlignment];
+	[textStyle setLineBreakMode:NSLineBreakByTruncatingMiddle];
 	NSMutableDictionary *attr = [NSMutableDictionary dictionaryWithObject:textStyle forKey:NSParagraphStyleAttributeName];
 	[textStyle release];
 	NSFontManager *fontManager = [NSFontManager sharedFontManager];
 	NSFont *font = [fontManager fontWithFamily:@"Helvetica Neue" traits:NSBoldFontMask weight:0 size:11];
+	NSShadow *shadow = [[NSShadow alloc] init];
+	[shadow setShadowColor:[NSColor blackColor]];
+	[shadow setShadowBlurRadius:3.0f];
+	[shadow setShadowOffset:NSMakeSize(0.0f,-2.0f)]; 
+	[attr setObject:shadow forKey:NSShadowAttributeName];
+	[shadow release];
 	[attr setObject:font forKey:NSFontAttributeName];
 	[attr setObject:[NSColor whiteColor] forKey:NSForegroundColorAttributeName];
 	textStyleAttributes = [attr retain];
 	
+	pageBackgroundColor = [[NSColor colorWithCalibratedRed:62.0f/255.0f green:62.0f/255.0f blue:62.0f/255.0f alpha:1.0f] retain];
+	pageBorderColor = [[NSColor colorWithCalibratedRed:76.0f/255.0f green:76.0f/255.0f blue:76.0f/255.0f alpha:1.0f] retain];
+	pageSeperatorColor = [[NSColor colorWithCalibratedRed:42.0f/255.0f green:42.0f/255.0f blue:42.0f/255.0f alpha:1.0f] retain];
 //	pageHeight = 16 + 4 * (iconHeight + iconGapHeight);
 }
 
@@ -76,32 +87,41 @@ static CGFloat folderIconGapHeight = 3.5;
 		return;
 	
 	NSUInteger count = [self.state.mainContainer.items count];
-	long width = (count - 1)*pageWidth;
-	[self setFrameSize:NSMakeSize(width, pageHeight)];
+	// count also includes the dock so we ignore it
+	CGFloat frameWidth = (count-1)*pageWidth+count;
+	pageHeight = [self frame].size.height;
+	[self setFrameSize:NSMakeSize(frameWidth, pageHeight)];
 	
-	for (int i = 1; i < count; i++) {
-		NSRect pageRect = NSMakeRect((i-1) * 320, 0, pageWidth, pageHeight);
+	int i = 0;
+	for (i = 1; i < count; i++) {
+		[pageSeperatorColor set];
+		NSRectFill(NSMakeRect((i-1)*(pageWidth+1), 0.0f, 1.0f, pageHeight));
+		
+		NSRect pageRect = NSMakeRect((i-1) * pageWidth + 1*i, 0, pageWidth, pageHeight);
 		[self drawSbPage:[self.state.mainContainer.items objectAtIndex:i] inRect:pageRect];
 
 		if ([controller isPageIgnored:i]) {
 			[[NSColor colorWithCalibratedWhite:0.0f alpha:0.75f] set];
 			[NSBezierPath fillRect: pageRect];
-			[[NSColor redColor] set];
+			[[NSColor colorWithCalibratedRed:255.0f green:255.0f blue:0.0f alpha:0.5f] set];
 			NSBezierPath *circle = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(((i-1) * 320) + 320.0f/2.0f - 15, pageHeight/2.0f - 15, 30, 30)];
 			[circle setLineWidth:100];
 			[circle stroke];
 		}
 	}
+	
+	[pageSeperatorColor set];
+	NSRectFill(NSMakeRect(i*(pageWidth+1), 0.0f, 1.0f, pageHeight));
 }
 
 -(void)drawSbPage:(SbContainer *)page inRect:(NSRect)rect
 {
-	[[NSColor colorWithCalibratedRed:62.0f/255.0f green:62.0f/255.0f blue:62.0f/255.0f alpha:1.0f] set];
+	[pageBackgroundColor set];
 	NSRectFill(rect);
 	
+	[pageBorderColor set];
 	NSBezierPath *path = [NSBezierPath bezierPathWithRect:rect];
 	[path setLineWidth:1];
-	[[NSColor colorWithCalibratedRed:42.0f/255.0f green:42.0f/255.0f blue:42.0f/255.0f alpha:1.0f] set];
 	[path stroke];
 	
 	CGFloat borderX = 16;

@@ -38,11 +38,8 @@
 		0747142213576E070016472B /* SbIcon_StoreApp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0747142113576E070016472B /* SbIcon_StoreApp.plist */; };
 		0747142613576EC00016472B /* SbState_Complete.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0747142513576EC00016472B /* SbState_Complete.plist */; };
 		0747142913576FCA0016472B /* TestUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0747142813576FC90016472B /* TestUtility.m */; };
-		0768D6A61377CBE500E059C3 /* LeftFacingTriangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0768D6A21377CBE500E059C3 /* LeftFacingTriangle.png */; };
-		0768D6A71377CBE500E059C3 /* LeftFacingTriangleHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0768D6A31377CBE500E059C3 /* LeftFacingTriangleHighlight.png */; };
-		0768D6A81377CBE500E059C3 /* RightFacingTriangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0768D6A41377CBE500E059C3 /* RightFacingTriangle.png */; };
-		0768D6A91377CBE500E059C3 /* RightFacingTriangleHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0768D6A51377CBE500E059C3 /* RightFacingTriangleHighlight.png */; };
-		079C311B1377CEFA007E80F5 /* MyButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 079C311A1377CEFA007E80F5 /* MyButton.m */; };
+		0768D6A71377CBE500E059C3 /* LeftFacingTriangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0768D6A31377CBE500E059C3 /* LeftFacingTriangle.png */; };
+		0768D6A91377CBE500E059C3 /* RightFacingTriangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0768D6A51377CBE500E059C3 /* RightFacingTriangle.png */; };
 		07AB04231370864900EBCF92 /* MySplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB04221370864900EBCF92 /* MySplitViewController.m */; };
 		07B4ECFD137028100003EB6F /* TransparentScrollerKnobBottom.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECF1137028100003EB6F /* TransparentScrollerKnobBottom.tif */; };
 		07B4ECFE137028100003EB6F /* TransparentScrollerKnobHorizontalFill.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECF2137028100003EB6F /* TransparentScrollerKnobHorizontalFill.tif */; };
@@ -58,6 +55,7 @@
 		07B4ED08137028100003EB6F /* TransparentScrollerSlotVerticalFill.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECFC137028100003EB6F /* TransparentScrollerSlotVerticalFill.tif */; };
 		07B4ED0D13702FA00003EB6F /* BWTransparentScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B4ED0A13702FA00003EB6F /* BWTransparentScroller.m */; };
 		07B4ED0E13702FA00003EB6F /* BWTransparentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B4ED0C13702FA00003EB6F /* BWTransparentScrollView.m */; };
+		07DD54EF1379C27100A96052 /* MySplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DD54EE1379C27100A96052 /* MySplitView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -127,12 +125,8 @@
 		0747142513576EC00016472B /* SbState_Complete.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SbState_Complete.plist; sourceTree = "<group>"; };
 		0747142713576FC90016472B /* TestUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUtility.h; sourceTree = "<group>"; };
 		0747142813576FC90016472B /* TestUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUtility.m; sourceTree = "<group>"; };
-		0768D6A21377CBE500E059C3 /* LeftFacingTriangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftFacingTriangle.png; sourceTree = "<group>"; };
-		0768D6A31377CBE500E059C3 /* LeftFacingTriangleHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftFacingTriangleHighlight.png; sourceTree = "<group>"; };
-		0768D6A41377CBE500E059C3 /* RightFacingTriangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightFacingTriangle.png; sourceTree = "<group>"; };
-		0768D6A51377CBE500E059C3 /* RightFacingTriangleHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightFacingTriangleHighlight.png; sourceTree = "<group>"; };
-		079C31191377CEFA007E80F5 /* MyButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButton.h; sourceTree = "<group>"; };
-		079C311A1377CEFA007E80F5 /* MyButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButton.m; sourceTree = "<group>"; };
+		0768D6A31377CBE500E059C3 /* LeftFacingTriangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftFacingTriangle.png; sourceTree = "<group>"; };
+		0768D6A51377CBE500E059C3 /* RightFacingTriangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightFacingTriangle.png; sourceTree = "<group>"; };
 		07AB04211370864900EBCF92 /* MySplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySplitViewController.h; sourceTree = "<group>"; };
 		07AB04221370864900EBCF92 /* MySplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySplitViewController.m; sourceTree = "<group>"; };
 		07B4ECF1137028100003EB6F /* TransparentScrollerKnobBottom.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerKnobBottom.tif; sourceTree = "<group>"; };
@@ -151,6 +145,8 @@
 		07B4ED0A13702FA00003EB6F /* BWTransparentScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWTransparentScroller.m; sourceTree = "<group>"; };
 		07B4ED0B13702FA00003EB6F /* BWTransparentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWTransparentScrollView.h; sourceTree = "<group>"; };
 		07B4ED0C13702FA00003EB6F /* BWTransparentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWTransparentScrollView.m; sourceTree = "<group>"; };
+		07DD54ED1379C27100A96052 /* MySplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySplitView.h; sourceTree = "<group>"; };
+		07DD54EE1379C27100A96052 /* MySplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySplitView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -320,8 +316,8 @@
 				07B4ED0C13702FA00003EB6F /* BWTransparentScrollView.m */,
 				070F3BFF1355CDD00060D04D /* SpringBoardView.h */,
 				070F3C001355CDD00060D04D /* SpringBoardView.m */,
-				079C31191377CEFA007E80F5 /* MyButton.h */,
-				079C311A1377CEFA007E80F5 /* MyButton.m */,
+				07DD54ED1379C27100A96052 /* MySplitView.h */,
+				07DD54EE1379C27100A96052 /* MySplitView.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -351,10 +347,8 @@
 		07B4ECF0137027F50003EB6F /* Images */ = {
 			isa = PBXGroup;
 			children = (
-				0768D6A21377CBE500E059C3 /* LeftFacingTriangle.png */,
-				0768D6A31377CBE500E059C3 /* LeftFacingTriangleHighlight.png */,
-				0768D6A41377CBE500E059C3 /* RightFacingTriangle.png */,
-				0768D6A51377CBE500E059C3 /* RightFacingTriangleHighlight.png */,
+				0768D6A31377CBE500E059C3 /* LeftFacingTriangle.png */,
+				0768D6A51377CBE500E059C3 /* RightFacingTriangle.png */,
 				07B4ECF1137028100003EB6F /* TransparentScrollerKnobBottom.tif */,
 				07B4ECF2137028100003EB6F /* TransparentScrollerKnobHorizontalFill.tif */,
 				07B4ECF3137028100003EB6F /* TransparentScrollerKnobLeft.tif */,
@@ -461,10 +455,8 @@
 				07B4ED06137028100003EB6F /* TransparentScrollerSlotRight.tif in Resources */,
 				07B4ED07137028100003EB6F /* TransparentScrollerSlotTop.tif in Resources */,
 				07B4ED08137028100003EB6F /* TransparentScrollerSlotVerticalFill.tif in Resources */,
-				0768D6A61377CBE500E059C3 /* LeftFacingTriangle.png in Resources */,
-				0768D6A71377CBE500E059C3 /* LeftFacingTriangleHighlight.png in Resources */,
-				0768D6A81377CBE500E059C3 /* RightFacingTriangle.png in Resources */,
-				0768D6A91377CBE500E059C3 /* RightFacingTriangleHighlight.png in Resources */,
+				0768D6A71377CBE500E059C3 /* LeftFacingTriangle.png in Resources */,
+				0768D6A91377CBE500E059C3 /* RightFacingTriangle.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -521,7 +513,7 @@
 				0713D9FF137563C7004C637F /* SortingStrategy.m in Sources */,
 				0713DA02137569B2004C637F /* SortingByGenre.m in Sources */,
 				0713DA0513758E3E004C637F /* SortingByAlphabet.m in Sources */,
-				079C311B1377CEFA007E80F5 /* MyButton.m in Sources */,
+				07DD54EF1379C27100A96052 /* MySplitView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

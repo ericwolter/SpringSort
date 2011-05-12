@@ -18,7 +18,6 @@
 -(afc_client_t)connectAfc:(const char *)bundleIdentifier withHouseArrestClient:(house_arrest_client_t)client;
 -(void)disconnectAfc:(afc_client_t)clientAfc;
 -(uint32_t)getFileSize:(afc_client_t)clientAfc;
--(plist_t)getMetadata:(const char *)bundleIdentifier;
 @end
 
 @implementation HouseArrestService
@@ -131,39 +130,6 @@
 	[self disconnect:client];
 	
 	return metadata;
-}
-
--(NSArray *)getGenres:(const char *)bundleIdentifier
-{
-	plist_t metadata = [self getMetadata:bundleIdentifier];
-	
-	NSMutableArray *genreIds = [NSMutableArray array];
-	if (!metadata) {
-		return genreIds;
-	}
-	
-	plist_t pGenreId = plist_dict_get_item(metadata, "genreId");
-	
-	if(pGenreId) {
-		uint64_t val = 0;
-		plist_get_uint_val(pGenreId, &val);
-		[genreIds addObject:[NSNumber numberWithLongLong:val]];
-	}
-	
-	plist_t pSubGenres = plist_dict_get_item(metadata, "subgenres");
-	if(pSubGenres) {
-		int count = plist_array_get_size(pSubGenres);
-		for (int i = 0; i < count; i++) {
-			plist_t pSubGenre = plist_array_get_item(pSubGenres, i);
-			uint64_t val = 0;
-			plist_get_uint_val(plist_dict_get_item(pSubGenre, "genreId"), &val);
-			[genreIds addObject:[NSNumber numberWithLongLong:val]];
-		}
-	}
-	
-	plist_free(metadata);
-	
-	return genreIds;
 }
 
 -(house_arrest_client_t)connect
