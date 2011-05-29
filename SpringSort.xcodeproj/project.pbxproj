@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07076DF0137EB7780080089E /* libimobiledevice.2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07076DEF137EB7780080089E /* libimobiledevice.2.dylib */; };
+		07076DF2137EB77E0080089E /* libplist.1.1.4.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 07076DF1137EB77E0080089E /* libplist.1.1.4.dylib */; };
+		07076DF4137EB78C0080089E /* libplist.1.1.4.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07076DF1137EB77E0080089E /* libplist.1.1.4.dylib */; };
+		07076DF5137EB78C0080089E /* libimobiledevice.2.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07076DEF137EB7780080089E /* libimobiledevice.2.dylib */; };
 		070F3BB31355CD8A0060D04D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 070F3BB21355CD8A0060D04D /* Cocoa.framework */; };
 		070F3BBD1355CD8A0060D04D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 070F3BBB1355CD8A0060D04D /* InfoPlist.strings */; };
 		070F3BC01355CD8A0060D04D /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3BBF1355CD8A0060D04D /* main.m */; };
@@ -38,24 +42,29 @@
 		0747142213576E070016472B /* SbIcon_StoreApp.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0747142113576E070016472B /* SbIcon_StoreApp.plist */; };
 		0747142613576EC00016472B /* SbState_Complete.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0747142513576EC00016472B /* SbState_Complete.plist */; };
 		0747142913576FCA0016472B /* TestUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0747142813576FC90016472B /* TestUtility.m */; };
+		07529206138CF08B002A7A67 /* MySidebarSeperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07529205138CF08B002A7A67 /* MySidebarSeperator.m */; };
+		0752920D138CF0C9002A7A67 /* ScrollerHorizontalFill.png in Resources */ = {isa = PBXBuildFile; fileRef = 07529208138CF0C9002A7A67 /* ScrollerHorizontalFill.png */; };
+		0752920E138CF0C9002A7A67 /* ScrollerKnobLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 07529209138CF0C9002A7A67 /* ScrollerKnobLeft.png */; };
+		0752920F138CF0C9002A7A67 /* ScrollerKnobRight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0752920A138CF0C9002A7A67 /* ScrollerKnobRight.png */; };
+		07529210138CF0C9002A7A67 /* SidebarButtonHighlight.png in Resources */ = {isa = PBXBuildFile; fileRef = 0752920B138CF0C9002A7A67 /* SidebarButtonHighlight.png */; };
+		07529211138CF0C9002A7A67 /* SidebarSeperator.png in Resources */ = {isa = PBXBuildFile; fileRef = 0752920C138CF0C9002A7A67 /* SidebarSeperator.png */; };
+		07529217138D0ACC002A7A67 /* MySidebarButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 07529216138D0ACC002A7A67 /* MySidebarButtonCell.m */; };
 		0768D6A71377CBE500E059C3 /* LeftFacingTriangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0768D6A31377CBE500E059C3 /* LeftFacingTriangle.png */; };
 		0768D6A91377CBE500E059C3 /* RightFacingTriangle.png in Resources */ = {isa = PBXBuildFile; fileRef = 0768D6A51377CBE500E059C3 /* RightFacingTriangle.png */; };
 		07AB04231370864900EBCF92 /* MySplitViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 07AB04221370864900EBCF92 /* MySplitViewController.m */; };
-		07B4ECFD137028100003EB6F /* TransparentScrollerKnobBottom.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECF1137028100003EB6F /* TransparentScrollerKnobBottom.tif */; };
-		07B4ECFE137028100003EB6F /* TransparentScrollerKnobHorizontalFill.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECF2137028100003EB6F /* TransparentScrollerKnobHorizontalFill.tif */; };
-		07B4ECFF137028100003EB6F /* TransparentScrollerKnobLeft.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECF3137028100003EB6F /* TransparentScrollerKnobLeft.tif */; };
-		07B4ED00137028100003EB6F /* TransparentScrollerKnobRight.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECF4137028100003EB6F /* TransparentScrollerKnobRight.tif */; };
-		07B4ED01137028100003EB6F /* TransparentScrollerKnobTop.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECF5137028100003EB6F /* TransparentScrollerKnobTop.tif */; };
-		07B4ED02137028100003EB6F /* TransparentScrollerKnobVerticalFill.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECF6137028100003EB6F /* TransparentScrollerKnobVerticalFill.tif */; };
-		07B4ED03137028100003EB6F /* TransparentScrollerSlotBottom.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECF7137028100003EB6F /* TransparentScrollerSlotBottom.tif */; };
-		07B4ED04137028100003EB6F /* TransparentScrollerSlotHorizontalFill.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECF8137028100003EB6F /* TransparentScrollerSlotHorizontalFill.tif */; };
-		07B4ED05137028100003EB6F /* TransparentScrollerSlotLeft.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECF9137028100003EB6F /* TransparentScrollerSlotLeft.tif */; };
-		07B4ED06137028100003EB6F /* TransparentScrollerSlotRight.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECFA137028100003EB6F /* TransparentScrollerSlotRight.tif */; };
-		07B4ED07137028100003EB6F /* TransparentScrollerSlotTop.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECFB137028100003EB6F /* TransparentScrollerSlotTop.tif */; };
-		07B4ED08137028100003EB6F /* TransparentScrollerSlotVerticalFill.tif in Resources */ = {isa = PBXBuildFile; fileRef = 07B4ECFC137028100003EB6F /* TransparentScrollerSlotVerticalFill.tif */; };
-		07B4ED0D13702FA00003EB6F /* BWTransparentScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B4ED0A13702FA00003EB6F /* BWTransparentScroller.m */; };
-		07B4ED0E13702FA00003EB6F /* BWTransparentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B4ED0C13702FA00003EB6F /* BWTransparentScrollView.m */; };
+		07B4ED0D13702FA00003EB6F /* MyScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = 07B4ED0A13702FA00003EB6F /* MyScroller.m */; };
+		07C5833113810D3D00433BEF /* libintl.8.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07C5832F13810D3600433BEF /* libintl.8.dylib */; };
+		07C5833413810D8900433BEF /* libglib-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07C5833213810D7C00433BEF /* libglib-2.0.0.dylib */; };
+		07C5833F1381127100433BEF /* libgcrypt.11.6.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07C5833D1381126A00433BEF /* libgcrypt.11.6.0.dylib */; };
+		07C583401381127100433BEF /* libusbmuxd.1.0.7.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07C5833B1381124100433BEF /* libusbmuxd.1.0.7.dylib */; };
+		07C583411381127100433BEF /* libgthread-2.0.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07C583391381121C00433BEF /* libgthread-2.0.0.dylib */; };
+		07C583421381127100433BEF /* libtasn1.3.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07C58337138111EB00433BEF /* libtasn1.3.dylib */; };
+		07C583431381127100433BEF /* libgnutls.26.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07C58335138111CF00433BEF /* libgnutls.26.dylib */; };
+		07C583461381167200433BEF /* libgpg-error.0.dylib in CopyFiles */ = {isa = PBXBuildFile; fileRef = 07C583441381166E00433BEF /* libgpg-error.0.dylib */; };
 		07DD54EF1379C27100A96052 /* MySplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = 07DD54EE1379C27100A96052 /* MySplitView.m */; };
+		07F90A37138FB1D600863213 /* SpringBoardViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F90A36138FB1D600863213 /* SpringBoardViewBackground.png */; };
+		07F90A3B138FB4FD00863213 /* MyButtomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F90A3A138FB4FD00863213 /* MyButtomBar.m */; };
+		07F90A3D138FB53B00863213 /* BottomBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F90A3C138FB53B00863213 /* BottomBarBackground.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,7 +77,31 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		07076DF3137EB7820080089E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				07C583461381167200433BEF /* libgpg-error.0.dylib in CopyFiles */,
+				07C5833F1381127100433BEF /* libgcrypt.11.6.0.dylib in CopyFiles */,
+				07C583401381127100433BEF /* libusbmuxd.1.0.7.dylib in CopyFiles */,
+				07C583411381127100433BEF /* libgthread-2.0.0.dylib in CopyFiles */,
+				07C583421381127100433BEF /* libtasn1.3.dylib in CopyFiles */,
+				07C583431381127100433BEF /* libgnutls.26.dylib in CopyFiles */,
+				07C5833413810D8900433BEF /* libglib-2.0.0.dylib in CopyFiles */,
+				07C5833113810D3D00433BEF /* libintl.8.dylib in CopyFiles */,
+				07076DF4137EB78C0080089E /* libplist.1.1.4.dylib in CopyFiles */,
+				07076DF5137EB78C0080089E /* libimobiledevice.2.dylib in CopyFiles */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		07076DEF137EB7780080089E /* libimobiledevice.2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libimobiledevice.2.dylib; path = usr/local/lib/libimobiledevice.2.dylib; sourceTree = SDKROOT; };
+		07076DF1137EB77E0080089E /* libplist.1.1.4.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libplist.1.1.4.dylib; path = usr/local/lib/libplist.1.1.4.dylib; sourceTree = SDKROOT; };
 		070F3BAE1355CD8A0060D04D /* SpringSort.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpringSort.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		070F3BB21355CD8A0060D04D /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		070F3BB51355CD8A0060D04D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -125,28 +158,35 @@
 		0747142513576EC00016472B /* SbState_Complete.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SbState_Complete.plist; sourceTree = "<group>"; };
 		0747142713576FC90016472B /* TestUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUtility.h; sourceTree = "<group>"; };
 		0747142813576FC90016472B /* TestUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestUtility.m; sourceTree = "<group>"; };
+		07529204138CF08B002A7A67 /* MySidebarSeperator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySidebarSeperator.h; sourceTree = "<group>"; };
+		07529205138CF08B002A7A67 /* MySidebarSeperator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySidebarSeperator.m; sourceTree = "<group>"; };
+		07529208138CF0C9002A7A67 /* ScrollerHorizontalFill.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScrollerHorizontalFill.png; sourceTree = "<group>"; };
+		07529209138CF0C9002A7A67 /* ScrollerKnobLeft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScrollerKnobLeft.png; sourceTree = "<group>"; };
+		0752920A138CF0C9002A7A67 /* ScrollerKnobRight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ScrollerKnobRight.png; sourceTree = "<group>"; };
+		0752920B138CF0C9002A7A67 /* SidebarButtonHighlight.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SidebarButtonHighlight.png; sourceTree = "<group>"; };
+		0752920C138CF0C9002A7A67 /* SidebarSeperator.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SidebarSeperator.png; sourceTree = "<group>"; };
+		07529215138D0ACB002A7A67 /* MySidebarButtonCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySidebarButtonCell.h; sourceTree = "<group>"; };
+		07529216138D0ACC002A7A67 /* MySidebarButtonCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySidebarButtonCell.m; sourceTree = "<group>"; };
 		0768D6A31377CBE500E059C3 /* LeftFacingTriangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = LeftFacingTriangle.png; sourceTree = "<group>"; };
 		0768D6A51377CBE500E059C3 /* RightFacingTriangle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = RightFacingTriangle.png; sourceTree = "<group>"; };
 		07AB04211370864900EBCF92 /* MySplitViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySplitViewController.h; sourceTree = "<group>"; };
 		07AB04221370864900EBCF92 /* MySplitViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySplitViewController.m; sourceTree = "<group>"; };
-		07B4ECF1137028100003EB6F /* TransparentScrollerKnobBottom.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerKnobBottom.tif; sourceTree = "<group>"; };
-		07B4ECF2137028100003EB6F /* TransparentScrollerKnobHorizontalFill.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerKnobHorizontalFill.tif; sourceTree = "<group>"; };
-		07B4ECF3137028100003EB6F /* TransparentScrollerKnobLeft.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerKnobLeft.tif; sourceTree = "<group>"; };
-		07B4ECF4137028100003EB6F /* TransparentScrollerKnobRight.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerKnobRight.tif; sourceTree = "<group>"; };
-		07B4ECF5137028100003EB6F /* TransparentScrollerKnobTop.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerKnobTop.tif; sourceTree = "<group>"; };
-		07B4ECF6137028100003EB6F /* TransparentScrollerKnobVerticalFill.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerKnobVerticalFill.tif; sourceTree = "<group>"; };
-		07B4ECF7137028100003EB6F /* TransparentScrollerSlotBottom.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerSlotBottom.tif; sourceTree = "<group>"; };
-		07B4ECF8137028100003EB6F /* TransparentScrollerSlotHorizontalFill.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerSlotHorizontalFill.tif; sourceTree = "<group>"; };
-		07B4ECF9137028100003EB6F /* TransparentScrollerSlotLeft.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerSlotLeft.tif; sourceTree = "<group>"; };
-		07B4ECFA137028100003EB6F /* TransparentScrollerSlotRight.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerSlotRight.tif; sourceTree = "<group>"; };
-		07B4ECFB137028100003EB6F /* TransparentScrollerSlotTop.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerSlotTop.tif; sourceTree = "<group>"; };
-		07B4ECFC137028100003EB6F /* TransparentScrollerSlotVerticalFill.tif */ = {isa = PBXFileReference; lastKnownFileType = image.tiff; path = TransparentScrollerSlotVerticalFill.tif; sourceTree = "<group>"; };
-		07B4ED0913702FA00003EB6F /* BWTransparentScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWTransparentScroller.h; sourceTree = "<group>"; };
-		07B4ED0A13702FA00003EB6F /* BWTransparentScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWTransparentScroller.m; sourceTree = "<group>"; };
-		07B4ED0B13702FA00003EB6F /* BWTransparentScrollView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWTransparentScrollView.h; sourceTree = "<group>"; };
-		07B4ED0C13702FA00003EB6F /* BWTransparentScrollView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BWTransparentScrollView.m; sourceTree = "<group>"; };
+		07B4ED0913702FA00003EB6F /* MyScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyScroller.h; sourceTree = "<group>"; };
+		07B4ED0A13702FA00003EB6F /* MyScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyScroller.m; sourceTree = "<group>"; };
+		07C5832F13810D3600433BEF /* libintl.8.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libintl.8.dylib; path = /usr/local/Cellar/gettext/0.18.1.1/lib/libintl.8.dylib; sourceTree = "<absolute>"; };
+		07C5833213810D7C00433BEF /* libglib-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libglib-2.0.0.dylib"; path = "/usr/local/Cellar/glib/2.28.6/lib/libglib-2.0.0.dylib"; sourceTree = "<absolute>"; };
+		07C58335138111CF00433BEF /* libgnutls.26.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgnutls.26.dylib; path = /usr/local/Cellar/gnutls/2.12.3/lib/libgnutls.26.dylib; sourceTree = "<absolute>"; };
+		07C58337138111EB00433BEF /* libtasn1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libtasn1.3.dylib; path = /usr/local/Cellar/libtasn1/2.9/lib/libtasn1.3.dylib; sourceTree = "<absolute>"; };
+		07C583391381121C00433BEF /* libgthread-2.0.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgthread-2.0.0.dylib"; path = "/usr/local/Cellar/glib/2.28.6/lib/libgthread-2.0.0.dylib"; sourceTree = "<absolute>"; };
+		07C5833B1381124100433BEF /* libusbmuxd.1.0.7.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libusbmuxd.1.0.7.dylib; path = /usr/local/lib/libusbmuxd.1.0.7.dylib; sourceTree = "<absolute>"; };
+		07C5833D1381126A00433BEF /* libgcrypt.11.6.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libgcrypt.11.6.0.dylib; path = /usr/local/Cellar/libgcrypt/1.4.6/lib/libgcrypt.11.6.0.dylib; sourceTree = "<absolute>"; };
+		07C583441381166E00433BEF /* libgpg-error.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = "libgpg-error.0.dylib"; path = "/usr/local/Cellar/libgpg-error/1.10/lib/libgpg-error.0.dylib"; sourceTree = "<absolute>"; };
 		07DD54ED1379C27100A96052 /* MySplitView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MySplitView.h; sourceTree = "<group>"; };
 		07DD54EE1379C27100A96052 /* MySplitView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MySplitView.m; sourceTree = "<group>"; };
+		07F90A36138FB1D600863213 /* SpringBoardViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SpringBoardViewBackground.png; sourceTree = "<group>"; };
+		07F90A39138FB4FC00863213 /* MyButtomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButtomBar.h; sourceTree = "<group>"; };
+		07F90A3A138FB4FD00863213 /* MyButtomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButtomBar.m; sourceTree = "<group>"; };
+		07F90A3C138FB53B00863213 /* BottomBarBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BottomBarBackground.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -154,6 +194,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07076DF2137EB77E0080089E /* libplist.1.1.4.dylib in Frameworks */,
+				07076DF0137EB7780080089E /* libimobiledevice.2.dylib in Frameworks */,
 				070F3BB31355CD8A0060D04D /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +233,16 @@
 		070F3BB11355CD8A0060D04D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				07076DF1137EB77E0080089E /* libplist.1.1.4.dylib */,
+				07076DEF137EB7780080089E /* libimobiledevice.2.dylib */,
+				07C583441381166E00433BEF /* libgpg-error.0.dylib */,
+				07C5833D1381126A00433BEF /* libgcrypt.11.6.0.dylib */,
+				07C5833B1381124100433BEF /* libusbmuxd.1.0.7.dylib */,
+				07C583391381121C00433BEF /* libgthread-2.0.0.dylib */,
+				07C58337138111EB00433BEF /* libtasn1.3.dylib */,
+				07C58335138111CF00433BEF /* libgnutls.26.dylib */,
+				07C5833213810D7C00433BEF /* libglib-2.0.0.dylib */,
+				07C5832F13810D3600433BEF /* libintl.8.dylib */,
 				070F3BB21355CD8A0060D04D /* Cocoa.framework */,
 				070F3BB41355CD8A0060D04D /* Other Frameworks */,
 			);
@@ -310,14 +362,18 @@
 		070F3C121355CE360060D04D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				07B4ED0913702FA00003EB6F /* BWTransparentScroller.h */,
-				07B4ED0A13702FA00003EB6F /* BWTransparentScroller.m */,
-				07B4ED0B13702FA00003EB6F /* BWTransparentScrollView.h */,
-				07B4ED0C13702FA00003EB6F /* BWTransparentScrollView.m */,
+				07B4ED0913702FA00003EB6F /* MyScroller.h */,
+				07B4ED0A13702FA00003EB6F /* MyScroller.m */,
 				070F3BFF1355CDD00060D04D /* SpringBoardView.h */,
 				070F3C001355CDD00060D04D /* SpringBoardView.m */,
 				07DD54ED1379C27100A96052 /* MySplitView.h */,
 				07DD54EE1379C27100A96052 /* MySplitView.m */,
+				07529204138CF08B002A7A67 /* MySidebarSeperator.h */,
+				07529205138CF08B002A7A67 /* MySidebarSeperator.m */,
+				07529215138D0ACB002A7A67 /* MySidebarButtonCell.h */,
+				07529216138D0ACC002A7A67 /* MySidebarButtonCell.m */,
+				07F90A39138FB4FC00863213 /* MyButtomBar.h */,
+				07F90A3A138FB4FD00863213 /* MyButtomBar.m */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -329,6 +385,32 @@
 				0747142513576EC00016472B /* SbState_Complete.plist */,
 			);
 			name = TestFiles;
+			sourceTree = "<group>";
+		};
+		07529212138CF0D1002A7A67 /* Scroller */ = {
+			isa = PBXGroup;
+			children = (
+				07529208138CF0C9002A7A67 /* ScrollerHorizontalFill.png */,
+				07529209138CF0C9002A7A67 /* ScrollerKnobLeft.png */,
+				0752920A138CF0C9002A7A67 /* ScrollerKnobRight.png */,
+			);
+			name = Scroller;
+			sourceTree = "<group>";
+		};
+		07529213138CF0DE002A7A67 /* SidebarSeperator */ = {
+			isa = PBXGroup;
+			children = (
+				0752920C138CF0C9002A7A67 /* SidebarSeperator.png */,
+			);
+			name = SidebarSeperator;
+			sourceTree = "<group>";
+		};
+		07529214138CF0ED002A7A67 /* SidebarButton */ = {
+			isa = PBXGroup;
+			children = (
+				0752920B138CF0C9002A7A67 /* SidebarButtonHighlight.png */,
+			);
+			name = SidebarButton;
 			sourceTree = "<group>";
 		};
 		07ACC2CF136C22F10007EDB7 /* Sorting */ = {
@@ -347,20 +429,13 @@
 		07B4ECF0137027F50003EB6F /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				07F90A3C138FB53B00863213 /* BottomBarBackground.png */,
+				07F90A36138FB1D600863213 /* SpringBoardViewBackground.png */,
+				07529214138CF0ED002A7A67 /* SidebarButton */,
+				07529213138CF0DE002A7A67 /* SidebarSeperator */,
+				07529212138CF0D1002A7A67 /* Scroller */,
 				0768D6A31377CBE500E059C3 /* LeftFacingTriangle.png */,
 				0768D6A51377CBE500E059C3 /* RightFacingTriangle.png */,
-				07B4ECF1137028100003EB6F /* TransparentScrollerKnobBottom.tif */,
-				07B4ECF2137028100003EB6F /* TransparentScrollerKnobHorizontalFill.tif */,
-				07B4ECF3137028100003EB6F /* TransparentScrollerKnobLeft.tif */,
-				07B4ECF4137028100003EB6F /* TransparentScrollerKnobRight.tif */,
-				07B4ECF5137028100003EB6F /* TransparentScrollerKnobTop.tif */,
-				07B4ECF6137028100003EB6F /* TransparentScrollerKnobVerticalFill.tif */,
-				07B4ECF7137028100003EB6F /* TransparentScrollerSlotBottom.tif */,
-				07B4ECF8137028100003EB6F /* TransparentScrollerSlotHorizontalFill.tif */,
-				07B4ECF9137028100003EB6F /* TransparentScrollerSlotLeft.tif */,
-				07B4ECFA137028100003EB6F /* TransparentScrollerSlotRight.tif */,
-				07B4ECFB137028100003EB6F /* TransparentScrollerSlotTop.tif */,
-				07B4ECFC137028100003EB6F /* TransparentScrollerSlotVerticalFill.tif */,
 			);
 			name = Images;
 			sourceTree = "<group>";
@@ -375,6 +450,8 @@
 				070F3BAA1355CD8A0060D04D /* Sources */,
 				070F3BAB1355CD8A0060D04D /* Frameworks */,
 				070F3BAC1355CD8A0060D04D /* Resources */,
+				07076DF3137EB7820080089E /* CopyFiles */,
+				0780989E137E9ED500EFCAF4 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -443,20 +520,15 @@
 				0747142213576E070016472B /* SbIcon_StoreApp.plist in Resources */,
 				0747142613576EC00016472B /* SbState_Complete.plist in Resources */,
 				071F5F11135E1848001B6D31 /* FolderIconBg.png in Resources */,
-				07B4ECFD137028100003EB6F /* TransparentScrollerKnobBottom.tif in Resources */,
-				07B4ECFE137028100003EB6F /* TransparentScrollerKnobHorizontalFill.tif in Resources */,
-				07B4ECFF137028100003EB6F /* TransparentScrollerKnobLeft.tif in Resources */,
-				07B4ED00137028100003EB6F /* TransparentScrollerKnobRight.tif in Resources */,
-				07B4ED01137028100003EB6F /* TransparentScrollerKnobTop.tif in Resources */,
-				07B4ED02137028100003EB6F /* TransparentScrollerKnobVerticalFill.tif in Resources */,
-				07B4ED03137028100003EB6F /* TransparentScrollerSlotBottom.tif in Resources */,
-				07B4ED04137028100003EB6F /* TransparentScrollerSlotHorizontalFill.tif in Resources */,
-				07B4ED05137028100003EB6F /* TransparentScrollerSlotLeft.tif in Resources */,
-				07B4ED06137028100003EB6F /* TransparentScrollerSlotRight.tif in Resources */,
-				07B4ED07137028100003EB6F /* TransparentScrollerSlotTop.tif in Resources */,
-				07B4ED08137028100003EB6F /* TransparentScrollerSlotVerticalFill.tif in Resources */,
 				0768D6A71377CBE500E059C3 /* LeftFacingTriangle.png in Resources */,
 				0768D6A91377CBE500E059C3 /* RightFacingTriangle.png in Resources */,
+				0752920D138CF0C9002A7A67 /* ScrollerHorizontalFill.png in Resources */,
+				0752920E138CF0C9002A7A67 /* ScrollerKnobLeft.png in Resources */,
+				0752920F138CF0C9002A7A67 /* ScrollerKnobRight.png in Resources */,
+				07529210138CF0C9002A7A67 /* SidebarButtonHighlight.png in Resources */,
+				07529211138CF0C9002A7A67 /* SidebarSeperator.png in Resources */,
+				07F90A37138FB1D600863213 /* SpringBoardViewBackground.png in Resources */,
+				07F90A3D138FB53B00863213 /* BottomBarBackground.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,6 +557,19 @@
 			shellPath = /bin/sh;
 			shellScript = "# Run the unit tests in this test bundle.\n\"${SYSTEM_DEVELOPER_DIR}/Tools/RunUnitTests\"\n";
 		};
+		0780989E137E9ED500EFCAF4 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# chmod\nchmod +wx \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libplist.1.1.4.dylib\"\nchmod +wx \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libimobiledevice.2.dylib\"\nchmod +wx \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libglib-2.0.0.dylib\"\nchmod +wx \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libintl.8.dylib\"\nchmod +wx \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgcrypt.11.6.0.dylib\"\nchmod +wx \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgnutls.26.dylib\"\nchmod +wx \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgthread-2.0.0.dylib\"\nchmod +wx \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libtasn1.3.dylib\"\nchmod +wx \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libusbmuxd.1.0.7.dylib\"\nchmod +wx \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgpg-error.0.dylib\"\n# change id\ninstall_name_tool -id \"@executable_path/../Frameworks/libplist.1.1.4.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libplist.1.1.4.dylib\"\ninstall_name_tool -id \"@executable_path/../Frameworks/libimobiledevice.2.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libimobiledevice.2.dylib\"\ninstall_name_tool -id \"@executable_path/../Frameworks/libglib-2.0.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libglib-2.0.0.dylib\"\ninstall_name_tool -id \"@executable_path/../Frameworks/libintl.8.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libintl.8.dylib\"\ninstall_name_tool -id \"@executable_path/../Frameworks/libgcrypt.11.6.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgcrypt.11.6.0.dylib\"\ninstall_name_tool -id \"@executable_path/../Frameworks/libgnutls.26.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgnutls.26.dylib\"\ninstall_name_tool -id \"@executable_path/../Frameworks/libgthread-2.0.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgthread-2.0.0.dylib\"\ninstall_name_tool -id \"@executable_path/../Frameworks/libtasn1.3.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libtasn1.3.dylib\"\ninstall_name_tool -id \"@executable_path/../Frameworks/libusbmuxd.1.0.7.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libusbmuxd.1.0.7.dylib\"\ninstall_name_tool -id \"@executable_path/../Frameworks/libgpg-error.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgpg-error.0.dylib\"\n# change reference\n# - in SpringSort\ninstall_name_tool -change \"/usr/local/lib/libplist.1.dylib\" \"@executable_path/../Frameworks/libplist.1.1.4.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\ninstall_name_tool -change \"/usr/local/lib/libimobiledevice.2.dylib\" \"@executable_path/../Frameworks/libimobiledevice.2.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/MacOS/$PRODUCT_NAME\"\n# - in libplist.1.1.4.dylib\ninstall_name_tool -change \"/usr/local/Cellar/glib/2.28.6/lib/libglib-2.0.0.dylib\" \"@executable_path/../Frameworks/libglib-2.0.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libplist.1.1.4.dylib\"\n# - in libglib-2.0.0.dylib\ninstall_name_tool -change \"/usr/local/Cellar/gettext/0.18.1.1/lib/libintl.8.dylib\" \"@executable_path/../Frameworks/libintl.8.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libglib-2.0.0.dylib\"\n# - in libimobiledevice.2.dylib\ninstall_name_tool -change \"/usr/local/Cellar/gnutls/2.12.3/lib/libgnutls.26.dylib\" \"@executable_path/../Frameworks/libgnutls.26.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libimobiledevice.2.dylib\"\ninstall_name_tool -change \"/usr/local/Cellar/libtasn1/2.9/lib/libtasn1.3.dylib\" \"@executable_path/../Frameworks/libtasn1.3.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libimobiledevice.2.dylib\"\ninstall_name_tool -change \"/usr/local/Cellar/glib/2.28.6/lib/libgthread-2.0.0.dylib\" \"@executable_path/../Frameworks/libgthread-2.0.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libimobiledevice.2.dylib\"\ninstall_name_tool -change \"/usr/local/Cellar/glib/2.28.6/lib/libglib-2.0.0.dylib\" \"@executable_path/../Frameworks/libglib-2.0.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libimobiledevice.2.dylib\"\ninstall_name_tool -change \"/usr/local/Cellar/gettext/0.18.1.1/lib/libintl.8.dylib\" \"@executable_path/../Frameworks/libintl.8.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libimobiledevice.2.dylib\"\ninstall_name_tool -change \"/usr/local/lib/libplist.1.dylib\" \"@executable_path/../Frameworks/libplist.1.1.4.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libimobiledevice.2.dylib\"\ninstall_name_tool -change \"/usr/local/lib/libusbmuxd.1.dylib\" \"@executable_path/../Frameworks/libusbmuxd.1.0.7.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libimobiledevice.2.dylib\"\ninstall_name_tool -change \"/usr/local/Cellar/libgcrypt/1.4.6/lib/libgcrypt.11.6.0.dylib\" \"@executable_path/../Frameworks/libgcrypt.11.6.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libimobiledevice.2.dylib\"\n# - in libgcrypt.11.6.0.dylib\ninstall_name_tool -change \"/usr/local/Cellar/libgpg-error/1.10/lib/libgpg-error.0.dylib\" \"@executable_path/../Frameworks/libgpg-error.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgcrypt.11.6.0.dylib\"\n# - in libgnutls.26.dylib\ninstall_name_tool -change \"/usr/local/Cellar/libgcrypt/1.4.6/lib/libgcrypt.11.6.0.dylib\" \"@executable_path/../Frameworks/libgcrypt.11.6.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgnutls.26.dylib\"\ninstall_name_tool -change \"/usr/local/Cellar/libgpg-error/1.10/lib/libgpg-error.0.dylib\" \"@executable_path/../Frameworks/libgpg-error.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgnutls.26.dylib\"\n# - in libgthread-2.0.0.dylib\ninstall_name_tool -change \"/usr/local/Cellar/glib/2.28.6/lib/libglib-2.0.0.dylib\" \"@executable_path/../Frameworks/libglib-2.0.0.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgthread-2.0.0.dylib\"\ninstall_name_tool -change \"/usr/local/Cellar/gettext/0.18.1.1/lib/libintl.8.dylib\" \"@executable_path/../Frameworks/libintl.8.dylib\" \"$TARGET_BUILD_DIR/$PRODUCT_NAME.app/Contents/Frameworks/libgthread-2.0.0.dylib\"";
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -507,13 +592,15 @@
 				070F3C0D1355CDDE0060D04D /* Utilities.m in Sources */,
 				0747142913576FCA0016472B /* TestUtility.m in Sources */,
 				071F5F0F135DC200001B6D31 /* SpringSortController.m in Sources */,
-				07B4ED0D13702FA00003EB6F /* BWTransparentScroller.m in Sources */,
-				07B4ED0E13702FA00003EB6F /* BWTransparentScrollView.m in Sources */,
+				07B4ED0D13702FA00003EB6F /* MyScroller.m in Sources */,
 				07AB04231370864900EBCF92 /* MySplitViewController.m in Sources */,
 				0713D9FF137563C7004C637F /* SortingStrategy.m in Sources */,
 				0713DA02137569B2004C637F /* SortingByGenre.m in Sources */,
 				0713DA0513758E3E004C637F /* SortingByAlphabet.m in Sources */,
 				07DD54EF1379C27100A96052 /* MySplitView.m in Sources */,
+				07529206138CF08B002A7A67 /* MySidebarSeperator.m in Sources */,
+				07529217138D0ACC002A7A67 /* MySidebarButtonCell.m in Sources */,
+				07F90A3B138FB4FD00863213 /* MyButtomBar.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -590,10 +677,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
 				ONLY_ACTIVE_ARCH = YES;
-				OTHER_LDFLAGS = (
-					"-limobiledevice",
-					"-lplist",
-				);
+				OTHER_LDFLAGS = "";
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -613,10 +697,7 @@
 					"/Users/eric/Coding/c++/iphonesort/libs/libplist/include/",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				OTHER_LDFLAGS = (
-					"-limobiledevice",
-					"-lplist",
-				);
+				OTHER_LDFLAGS = "";
 				SDKROOT = macosx;
 			};
 			name = Release;
@@ -625,13 +706,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpringSort/SpringSort-Prefix.pch";
 				INFOPLIST_FILE = "SpringSort/SpringSort-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/SpringSort\"",
+					/usr/local/Cellar/gettext/0.18.1.1/lib,
+					/usr/local/Cellar/glib/2.28.6/lib,
+					/usr/local/Cellar/gnutls/2.12.3/lib,
+					/usr/local/Cellar/libtasn1/2.9/lib,
+					/usr/local/Cellar/libgcrypt/1.4.6/lib,
+					"\"/usr/local/Cellar/libgpg-error/1.10/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -640,13 +734,26 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_OBJC_EXCEPTIONS = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SpringSort/SpringSort-Prefix.pch";
 				INFOPLIST_FILE = "SpringSort/SpringSort-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/SpringSort\"",
+					/usr/local/Cellar/gettext/0.18.1.1/lib,
+					/usr/local/Cellar/glib/2.28.6/lib,
+					/usr/local/Cellar/gnutls/2.12.3/lib,
+					/usr/local/Cellar/libtasn1/2.9/lib,
+					/usr/local/Cellar/libgcrypt/1.4.6/lib,
+					"\"/usr/local/Cellar/libgpg-error/1.10/lib\"",
+				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				VALID_ARCHS = x86_64;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

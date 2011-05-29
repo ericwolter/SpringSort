@@ -55,8 +55,8 @@ static NSString *cachePath;
 		
 		[cachePath retain];
 		
-		ignoredPages = [[NSMutableSet alloc] init];
-		[ignoredPages addObject:[NSNumber numberWithInt:0]];
+		pageStates = [[NSMutableDictionary alloc] init];
+		[pageStates setObject:[NSNumber numberWithInt:PageIsExcluded] forKey:[NSNumber numberWithInt:0]];
     }
     
     return self;
@@ -68,7 +68,7 @@ static NSString *cachePath;
 	[cacheIcons release];
 	[cacheGenres release];
 	[wallpaper release];
-	[ignoredPages release];
+	[pageStates release];
     [super dealloc];
 }
 
@@ -259,18 +259,30 @@ static NSString *cachePath;
 	[self.device.springBoardService setState:[self.state toPlist]];
 }
 
--(void)toggleIgnoredPage:(int)pageIndex;
+-(void)togglePageState:(int)pageIndex;
 {
 	NSNumber *pageNumber = [NSNumber numberWithInt:pageIndex];
-	if ([ignoredPages containsObject:pageNumber]) {
-		[ignoredPages removeObject:pageNumber];
+	PageState pageState = [[pageStates objectForKey:pageNumber] intValue];
+	if(pageState) {
+		switch (pageState) {
+			case PageIsExcluded:
+				[pageStates setObject:[NSNumber numberWithInt:PageIsTargetOnly] forKey:pageNumber];
+				break;
+			case PageIsIncluded:
+				[pageStates setObject:[NSNumber numberWithInt:PageIsExcluded] forKey:pageNumber];
+				break;
+			case PageIsTargetOnly:
+				[pageStates setObject:[NSNumber numberWithInt:PageIsIncluded] forKey:pageNumber];
+			default:
+				break;
+		}
 	} else {
-		[ignoredPages addObject:pageNumber];
+		[pageStates setObject:[NSNumber numberWithInt:PageIsExcluded] forKey:pageNumber];
 	}
 }
 
--(BOOL)isPageIgnored:(int)pageIndex
+-(PageState)getPageState:(int)pageIndex
 {
-	return [ignoredPages containsObject:[NSNumber numberWithInt:pageIndex]];
+	return [[pageStates objectForKey:[NSNumber numberWithInt:pageIndex]] intValue];
 }
 @end

@@ -30,7 +30,7 @@
 	NSMutableArray *flatten = [[NSMutableArray alloc] init];
 	int pageIndex = 0;
 	for (SbContainer *pageContainer in sourceState.mainContainer.items) {
-		if([self.controller isPageIgnored:pageIndex]) {
+		if([self.controller getPageState:pageIndex]) {
 			[newState.mainContainer.items addObject:[pageContainer copy]];
 		} else {
 			[Utilities flatten:pageContainer IntoArray:flatten];

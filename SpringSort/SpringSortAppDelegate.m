@@ -17,6 +17,10 @@
 #import "SortingByAlphabet.h"
 #import "SortingByGenre.h"
 
+@interface SpringSortAppDelegate()
+-(void)reloadFromDevice;
+@end
+
 @implementation SpringSortAppDelegate
 
 @synthesize window, springBoardView, springSortController;
@@ -24,33 +28,12 @@
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
-	[self.window setBackgroundColor:[NSColor colorWithCalibratedRed:56.0f/255.0f green:56.0f/255.0f blue:56.0f/255.0f alpha:1.0f]];
+	[self.window setBackgroundColor:[NSColor whiteColor]];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	// Insert code here to initialize your application
-	Device *d = [[Device alloc] initWithUuid:[UsbUtility firstDeviceUuid]];
-	
-	SpringSortController *controller = [[SpringSortController alloc] initWithDevice:d];
-	self.springBoardView.controller = controller;
-	self.springBoardView.state = controller.state;
-	[d release];
-	
-	self.springSortController = controller;
-	[controller release];
-	
-	NSMutableArray *ss = [NSMutableArray array];
-	SortingStrategy *s = [[SortingByAlphabet alloc] initWithController:self.springSortController];
-	[ss addObject:s];
-	[s release];
-	s = [[SortingByGenre alloc] initWithController:self.springSortController];
-	[ss addObject:s];
-	[s release];
-	
-	self.sortingStrategies = ss;
-	
-	[self.springBoardView setNeedsDisplay:YES];
+	[self reloadFromDevice];
 }
 
 - (IBAction)sortByAlphabet:(NSButton *)sender
@@ -93,6 +76,30 @@
 
 -(NSArray*)sortingStrategies {
     return sortingStrategies;
+}
+
+- (IBAction)reload:(NSButton *)sender
+{
+	[self reloadFromDevice];
+}
+
+-(void)reloadFromDevice
+{
+	NSString *uuid = [UsbUtility firstDeviceUuid];
+	if (!uuid) {
+		return;
+	}
+	Device *d = [[Device alloc] initWithUuid:uuid];
+	
+	SpringSortController *controller = [[SpringSortController alloc] initWithDevice:d];
+	self.springBoardView.controller = controller;
+	self.springBoardView.state = controller.state;
+	[d release];
+	
+	self.springSortController = controller;
+	[controller release];
+	
+	[self.springBoardView setNeedsDisplay:YES];
 }
 
 @end

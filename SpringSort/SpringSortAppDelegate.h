@@ -16,6 +16,7 @@
 	NSWindow *window;
 	SpringBoardView *springBoardView;
 	SpringSortController *springSortController;
+	NSMutableArray *sortingStrategies;
 }
 
 @property (assign) IBOutlet NSWindow *window;
@@ -25,4 +26,6 @@
 
 - (IBAction)sortByAlphabet:(NSButton *)sender;
 - (IBAction)sortByGenre:(NSButton *)sender;
+
+- (IBAction)reload:(NSButton *)sender;
 @end

@@ -1,5 +1,5 @@
 //
-//  BWTransparentScrollView.h
+//  BWTransparentScroller.h
 //  BWToolkit
 //
 //  Created by Brandon Walkin (www.brandonwalkin.com)
@@ -8,8 +8,8 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface BWTransparentScrollView : NSScrollView 
-{
+@interface MyScroller : NSScroller {
+@private
 
 }
 

@@ -15,13 +15,19 @@
 @class SbIcon;
 @class SbContainer;
 
+typedef enum{
+	PageIsIncluded,
+	PageIsExcluded,
+	PageIsTargetOnly,
+} PageState;
+
 @interface SpringSortController : NSObject {
 @private
     Device *device;
 	SbState *state;
 	NSMutableDictionary *cacheIcons;
 	NSMutableDictionary *cacheGenres;
-	NSMutableSet *ignoredPages;
+	NSMutableDictionary *pageStates;
 	
 	NSImage *wallpaper;
 }
@@ -38,6 +44,6 @@
 -(void)writeState;
 -(NSArray *)getIconsToSort;
 
--(void)toggleIgnoredPage:(int)pageIndex;
--(BOOL)isPageIgnored:(int)pageIndex;
+-(void)togglePageState:(int)pageIndex;
+-(PageState)getPageState:(int)pageIndex;
 @end

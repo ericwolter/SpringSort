@@ -12,7 +12,7 @@
 
 - (NSColor *)dividerColor
 {
-	return [NSColor colorWithCalibratedRed:22.0f/255.0f green:22.0f/255.0f blue:22.0f/255.0f alpha:1.0f];
+	return [NSColor colorWithCalibratedRed:175.0f/255.0f green:175.0f/255.0f blue:175.0f/255.0f alpha:1.0f];
 }
 
 @end

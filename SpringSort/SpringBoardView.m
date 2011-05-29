@@ -14,6 +14,7 @@
 #import "SbFolder.h"
 #import "SbIcon.h"
 
+static NSColor *backgroundColor;
 static NSImage *folderBackground;
 static NSDictionary *textStyleAttributes;
 
@@ -46,8 +47,13 @@ static NSColor *pageBackgroundColor, *pageBorderColor, *pageSeperatorColor;
 {
 	[super initialize];
 	
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"FolderIconBg" ofType:@"png"];
-	folderBackground = [[NSImage alloc] initWithContentsOfFile:path];
+	NSBundle *bundle = [NSBundle bundleForClass:[SpringBoardView class]];
+	
+	NSImage *bgImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"SpringBoardViewBackground.png"]];
+	backgroundColor = [[NSColor colorWithPatternImage:bgImage] retain];
+	[bgImage release];
+	
+	folderBackground = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"FolderIconBg.png"]];
 	
 	NSMutableParagraphStyle *textStyle = [[NSMutableParagraphStyle alloc] init];
 	[textStyle setAlignment:NSCenterTextAlignment];
@@ -80,6 +86,9 @@ static NSColor *pageBackgroundColor, *pageBorderColor, *pageSeperatorColor;
 
 - (void)drawRect:(NSRect)dirtyRect
 {	
+	[backgroundColor set];
+	NSRectFill(self.frame);
+	
 	if(!controller)
 		return;
 	
@@ -91,39 +100,39 @@ static NSColor *pageBackgroundColor, *pageBorderColor, *pageSeperatorColor;
 	CGFloat frameWidth = (count-1)*pageWidth+count;
 	pageHeight = [self frame].size.height;
 	[self setFrameSize:NSMakeSize(frameWidth, pageHeight)];
+	[backgroundColor set];
+	NSRectFill(self.frame);
 	
 	int i = 0;
 	for (i = 1; i < count; i++) {
-		[pageSeperatorColor set];
-		NSRectFill(NSMakeRect((i-1)*(pageWidth+1), 0.0f, 1.0f, pageHeight));
-		
-		NSRect pageRect = NSMakeRect((i-1) * pageWidth + 1*i, 0, pageWidth, pageHeight);
+		NSRect pageRect = NSMakeRect((i-1) * pageWidth, 0, pageWidth, pageHeight);
 		[self drawSbPage:[self.state.mainContainer.items objectAtIndex:i] inRect:pageRect];
 
-		if ([controller isPageIgnored:i]) {
-			[[NSColor colorWithCalibratedWhite:0.0f alpha:0.75f] set];
-			[NSBezierPath fillRect: pageRect];
-			[[NSColor colorWithCalibratedRed:255.0f green:255.0f blue:0.0f alpha:0.5f] set];
-			NSBezierPath *circle = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(((i-1) * 320) + 320.0f/2.0f - 15, pageHeight/2.0f - 15, 30, 30)];
-			[circle setLineWidth:100];
-			[circle stroke];
+		switch ([controller getPageState:i]) {
+			case PageIsExcluded:
+				[[NSColor colorWithCalibratedWhite:0.0f alpha:0.75f] set];
+				[NSBezierPath fillRect: pageRect];
+				[[NSColor colorWithCalibratedRed:1.0f green:0.0f blue:0.0f alpha:0.5f] set];
+				NSBezierPath *circle1 = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(((i-1) * 320) + 320.0f/2.0f - 15, pageHeight/2.0f - 15, 30, 30)];
+				[circle1 setLineWidth:100];
+				[circle1 stroke];
+				break;
+			case PageIsTargetOnly:
+				[[NSColor colorWithCalibratedWhite:0.0f alpha:0.75f] set];
+				[NSBezierPath fillRect: pageRect];
+				[[NSColor colorWithCalibratedRed:1.0f green:1.0f blue:0.0f alpha:0.5f] set];
+				NSBezierPath *circle2 = [NSBezierPath bezierPathWithOvalInRect:NSMakeRect(((i-1) * 320) + 320.0f/2.0f - 15, pageHeight/2.0f - 15, 30, 30)];
+				[circle2 setLineWidth:100];
+				[circle2 stroke];
+				break;
+			default:
+				break;
 		}
 	}
-	
-	[pageSeperatorColor set];
-	NSRectFill(NSMakeRect(i*(pageWidth+1), 0.0f, 1.0f, pageHeight));
 }
 
 -(void)drawSbPage:(SbContainer *)page inRect:(NSRect)rect
 {
-	[pageBackgroundColor set];
-	NSRectFill(rect);
-	
-	[pageBorderColor set];
-	NSBezierPath *path = [NSBezierPath bezierPathWithRect:rect];
-	[path setLineWidth:1];
-	[path stroke];
-	
 	CGFloat borderX = 16;
 	CGFloat offsetX = rect.origin.x + borderX;
 	CGFloat offsetY = rect.origin.y + borderX;
@@ -191,7 +200,7 @@ static NSColor *pageBackgroundColor, *pageBorderColor, *pageSeperatorColor;
 -(void)mouseUp:(NSEvent *)theEvent
 {
 	NSPoint clickPoint = [self convertPoint:[theEvent locationInWindow] fromView:nil];
-	[controller toggleIgnoredPage:(int)(clickPoint.x / pageWidth) + 1];
+	[controller togglePageState:(int)(clickPoint.x / pageWidth) + 1];
 	[self display];
 }
 
