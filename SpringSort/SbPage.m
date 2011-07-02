@@ -43,4 +43,9 @@
     [super dealloc];
 }
 
+-(SbPage *)copy
+{
+	return [SbPage newFromPlist:[self toPlist]];
+}
+
 @end

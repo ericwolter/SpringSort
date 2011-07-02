@@ -37,13 +37,11 @@
 		070F3C071355CDD00060D04D /* SpringBoardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3C001355CDD00060D04D /* SpringBoardView.m */; };
 		070F3C0C1355CDDE0060D04D /* UsbUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3C091355CDDE0060D04D /* UsbUtility.m */; };
 		070F3C0D1355CDDE0060D04D /* Utilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 070F3C0B1355CDDE0060D04D /* Utilities.m */; };
-		0713D9FF137563C7004C637F /* SortingStrategy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0713D9FE137563C7004C637F /* SortingStrategy.m */; };
 		0713DA02137569B2004C637F /* SortingByGenre.m in Sources */ = {isa = PBXBuildFile; fileRef = 0713DA01137569B2004C637F /* SortingByGenre.m */; };
-		0713DA0513758E3E004C637F /* SortingByAlphabet.m in Sources */ = {isa = PBXBuildFile; fileRef = 0713DA0413758E3E004C637F /* SortingByAlphabet.m */; };
+		0713DA0513758E3E004C637F /* SortingByDisplayName.m in Sources */ = {isa = PBXBuildFile; fileRef = 0713DA0413758E3E004C637F /* SortingByDisplayName.m */; };
 		071F5F0F135DC200001B6D31 /* SpringSortController.m in Sources */ = {isa = PBXBuildFile; fileRef = 071F5F0E135DC200001B6D31 /* SpringSortController.m */; };
 		071F5F11135E1848001B6D31 /* FolderIconBg.png in Resources */ = {isa = PBXBuildFile; fileRef = 071F5F10135E1848001B6D31 /* FolderIconBg.png */; };
 		073ECEFB13BF0582007E3BAF /* SbPage.m in Sources */ = {isa = PBXBuildFile; fileRef = 073ECEFA13BF0582007E3BAF /* SbPage.m */; };
-		073ECEFE13BF0FF0007E3BAF /* SortingOrganizer.m in Sources */ = {isa = PBXBuildFile; fileRef = 073ECEFD13BF0FF0007E3BAF /* SortingOrganizer.m */; };
 		07529206138CF08B002A7A67 /* MySidebarSeperator.m in Sources */ = {isa = PBXBuildFile; fileRef = 07529205138CF08B002A7A67 /* MySidebarSeperator.m */; };
 		0752920D138CF0C9002A7A67 /* ScrollerHorizontalFill.png in Resources */ = {isa = PBXBuildFile; fileRef = 07529208138CF0C9002A7A67 /* ScrollerHorizontalFill.png */; };
 		0752920E138CF0C9002A7A67 /* ScrollerKnobLeft.png in Resources */ = {isa = PBXBuildFile; fileRef = 07529209138CF0C9002A7A67 /* ScrollerKnobLeft.png */; };
@@ -82,6 +80,9 @@
 		07E2FBF313A7FCC2007CDE98 /* SbAppleIcon.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07E2FBEA13A7FA5B007CDE98 /* SbAppleIcon.plist */; };
 		07E2FBF413A7FDAC007CDE98 /* TestUtility.m in Sources */ = {isa = PBXBuildFile; fileRef = 0747142813576FC90016472B /* TestUtility.m */; };
 		07E2FBF513A7FDB8007CDE98 /* TestUtility.h in Resources */ = {isa = PBXBuildFile; fileRef = 0747142713576FC90016472B /* TestUtility.h */; };
+		07F8BA5013BF2F4700C6C4D1 /* OrganizingByGenreFolder.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BA4F13BF2F4700C6C4D1 /* OrganizingByGenreFolder.m */; };
+		07F8BA5613BF3A5600C6C4D1 /* SortingWorkflow.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BA5513BF3A5500C6C4D1 /* SortingWorkflow.m */; };
+		07F8BA5F13BF477E00C6C4D1 /* RetouchDefault.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F8BA5E13BF477E00C6C4D1 /* RetouchDefault.m */; };
 		07F90A37138FB1D600863213 /* SpringBoardViewBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F90A36138FB1D600863213 /* SpringBoardViewBackground.png */; };
 		07F90A3B138FB4FD00863213 /* MyButtomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 07F90A3A138FB4FD00863213 /* MyButtomBar.m */; };
 		07F90A3D138FB53B00863213 /* BottomBarBackground.png in Resources */ = {isa = PBXBuildFile; fileRef = 07F90A3C138FB53B00863213 /* BottomBarBackground.png */; };
@@ -180,19 +181,15 @@
 		070F3C091355CDDE0060D04D /* UsbUtility.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UsbUtility.m; sourceTree = "<group>"; };
 		070F3C0A1355CDDE0060D04D /* Utilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Utilities.h; sourceTree = "<group>"; };
 		070F3C0B1355CDDE0060D04D /* Utilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Utilities.m; sourceTree = "<group>"; };
-		0713D9FD137563C7004C637F /* SortingStrategy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortingStrategy.h; sourceTree = "<group>"; };
-		0713D9FE137563C7004C637F /* SortingStrategy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortingStrategy.m; sourceTree = "<group>"; };
 		0713DA00137569B2004C637F /* SortingByGenre.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortingByGenre.h; sourceTree = "<group>"; };
 		0713DA01137569B2004C637F /* SortingByGenre.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortingByGenre.m; sourceTree = "<group>"; };
-		0713DA0313758E3E004C637F /* SortingByAlphabet.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortingByAlphabet.h; sourceTree = "<group>"; };
-		0713DA0413758E3E004C637F /* SortingByAlphabet.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortingByAlphabet.m; sourceTree = "<group>"; };
+		0713DA0313758E3E004C637F /* SortingByDisplayName.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortingByDisplayName.h; sourceTree = "<group>"; };
+		0713DA0413758E3E004C637F /* SortingByDisplayName.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortingByDisplayName.m; sourceTree = "<group>"; };
 		071F5F0D135DC200001B6D31 /* SpringSortController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SpringSortController.h; sourceTree = "<group>"; };
 		071F5F0E135DC200001B6D31 /* SpringSortController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SpringSortController.m; sourceTree = "<group>"; };
 		071F5F10135E1848001B6D31 /* FolderIconBg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = FolderIconBg.png; sourceTree = "<group>"; };
 		073ECEF913BF0582007E3BAF /* SbPage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbPage.h; sourceTree = "<group>"; };
 		073ECEFA13BF0582007E3BAF /* SbPage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbPage.m; sourceTree = "<group>"; };
-		073ECEFC13BF0FF0007E3BAF /* SortingOrganizer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortingOrganizer.h; sourceTree = "<group>"; };
-		073ECEFD13BF0FF0007E3BAF /* SortingOrganizer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortingOrganizer.m; sourceTree = "<group>"; };
 		0747142113576E070016472B /* SbStoreIcon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SbStoreIcon.plist; sourceTree = "<group>"; };
 		0747142513576EC00016472B /* SbState.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SbState.plist; sourceTree = "<group>"; };
 		0747142713576FC90016472B /* TestUtility.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TestUtility.h; sourceTree = "<group>"; };
@@ -245,6 +242,17 @@
 		07E2FBEA13A7FA5B007CDE98 /* SbAppleIcon.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = SbAppleIcon.plist; sourceTree = "<group>"; };
 		07E2FBEC13A7FAC3007CDE98 /* SbAppleIconTests.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SbAppleIconTests.h; sourceTree = "<group>"; };
 		07E2FBED13A7FAC3007CDE98 /* SbAppleIconTests.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SbAppleIconTests.m; sourceTree = "<group>"; };
+		07F8BA4B13BF143900C6C4D1 /* SortStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortStep.h; sourceTree = "<group>"; };
+		07F8BA4D13BF2B3500C6C4D1 /* FileStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FileStep.h; sourceTree = "<group>"; };
+		07F8BA4E13BF2F4700C6C4D1 /* OrganizingByGenreFolder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OrganizingByGenreFolder.h; sourceTree = "<group>"; };
+		07F8BA4F13BF2F4700C6C4D1 /* OrganizingByGenreFolder.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = OrganizingByGenreFolder.m; sourceTree = "<group>"; };
+		07F8BA5113BF3A0700C6C4D1 /* PrepareStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrepareStep.h; sourceTree = "<group>"; };
+		07F8BA5213BF3A1600C6C4D1 /* MergeStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MergeStep.h; sourceTree = "<group>"; };
+		07F8BA5313BF3A2800C6C4D1 /* RetouchStep.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetouchStep.h; sourceTree = "<group>"; };
+		07F8BA5413BF3A5500C6C4D1 /* SortingWorkflow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SortingWorkflow.h; sourceTree = "<group>"; };
+		07F8BA5513BF3A5500C6C4D1 /* SortingWorkflow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SortingWorkflow.m; sourceTree = "<group>"; };
+		07F8BA5D13BF477E00C6C4D1 /* RetouchDefault.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RetouchDefault.h; sourceTree = "<group>"; };
+		07F8BA5E13BF477E00C6C4D1 /* RetouchDefault.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RetouchDefault.m; sourceTree = "<group>"; };
 		07F90A36138FB1D600863213 /* SpringBoardViewBackground.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SpringBoardViewBackground.png; sourceTree = "<group>"; };
 		07F90A39138FB4FC00863213 /* MyButtomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyButtomBar.h; sourceTree = "<group>"; };
 		07F90A3A138FB4FD00863213 /* MyButtomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyButtomBar.m; sourceTree = "<group>"; };
@@ -527,14 +535,13 @@
 		07ACC2CF136C22F10007EDB7 /* Sorting */ = {
 			isa = PBXGroup;
 			children = (
-				0713D9FD137563C7004C637F /* SortingStrategy.h */,
-				0713D9FE137563C7004C637F /* SortingStrategy.m */,
-				0713DA00137569B2004C637F /* SortingByGenre.h */,
-				0713DA01137569B2004C637F /* SortingByGenre.m */,
-				0713DA0313758E3E004C637F /* SortingByAlphabet.h */,
-				0713DA0413758E3E004C637F /* SortingByAlphabet.m */,
-				073ECEFC13BF0FF0007E3BAF /* SortingOrganizer.h */,
-				073ECEFD13BF0FF0007E3BAF /* SortingOrganizer.m */,
+				07F8BA5413BF3A5500C6C4D1 /* SortingWorkflow.h */,
+				07F8BA5513BF3A5500C6C4D1 /* SortingWorkflow.m */,
+				07F8BA5913BF472600C6C4D1 /* 1. Prepare */,
+				07F8BA5813BF471C00C6C4D1 /* 2. Sort */,
+				07F8BA5A13BF473100C6C4D1 /* 3. File */,
+				07F8BA5B13BF474200C6C4D1 /* 4. Merge */,
+				07F8BA5C13BF474D00C6C4D1 /* 5. Retouch */,
 			);
 			name = Sorting;
 			sourceTree = "<group>";
@@ -551,6 +558,54 @@
 				0768D6A51377CBE500E059C3 /* RightFacingTriangle.png */,
 			);
 			name = Images;
+			sourceTree = "<group>";
+		};
+		07F8BA5813BF471C00C6C4D1 /* 2. Sort */ = {
+			isa = PBXGroup;
+			children = (
+				07F8BA4B13BF143900C6C4D1 /* SortStep.h */,
+				0713DA00137569B2004C637F /* SortingByGenre.h */,
+				0713DA01137569B2004C637F /* SortingByGenre.m */,
+				0713DA0313758E3E004C637F /* SortingByDisplayName.h */,
+				0713DA0413758E3E004C637F /* SortingByDisplayName.m */,
+			);
+			name = "2. Sort";
+			sourceTree = "<group>";
+		};
+		07F8BA5913BF472600C6C4D1 /* 1. Prepare */ = {
+			isa = PBXGroup;
+			children = (
+				07F8BA5113BF3A0700C6C4D1 /* PrepareStep.h */,
+			);
+			name = "1. Prepare";
+			sourceTree = "<group>";
+		};
+		07F8BA5A13BF473100C6C4D1 /* 3. File */ = {
+			isa = PBXGroup;
+			children = (
+				07F8BA4D13BF2B3500C6C4D1 /* FileStep.h */,
+				07F8BA4E13BF2F4700C6C4D1 /* OrganizingByGenreFolder.h */,
+				07F8BA4F13BF2F4700C6C4D1 /* OrganizingByGenreFolder.m */,
+			);
+			name = "3. File";
+			sourceTree = "<group>";
+		};
+		07F8BA5B13BF474200C6C4D1 /* 4. Merge */ = {
+			isa = PBXGroup;
+			children = (
+				07F8BA5213BF3A1600C6C4D1 /* MergeStep.h */,
+			);
+			name = "4. Merge";
+			sourceTree = "<group>";
+		};
+		07F8BA5C13BF474D00C6C4D1 /* 5. Retouch */ = {
+			isa = PBXGroup;
+			children = (
+				07F8BA5313BF3A2800C6C4D1 /* RetouchStep.h */,
+				07F8BA5D13BF477E00C6C4D1 /* RetouchDefault.h */,
+				07F8BA5E13BF477E00C6C4D1 /* RetouchDefault.m */,
+			);
+			name = "5. Retouch";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -711,9 +766,8 @@
 				071F5F0F135DC200001B6D31 /* SpringSortController.m in Sources */,
 				07B4ED0D13702FA00003EB6F /* MyScroller.m in Sources */,
 				07AB04231370864900EBCF92 /* MySplitViewController.m in Sources */,
-				0713D9FF137563C7004C637F /* SortingStrategy.m in Sources */,
 				0713DA02137569B2004C637F /* SortingByGenre.m in Sources */,
-				0713DA0513758E3E004C637F /* SortingByAlphabet.m in Sources */,
+				0713DA0513758E3E004C637F /* SortingByDisplayName.m in Sources */,
 				07DD54EF1379C27100A96052 /* MySplitView.m in Sources */,
 				07529206138CF08B002A7A67 /* MySidebarSeperator.m in Sources */,
 				07529217138D0ACC002A7A67 /* MySidebarButtonCell.m in Sources */,
@@ -726,7 +780,9 @@
 				07E2FBE513A7F32B007CDE98 /* SbStoreIcon.m in Sources */,
 				079CAD3913BAFC9D00F3ED88 /* DeviceCentral.m in Sources */,
 				073ECEFB13BF0582007E3BAF /* SbPage.m in Sources */,
-				073ECEFE13BF0FF0007E3BAF /* SortingOrganizer.m in Sources */,
+				07F8BA5013BF2F4700C6C4D1 /* OrganizingByGenreFolder.m in Sources */,
+				07F8BA5613BF3A5600C6C4D1 /* SortingWorkflow.m in Sources */,
+				07F8BA5F13BF477E00C6C4D1 /* RetouchDefault.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

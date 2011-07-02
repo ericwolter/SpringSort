@@ -15,5 +15,6 @@
 }
 
 @property (nonatomic, copy) NSString *displayName;
+@property (nonatomic, readonly) NSUInteger count;
 
 @end

@@ -13,8 +13,6 @@
 #import "UsbUtility.h"
 
 #import "SpringSortController.h"
-
-#import "SortingByAlphabet.h"
 #import "SortingByGenre.h"
 
 @implementation SpringSortAppDelegate
@@ -38,45 +36,45 @@
 
 - (IBAction)sortByAlphabet:(NSButton *)sender
 {
-	if (!self.springSortController) {
-		return;
-	}
-	
-	SortingByAlphabet *s = [[SortingByAlphabet alloc] initWithController:self.springSortController];
-	springBoardView.state = [s newSortedState:self.springSortController.state];
-	[s release];
-	
-	[springBoardView setNeedsDisplay:YES];
+//	if (!self.springSortController) {
+//		return;
+//	}
+//	
+//	SortingByAlphabet *s = [[SortingByAlphabet alloc] initWithController:self.springSortController];
+//	springBoardView.state = [s newSortedState:self.springSortController.state];
+//	[s release];
+//	
+//	[springBoardView setNeedsDisplay:YES];
 }
 
 - (IBAction)sortByGenre:(NSButton *)sender
 {
-	if (!self.springSortController) {
-		return;
-	}
-	
-	SortingByGenre *s = [[SortingByGenre alloc] initWithController:self.springSortController];
-	springBoardView.state = [s newSortedState:self.springSortController.state];
-	[s release];
-	
-	[springBoardView setNeedsDisplay:YES];
+//	if (!self.springSortController) {
+//		return;
+//	}
+//	
+//	SortingByGenre *s = [[SortingByGenre alloc] initWithController:self.springSortController];
+//	springBoardView.state = [s newSortedState:self.springSortController.state];
+//	[s release];
+//	
+//	[springBoardView setNeedsDisplay:YES];
 }
 
--(void)insertObject:(SortingStrategy *)s inSortingStrategiesAtIndex:(NSUInteger)index {
-    [sortingStrategies insertObject:s atIndex:index];
-}
+//-(void)insertObject:(SortingStrategy *)s inSortingStrategiesAtIndex:(NSUInteger)index {
+//    [sortingStrategies insertObject:s atIndex:index];
+//}
+//
+//-(void)removeObjectFromSortingStrategiesAtIndex:(NSUInteger)index {
+//    [sortingStrategies removeObjectAtIndex:index];
+//}
+//
+//-(void)setSortingStrategies:(NSMutableArray *)a {
+//    sortingStrategies = a;
+//}
 
--(void)removeObjectFromSortingStrategiesAtIndex:(NSUInteger)index {
-    [sortingStrategies removeObjectAtIndex:index];
-}
-
--(void)setSortingStrategies:(NSMutableArray *)a {
-    sortingStrategies = a;
-}
-
--(NSArray*)sortingStrategies {
-    return sortingStrategies;
-}
+//-(NSArray*)sortingStrategies {
+//    return sortingStrategies;
+//}
 
 - (IBAction)reloadClicked:(NSButton *)sender
 {

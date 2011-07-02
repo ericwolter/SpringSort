@@ -8,7 +8,6 @@
 
 #import <Foundation/Foundation.h>
 #import <plist/plist.h>
-#import "SortingStrategy.h"
 #import "CacheUtility.h"
 #import "ProgressListener.h"
 

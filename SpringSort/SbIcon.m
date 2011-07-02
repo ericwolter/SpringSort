@@ -97,4 +97,13 @@
 	return displayIdentifier;
 }
 
+-(NSString *)primaryGenre
+{
+	if([self.genres count] > 0) {
+		return [self.genres objectAtIndex:0];
+	} else {
+		return @"Uncategorized";
+	}
+}
+
 @end

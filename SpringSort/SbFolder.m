@@ -41,6 +41,16 @@
     [super dealloc];
 }
 
+-(NSUInteger)count
+{
+	if (items) {
+		return [items count];
+	} else {
+		return 0;
+	}
+		
+}
+
 -(plist_t)toPlist
 {
     plist_t pFolder = plist_new_dict();

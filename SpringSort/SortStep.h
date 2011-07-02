@@ -1,5 +1,5 @@
 //
-//  SortingOrganizer.h
+//  SortingStrategy.h
 //  SpringSort
 //
 //  Created by Eric Wolter on 02.07.11.
@@ -8,10 +8,6 @@
 
 #import <Foundation/Foundation.h>
 
-
-@interface SortingOrganizer : NSObject {
-@private
-    
-}
-
+@protocol SortStep <NSObject>
+-(NSArray *)sort:(NSArray *)items;
 @end

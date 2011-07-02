@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) NSString* displayIdentifier;
 @property (nonatomic, retain) NSArray* genres;
 @property (nonatomic, retain) NSImage* icon;
+@property (nonatomic, readonly) NSString* primaryGenre;
 
 +(NSString *)extractDisplayName:(plist_t)thePlist;
 +(NSString *)extractDisplayIdentifier:(plist_t)thePlist;

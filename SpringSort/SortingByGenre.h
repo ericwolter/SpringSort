@@ -7,9 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "SortingStrategy.h"
+#import "SortStep.h"
 
-@interface SortingByGenre : SortingStrategy {
+@interface SortingByGenre : NSObject<SortStep> {
 @private
     
 }
