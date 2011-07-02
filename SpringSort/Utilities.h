@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "SbContainer.h"
+#import "SbPage.h"
 #import "SbFolder.h"
 #import "SbIcon.h"
 

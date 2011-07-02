@@ -8,24 +8,33 @@
 
 #import <Cocoa/Cocoa.h>
 #import "SpringSortController.h"
+#import "DeviceCentral.h"
+#import "DeviceDelegate.h"
+#import "ProgressListener.h"
 
 @class SpringBoardView;
 
-@interface SpringSortAppDelegate : NSObject <NSApplicationDelegate> {
+@interface SpringSortAppDelegate : NSObject <NSApplicationDelegate, DeviceDelegate, ProgressListener> {
 @private
 	NSWindow *window;
-	SpringBoardView *springBoardView;
 	SpringSortController *springSortController;
 	NSMutableArray *sortingStrategies;
+	DeviceCentral *deviceCentral;
+	
+	IBOutlet SpringBoardView *springBoardView;
+	IBOutlet NSTextField *messageLabel;
+	IBOutlet NSProgressIndicator *indeterminateProgress;
+	IBOutlet NSProgressIndicator *loadingProgress;
 }
 
-@property (assign) IBOutlet NSWindow *window;
-@property (assign) IBOutlet SpringBoardView *springBoardView;
+@property (nonatomic, assign) IBOutlet NSWindow *window;
 @property (nonatomic, retain) SpringSortController *springSortController;
 @property (nonatomic, retain) NSMutableArray *sortingStrategies;
+@property (nonatomic, retain) DeviceCentral *deviceCentral;
 
 - (IBAction)sortByAlphabet:(NSButton *)sender;
 - (IBAction)sortByGenre:(NSButton *)sender;
 
-- (IBAction)reload:(NSButton *)sender;
+- (IBAction)reloadClicked:(NSButton *)sender;
+-(void)reload:(Device *)device;
 @end

@@ -1,5 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-<dict/>
+	<dict>
+		<key>displayName</key>
+		<string>Phone</string>
+		<key>iconModDate</key>
+		<date>1979-11-20T07:59:22Z</date>
+		<key>bundleIdentifier</key>
+		<string>com.apple.mobilephone</string>
+		<key>displayIdentifier</key>
+		<string>com.apple.mobilephone</string>
+	</dict>
 </plist>

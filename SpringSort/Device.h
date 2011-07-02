@@ -18,12 +18,14 @@
 @interface Device : NSObject {
 @private
 	NSString *uuid;
+	NSString *name;
 	idevice_t idevice;
 	SpringBoardService* springBoardService;
 	HouseArrestService* houseArrestService;
 }
 
 @property (nonatomic, copy) NSString* uuid;
+@property (nonatomic, copy) NSString* name;
 @property (nonatomic, readonly) idevice_t idevice;
 @property (nonatomic, retain) SpringBoardService* springBoardService;
 @property (nonatomic, retain) HouseArrestService* houseArrestService;

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SbAppIcon.h"
 
 @interface SbStoreIcon : SbAppIcon {
 @private

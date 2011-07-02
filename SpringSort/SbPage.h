@@ -7,11 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SbContainer.h"
 
+typedef enum{
+	PageIsIncluded,
+	PageIsExcluded,
+	PageIsTargetOnly,
+} PageState;
 
 @interface SbPage : SbContainer {
 @private
-    
+    PageState state;
 }
+
+@property (nonatomic, assign) PageState state;
 
 @end

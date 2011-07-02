@@ -10,7 +10,7 @@
 
 @implementation Device
 
-@synthesize uuid, idevice, springBoardService, houseArrestService;
+@synthesize uuid, name, idevice, springBoardService, houseArrestService;
 
 - (id) initWithUuid: (NSString *)theUuid
 {
@@ -27,6 +27,19 @@
 -(void)start
 {
     if (idevice_new(&idevice, [self.uuid cStringUsingEncoding:NSUTF8StringEncoding]) == IDEVICE_E_SUCCESS) {
+		
+		lockdownd_client_t clientLockdown = NULL;
+		if (lockdownd_client_new_with_handshake(self.idevice, &clientLockdown, "springsort_infos") == LOCKDOWN_E_SUCCESS) {
+			char *rawName = NULL;
+			lockdownd_get_device_name(clientLockdown, &rawName);
+			self.name = [NSString stringWithUTF8String:rawName];
+			free(rawName);
+		}
+		
+		if(clientLockdown) {
+			lockdownd_client_free(clientLockdown);
+		}
+		
 		// Starting services
 		uint16_t port = 0;
 		port = [self startSpringBoard];

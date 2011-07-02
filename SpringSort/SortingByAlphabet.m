@@ -26,29 +26,31 @@
 {
 	SbState *newState = [[SbState alloc] init];
 	
-	NSMutableArray *flatten = [[NSMutableArray alloc] init];
-	int pageIndex = 0;
-	for (SbContainer *pageContainer in sourceState.mainContainer.items) {
-		if([self.controller getPageState:pageIndex]) {
-			[newState.mainContainer.items addObject:[pageContainer copy]];
-		} else {
-			[Utilities flatten:pageContainer IntoArray:flatten];
-		}
-		pageIndex++;
-	}
-	
-	int count = 0;
-    SbContainer *page;
-    for (id item in [self sortByDisplayName:flatten]) {
-        if (count % 16 == 0)
-        {
-            page = [[SbContainer alloc] init];
-            [newState.mainContainer.items addObject:page];
-            [page release];
-        }
-        [page.items addObject:item];
-        count++;
-    }
+//	NSMutableArray *flatten = [[NSMutableArray alloc] init];
+//	int pageIndex = 0;
+//	for (SbContainer *pageContainer in sourceState.mainContainer.items) {
+//		if([self.controller getPageState:pageIndex]) {
+//			SbContainer *unchangedContainer = [pageContainer copy];
+//			[newState.mainContainer.items addObject:unchangedContainer];
+//			[unchangedContainer release];
+//		} else {
+//			[Utilities flatten:pageContainer IntoArray:flatten];
+//		}
+//		pageIndex++;
+//	}
+//	
+//	int count = 0;
+//    SbContainer *page;
+//    for (id item in [self sortByDisplayName:flatten]) {
+//        if (count % 16 == 0)
+//        {
+//            page = [[SbContainer alloc] init];
+//            [newState.mainContainer.items addObject:page];
+//            [page release];
+//        }
+//        [page.items addObject:item];
+//        count++;
+//    }
 	
 	return newState;
 }

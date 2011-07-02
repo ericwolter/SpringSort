@@ -5,47 +5,54 @@
 //  Created by Eric Wolter on 13.04.11.
 //  Copyright 2011 private. All rights reserved.
 //
+#define HC_SHORTHAND
+#import <OCHamcrest/OCHamcrest.h>
 
-#import "SbIconTests.h"
-#import	"SbIcon.h"
+#import "SbStoreIconTests.h"
+#import <plist/plist.h>
 #import "TestUtility.h"
+#import "SbStoreIcon.h"
 
-@implementation SbIconTests
+@implementation SbStoreIconTests
 
 - (void)setUp
 {
     [super setUp];
-    
-    // Set-up code here.
+	
+	plist_t plist = [TestUtility plistFromTestFile:@"SbStoreIcon"];
+	icon = [SbIcon newFromPlist:plist];
+	plist_free(plist);
 }
 
 - (void)tearDown
 {
-    // Tear-down code here.
-    
+	[icon release];
     [super tearDown];
 }
 
-- (void)testSbIcon_FromPlist_NotNull
+- (void)test_FromPlist_NotNull
 {
-	plist_t plist = [TestUtility plistFromTestFile:@"SbIcon_StoreApp"];
-	SbIcon *icon = [[SbIcon alloc] initFromPlist:plist];
-	free(plist);
-	
-	STAssertNotNil(icon, @"icon was nil", nil);
-	
-	[icon release];
+	assertThat(icon, notNilValue());
 }
 
-- (void)testSbIcon_StoreAppFromPlist_CorrectDisplayName
+-(void)test_FromPlist_HasCorrectType
 {
-	plist_t plist = [TestUtility plistFromTestFile:@"SbIcon_StoreApp"];
-	SbIcon *icon = [[SbIcon alloc] initFromPlist:plist];
-	free(plist);
-	
-	STAssertTrue([icon.displayName isEqualToString:@"Wunderlist"], @"display name was incorrect ; %@", icon.displayName);
-	
-	[icon release];
+	assertThat(icon, instanceOf([SbStoreIcon class]));
+}
+
+- (void)test_FromPlist_HasCorrectDisplayName
+{
+	assertThat(icon.displayName, is(@"Wunderlist"));
+}
+
+-(void)test_FromPlist_HasCorrectDisplayIdentifier
+{
+	assertThat(icon.displayIdentifier, is(@"com.6wunderkinder.wunderlistmobile"));
+}
+
+-(void)test_FromPlist_HasCorrectBundleIdentifier
+{
+	assertThat(((SbAppIcon *)icon).bundleIdentifier, is(@"com.6wunderkinder.wunderlistmobile"));
 }
 
 @end

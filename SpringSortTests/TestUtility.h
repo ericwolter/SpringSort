@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <plist/plist.h>
+#import "SbWebIcon.h"
 
 @interface TestUtility : NSObject {
 @private
@@ -15,5 +16,6 @@
 }
 
 +(plist_t)plistFromTestFile:(NSString *)testFile;
++(SbWebIcon *)getWebIcon;
 
 @end

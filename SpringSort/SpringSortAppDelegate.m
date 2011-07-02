@@ -17,23 +17,23 @@
 #import "SortingByAlphabet.h"
 #import "SortingByGenre.h"
 
-@interface SpringSortAppDelegate()
--(void)reloadFromDevice;
-@end
-
 @implementation SpringSortAppDelegate
 
-@synthesize window, springBoardView, springSortController;
+@synthesize window, springSortController;
 @synthesize sortingStrategies;
+@synthesize deviceCentral;
 
 - (void)applicationWillFinishLaunching:(NSNotification *)aNotification
 {
 	[self.window setBackgroundColor:[NSColor whiteColor]];
+	[indeterminateProgress startAnimation:self];
+	[messageLabel setStringValue:@"Looking for device..."];
 }
 
 - (void)applicationDidFinishLaunching:(NSNotification *)aNotification
 {
-	[self reloadFromDevice];
+	self.deviceCentral = [[DeviceCentral alloc] init];
+	[self.deviceCentral setDelegate:self];
 }
 
 - (IBAction)sortByAlphabet:(NSButton *)sender
@@ -43,10 +43,10 @@
 	}
 	
 	SortingByAlphabet *s = [[SortingByAlphabet alloc] initWithController:self.springSortController];
-	self.springBoardView.state = [s newSortedState:self.springSortController.state];
+	springBoardView.state = [s newSortedState:self.springSortController.state];
 	[s release];
 	
-	[self.springBoardView setNeedsDisplay:YES];
+	[springBoardView setNeedsDisplay:YES];
 }
 
 - (IBAction)sortByGenre:(NSButton *)sender
@@ -56,10 +56,10 @@
 	}
 	
 	SortingByGenre *s = [[SortingByGenre alloc] initWithController:self.springSortController];
-	self.springBoardView.state = [s newSortedState:self.springSortController.state];
+	springBoardView.state = [s newSortedState:self.springSortController.state];
 	[s release];
 	
-	[self.springBoardView setNeedsDisplay:YES];
+	[springBoardView setNeedsDisplay:YES];
 }
 
 -(void)insertObject:(SortingStrategy *)s inSortingStrategiesAtIndex:(NSUInteger)index {
@@ -78,28 +78,62 @@
     return sortingStrategies;
 }
 
-- (IBAction)reload:(NSButton *)sender
+- (IBAction)reloadClicked:(NSButton *)sender
 {
-	[self reloadFromDevice];
+	return;
 }
 
--(void)reloadFromDevice
+-(void)reload:(Device *)device
 {
-	NSString *uuid = [UsbUtility firstDeviceUuid];
-	if (!uuid) {
-		return;
-	}
-	Device *d = [[Device alloc] initWithUuid:uuid];
+	void (^jobFinished)(void) = ^{
+		[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+			[self.springSortController removeProgressListener:self];
+			[springBoardView setNeedsDisplay:YES];
+			[loadingProgress setHidden:YES];
+			[indeterminateProgress stopAnimation:self];
+			[messageLabel setStringValue:[NSString stringWithFormat:@"%@ connected", device.name]];
+		}];
+    };
 	
-	SpringSortController *controller = [[SpringSortController alloc] initWithDevice:d];
-	self.springBoardView.controller = controller;
-	self.springBoardView.state = controller.state;
-	[d release];
+	NSOperationQueue *queue = [[NSOperationQueue alloc] init];
+	NSBlockOperation* theOp = [NSBlockOperation blockOperationWithBlock: ^{
+		[messageLabel setStringValue:@"Loading icon state..."];
+		[loadingProgress setHidden:NO];
+		[loadingProgress setControlTint:NSGraphiteControlTint];
+		SpringSortController *controller = [[SpringSortController alloc] initWithDevice:device];
+		[controller addProgressListener:self];
+		[controller download];
+		springBoardView.controller = controller;
+		springBoardView.state = controller.state;
+		self.springSortController = controller;
+		[controller release];
+	}];
+
+    [theOp setCompletionBlock:jobFinished];
+	[queue addOperation:theOp];
+}
+
+-(void)deviceAdded:(Device *)theDevice
+{
+	[self reload:theDevice];
+}
+
+-(void)deviceRemoved:(Device *)theDevice
+{
+	NSString *message = [NSString stringWithFormat:@"%@ disconnected", theDevice.name];
+	[messageLabel setStringValue:message];
 	
-	self.springSortController = controller;
-	[controller release];
-	
-	[self.springBoardView setNeedsDisplay:YES];
+	[indeterminateProgress startAnimation:self];
+	[messageLabel setStringValue:@"Looking for device..."];
+}
+
+-(void)reportProgress:(NSUInteger)theValue max:(NSUInteger)theMax
+{
+	[[NSOperationQueue mainQueue] addOperationWithBlock:^{
+		double d = (theValue/(double)theMax) * 100;
+		[loadingProgress setDoubleValue:d];
+		[messageLabel setStringValue:[NSString stringWithFormat:@"Loading %i of %i icons",(int)theValue, (int)theMax]];
+	}];
 }
 
 @end

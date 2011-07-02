@@ -12,7 +12,7 @@
 
 +(plist_t)plistFromTestFile:(NSString *)testFile
 {
-	NSString *path = [[NSBundle mainBundle] pathForResource:@"SbIcon_StoreApp" ofType:@"plist"];
+	NSString *path = [[NSBundle bundleForClass:[TestUtility class]] pathForResource:testFile ofType:@"plist"];
 	
 	NSFileHandle *handle = [NSFileHandle fileHandleForReadingAtPath:path];
 	NSData *data = [handle readDataToEndOfFile];
@@ -30,6 +30,14 @@
 	[handle closeFile];
 	
 	return result;
+}
+
++(SbWebIcon *)getWebIcon
+{
+	plist_t plist = [TestUtility plistFromTestFile:@"SbWebIcon"];
+	SbWebIcon *icon = [SbIcon newFromPlist:plist];
+	plist_free(plist);
+	return icon;
 }
 
 @end

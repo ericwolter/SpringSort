@@ -11,44 +11,33 @@
 
 @implementation SbFolder
 
-@synthesize displayName, items;
+@synthesize displayName;
 
--(id)init
++(id)newFromPlist:(plist_t)thePlist
 {
-    self = [super init];
-    if (self)
-    {
-        self.items = [[NSMutableArray alloc] init];
-    }
-    return self;    
-}
-
--(id)initFromPlist:(plist_t)plist
-{
-    self = [super init];
-    if(self)
-    {
-        self.items = [NSMutableArray array];
+	SbFolder *newFolder = [[SbFolder alloc] init];
+	
+	if(newFolder) {
+		char *val = NULL;
+        plist_get_string_val(plist_dict_get_item(thePlist, "displayName"), &val);
+		newFolder.displayName = [NSString stringWithUTF8String:val];
+		free(val);
         
-        char *val = NULL;
-        plist_get_string_val(plist_dict_get_item(plist, "displayName"), &val);
-        self.displayName = [NSString stringWithUTF8String:val];
-        
-        plist_t folderContent = plist_dict_get_item(plist, "iconLists");
+        plist_t folderContent = plist_dict_get_item(thePlist, "iconLists");
         
         int count = plist_array_get_size(folderContent);
         for (int i = 0; i < count; i++)
         {
-            [self.items addObject:[Utilities switchSbType:plist_array_get_item(folderContent, i)]];
+			[newFolder.items addObject:[Utilities switchSbType:plist_array_get_item(folderContent, i)]];
         }
-    }
-    return self;
+	}
+	
+	return newFolder;
 }
 
 -(void)dealloc
 {
     self.displayName = nil;
-    self.items = nil;
     [super dealloc];
 }
 

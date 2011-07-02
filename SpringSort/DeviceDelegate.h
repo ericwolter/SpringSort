@@ -9,6 +9,9 @@
 #import <Foundation/Foundation.h>
 
 
-@protocol DeviceListener <NSObject>
+@protocol DeviceDelegate <NSObject>
+
+-(void)deviceAdded:(Device *)theDevice;
+-(void)deviceRemoved:(Device *)theDevice;
 
 @end

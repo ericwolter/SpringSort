@@ -9,6 +9,6 @@
 #import <Foundation/Foundation.h>
 
 
-@protocol ProgresssListener <NSObject>
-
+@protocol ProgressListener <NSObject>
+-(void)reportProgress:(NSUInteger)theValue max:(NSUInteger)theMax;
 @end

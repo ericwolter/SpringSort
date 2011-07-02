@@ -8,22 +8,40 @@
 
 #import "SbAppIcon.h"
 
+@interface SbIcon()
+-(NSString *)extractBundleIdentifier;
+@end
 
 @implementation SbAppIcon
 
-- (id)init
+@synthesize bundleIdentifier;
+
+-(NSString *)bundleIdentifier
 {
-    self = [super init];
-    if (self) {
-        // Initialization code here.
-    }
-    
-    return self;
+	if(!bundleIdentifier) {
+		bundleIdentifier = [[self extractBundleIdentifier] retain];
+	}
+	
+	return bundleIdentifier;
 }
 
-- (void)dealloc
+-(NSString *)extractBundleIdentifier
 {
-    [super dealloc];
+	char *val = NULL;
+	plist_t item = plist_dict_get_item(self.node, "bundleIdentifier");
+	if (item) {
+		plist_get_string_val(item, &val);
+		NSString *value = [NSString stringWithUTF8String:val];
+		free(val);
+        return value;    
+	}
+	return nil;
+}
+
+-(void)dealloc
+{
+	[bundleIdentifier release];
+	[super dealloc];
 }
 
 @end

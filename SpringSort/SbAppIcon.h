@@ -7,11 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SbIcon.h"
 
 @interface SbAppIcon : SbIcon {
 @private
-    
+   	NSString *bundleIdentifier; 
 }
+
+@property (nonatomic, readonly) NSString* bundleIdentifier;
 
 @end

@@ -7,11 +7,11 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
-
+#import "SbState.h"
 
 @interface SbStateTests : SenTestCase {
 @private
-    
+	SbState *state;
 }
 
 @end

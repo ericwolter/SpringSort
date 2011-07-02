@@ -13,20 +13,19 @@
 
 @synthesize items;
 
--(id)initFromPlist:(plist_t)plist
++(id)newFromPlist:(plist_t)thePlist
 {
-    self = [super init];
-    if (self)
-    {	
-		self.items = [NSMutableArray array];
-		
-		int count = plist_array_get_size(plist);
-		for (int i = 0; i < count; i++)
+	SbContainer *newContainer = [[SbContainer alloc] init];
+	
+	if(newContainer) {
+		int count = plist_array_get_size(thePlist);
+		for (int i = 0; i < count; i++) 
 		{
-			[self.items addObject:[Utilities switchSbType:plist_array_get_item(plist, i)]];
+			[newContainer.items addObject:[Utilities switchSbType:plist_array_get_item(thePlist, i)]];
 		}
-    }
-    return self;    
+	}
+	
+	return newContainer;
 }
 
 -(id)init
@@ -47,7 +46,7 @@
 
 -(SbContainer *)copy
 {
-	return [[SbContainer alloc] initFromPlist:[self toPlist]];
+	return [SbContainer newFromPlist:[self toPlist]];
 }
 
 -(plist_t)toPlist

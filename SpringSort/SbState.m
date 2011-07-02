@@ -16,13 +16,15 @@
 
 @synthesize mainContainer;
 
--(id)initFromPlist:(plist_t)plist
++(id)newFromPlist:(plist_t)thePlist
 {
-	self = [super init];
-	if (self) {
-		self.mainContainer = [Utilities switchSbType:plist];
+	SbState *newState = [[SbState alloc] init];
+	
+	if(newState) {
+		newState.mainContainer = [Utilities switchSbType:thePlist];
 	}
-	return self;
+	
+	return newState;
 }
 
 -(id)init
@@ -39,6 +41,11 @@
 {
     self.mainContainer = nil;
     [super dealloc];
+}
+
+-(SbState *)copy
+{
+	return [SbState newFromPlist:[self toPlist]];
 }
 
 -(plist_t)toPlist

@@ -7,7 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "SbIcon.h"
 
 @interface SbWebIcon : SbIcon {
 @private

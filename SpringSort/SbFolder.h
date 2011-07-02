@@ -7,19 +7,13 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SbContainer.h"
 #import <plist/plist.h>
 
-@interface SbFolder : NSObject {
-    NSMutableArray* items;
+@interface SbFolder : SbContainer {
 	NSString* displayName;
 }
 
-@property (nonatomic, retain) NSMutableArray *items;
 @property (nonatomic, copy) NSString *displayName;
-
--(id)initFromPlist:(plist_t)plist;
--(id)init;
--(void)dealloc;
--(plist_t)toPlist;
 
 @end

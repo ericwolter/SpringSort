@@ -7,11 +7,11 @@
 //
 
 #import <SenTestingKit/SenTestingKit.h>
+#import "SbIcon.h"
 
-
-@interface SbWebclipTests : SenTestCase {
+@interface SbWebIconTests : SenTestCase {
 @private
-    
+	SbIcon *icon;
 }
 
 @end

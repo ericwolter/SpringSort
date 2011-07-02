@@ -7,19 +7,35 @@
 //
 
 #import "SbIcon.h"
+#import "SbAppleIcon.h"
+#import "SbWebIcon.h"
+#import "SbStoreIcon.h"
 
 @implementation SbIcon
 
 @synthesize node;
+@synthesize genres;
+@synthesize icon;
 
--(id)initFromPlist:(plist_t)plist
++(id)newFromPlist:(plist_t)thePlist
 {
-    self = [super init];
-    if (self)
-    {
-        self.node = plist_copy(plist);
-    }
-    return self;
+	id newIcon;
+	if(plist_dict_get_item(thePlist, "webClipURL")) {
+		newIcon = [[SbWebIcon alloc] init];
+	} else {
+		NSString *displayIdentifier = [SbIcon extractDisplayIdentifier:thePlist];
+		if([displayIdentifier hasPrefix:@"com.apple."]) {
+			newIcon = [[SbAppleIcon alloc] init];
+		} else {
+			newIcon = [[SbStoreIcon alloc] init];
+		}
+	}
+	
+	if(newIcon) {
+		[newIcon setNode:plist_copy(thePlist)];
+	}
+	
+	return newIcon;
 }
 
 -(void)dealloc
@@ -27,6 +43,8 @@
     if(self.node) {
         plist_free(node);
     }
+	[displayName release];
+	[displayIdentifier release];
     [super dealloc];
 }
 
@@ -35,39 +53,48 @@
     return plist_copy(self.node);
 }
 
--(NSString *)displayName
++(NSString *)extractDisplayName:(plist_t)thePlist
 {
     char *val = NULL;
-    plist_t item = plist_dict_get_item(self.node, "displayName");
+    plist_t item = plist_dict_get_item(thePlist, "displayName");
     if (item) {
         plist_get_string_val(item, &val);
-        return [NSString stringWithUTF8String:val];    
+		NSString *value = [NSString stringWithUTF8String:val];
+		free(val);
+        return value;    
     }
     return nil;
 }
 
--(NSString *)bundleIdentifier
++(NSString *)extractDisplayIdentifier:(plist_t)thePlist
 {
     char *val = NULL;
-    plist_t item = plist_dict_get_item(self.node, "bundleIdentifier");
+    plist_t item = plist_dict_get_item(thePlist, "displayIdentifier");
     if (item) {
         plist_get_string_val(item, &val);
-        return [NSString stringWithUTF8String:val];    
+		NSString *value = [NSString stringWithUTF8String:val];
+		free(val);
+        return value;    
     }
-    return nil;
-    
+    return nil;	
+}
+
+-(NSString *)displayName
+{
+	if (!displayName) {
+		displayName = [[SbIcon extractDisplayName:self.node] retain];
+	}
+	
+	return displayName;
 }
 
 -(NSString *)displayIdentifier
 {
-    char *val = NULL;
-    plist_t item = plist_dict_get_item(self.node, "displayIdentifier");
-    if (item) {
-        plist_get_string_val(item, &val);
-        return [NSString stringWithUTF8String:val];    
-    }
-    return nil;
-    
+	if(!displayIdentifier) {
+		displayIdentifier = [[SbIcon extractDisplayIdentifier:self.node] retain];
+	}
+	
+	return displayIdentifier;
 }
 
 @end

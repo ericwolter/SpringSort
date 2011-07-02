@@ -9,16 +9,16 @@
 #import <Foundation/Foundation.h>
 #import <libimobiledevice/sbservices.h>
 
+#import "SbSerializable.h"
 #import "SbContainer.h"
 
-@interface SbState : NSObject {
+@interface SbState : NSObject<SbSerializable> {
 	SbContainer* mainContainer;
 }
 
 @property (nonatomic, retain) SbContainer *mainContainer;
 
--(id)initFromPlist:(plist_t)plist;
 -(void)dealloc;
--(plist_t)toPlist;
+-(SbState *)copy;
 
 @end

@@ -7,8 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <plist/plist.h>
 
 @protocol SbSerializable <NSObject>
+
++(id)newFromPlist:(plist_t)thePlist;
+-(plist_t)toPlist;
 
 @end
