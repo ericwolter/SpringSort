@@ -19,6 +19,5 @@
 @property (nonatomic, retain) SbContainer *mainContainer;
 
 -(void)dealloc;
--(SbState *)copy;
 
 @end

@@ -106,4 +106,17 @@
 	}
 }
 
+-(id)copy
+{
+	SbIcon *newIcon = [SbIcon newFromPlist:[self toPlist]];
+	NSArray *newGenres = [[NSArray alloc] initWithArray:self.genres copyItems:YES];
+	newIcon.genres = newGenres;
+	[newGenres release];
+	// no need to reallocate image, just reuse the old one
+	// as image is immutable;
+	newIcon.icon = self.icon;
+	
+	return newIcon;
+}
+
 @end

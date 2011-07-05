@@ -36,10 +36,10 @@
 -(NSImage *)getWallpaper;
 
 -(void)writeState;
--(NSArray *)getIconsToSort;
 
 -(void)togglePageState:(NSUInteger)pageIndex;
 
+-(void)reloadState;
 -(void)download;
 
 -(void)addProgressListener:(id<ProgressListener>)theListener;

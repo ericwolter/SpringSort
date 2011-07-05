@@ -43,9 +43,14 @@
     [super dealloc];
 }
 
--(SbPage *)copy
+-(id)copy
 {
-	return [SbPage newFromPlist:[self toPlist]];
+	SbPage *newPage = [[SbPage alloc] init];
+	NSMutableArray *newItems = [[NSMutableArray alloc] initWithArray:self.items copyItems:YES];
+	newPage.items = newItems;
+	[newItems release];
+	newPage.state = self.state;
+	return newPage;
 }
 
 @end

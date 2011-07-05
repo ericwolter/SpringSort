@@ -47,8 +47,7 @@
 		return [items count];
 	} else {
 		return 0;
-	}
-		
+	}		
 }
 
 -(plist_t)toPlist
@@ -64,6 +63,16 @@
     }
     
     return pFolder;
+}
+
+-(id)copy
+{
+	SbFolder *newFolder = [[SbFolder alloc] init];
+	NSMutableArray *newItems = [[NSMutableArray alloc] initWithArray:self.items copyItems:YES];
+	newFolder.items = newItems;
+	[newItems release];
+	newFolder.displayName = [self.displayName copy];
+	return newFolder;
 }
 
 @end

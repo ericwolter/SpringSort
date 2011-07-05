@@ -13,7 +13,14 @@
 #import "UsbUtility.h"
 
 #import "SpringSortController.h"
-#import "SortingByGenre.h"
+#import "SbPage.h"
+
+#import "SortingWorkflow.h"
+#import	"PrepareFlat.h"
+#import "SortingByDisplayName.h"
+#import "FileNothing.h"
+#import "MergeNothing.h"
+#import "RetouchDefault.h"
 
 @implementation SpringSortAppDelegate
 
@@ -34,47 +41,57 @@
 	[self.deviceCentral setDelegate:self];
 }
 
+- (IBAction)reloadState:(NSButton *)sender
+{
+	if (!self.springSortController) {
+		return;
+	}
+	[self.springSortController reloadState];
+	springBoardView.state = self.springSortController.state;
+	[springBoardView setNeedsDisplay:YES];
+}
+
 - (IBAction)sortByAlphabet:(NSButton *)sender
 {
-//	if (!self.springSortController) {
-//		return;
-//	}
-//	
-//	SortingByAlphabet *s = [[SortingByAlphabet alloc] initWithController:self.springSortController];
-//	springBoardView.state = [s newSortedState:self.springSortController.state];
-//	[s release];
-//	
-//	[springBoardView setNeedsDisplay:YES];
+	if (!self.springSortController) {
+		return;
+	}
+	
+	id<PrepareStep> prepareStep = [[PrepareFlat alloc] init];
+	id<SortStep> sortStep = [[SortingByDisplayName alloc] init];
+	id<FileStep> fileStep = [[FileNothing alloc] init];
+	id<MergeStep> mergeStep = [[MergeNothing alloc] init];
+	id<RetouchStep> retouchStep = [[RetouchDefault alloc] init];
+	
+	NSArray *steps = [[NSArray alloc] initWithObjects:prepareStep,sortStep,fileStep,mergeStep,retouchStep, nil];
+	[prepareStep release];
+	[sortStep release];
+	[fileStep release];
+	[mergeStep release];
+	[retouchStep release];
+	SortingWorkflow *workflow = [[SortingWorkflow alloc] initWithSteps:steps];
+	[steps release];
+	SbState *sortedState = [workflow newSortedState:self.springSortController.state];
+	self.springSortController.state = sortedState;
+	springBoardView.state = sortedState;
+	[sortedState release];
+	[workflow release];
+	
+	[springBoardView setNeedsDisplay:YES];
 }
 
 - (IBAction)sortByGenre:(NSButton *)sender
 {
-//	if (!self.springSortController) {
-//		return;
-//	}
-//	
+	if (!self.springSortController) {
+		return;
+	}
+	
 //	SortingByGenre *s = [[SortingByGenre alloc] initWithController:self.springSortController];
 //	springBoardView.state = [s newSortedState:self.springSortController.state];
 //	[s release];
-//	
-//	[springBoardView setNeedsDisplay:YES];
+	
+	[springBoardView setNeedsDisplay:YES];
 }
-
-//-(void)insertObject:(SortingStrategy *)s inSortingStrategiesAtIndex:(NSUInteger)index {
-//    [sortingStrategies insertObject:s atIndex:index];
-//}
-//
-//-(void)removeObjectFromSortingStrategiesAtIndex:(NSUInteger)index {
-//    [sortingStrategies removeObjectAtIndex:index];
-//}
-//
-//-(void)setSortingStrategies:(NSMutableArray *)a {
-//    sortingStrategies = a;
-//}
-
-//-(NSArray*)sortingStrategies {
-//    return sortingStrategies;
-//}
 
 - (IBAction)reloadClicked:(NSButton *)sender
 {

@@ -14,7 +14,46 @@
 
 -(NSArray *)splitFolder:(SbFolder *)folder
 {
-	return nil;
+	NSMutableArray* splitFolders = [[NSMutableArray alloc] init];
+	SbContainer *folderContent = [folder.items objectAtIndex:0];
+	
+	NSUInteger size = 12;
+	NSUInteger total = [folderContent.items count];
+	for (NSUInteger i = 0; i < total; i = i + size) {
+		NSUInteger length = size;
+		if (i + length > total) {
+			length = total - i;
+		}
+		
+		SbFolder *newFolder = [[SbFolder alloc] init];
+		newFolder.displayName = folder.displayName;
+		SbContainer *newFolderContent = [[SbContainer alloc] init];
+		[newFolderContent.items addObjectsFromArray:[folderContent.items subarrayWithRange:NSMakeRange(i, length)]];
+		[newFolder.items addObject:newFolderContent];
+		[splitFolders addObject:newFolder];
+	}
+	
+	return splitFolders;
+}
+
+-(NSArray *)splitPage:(SbPage *)page
+{
+	NSMutableArray *splitPages = [[NSMutableArray alloc] init];
+	
+	NSUInteger size = 16;
+	NSUInteger total = [page.items count];
+	for (NSUInteger i = 0; i < total; i = i + size) {
+		NSUInteger length = size;
+		if(i + length > total) {
+			length = total - i;
+		}
+		
+		SbPage *newPage = [[SbPage alloc] init];
+		[newPage.items addObjectsFromArray:[page.items subarrayWithRange:NSMakeRange(i, length)]];
+		[splitPages addObject:newPage];
+	}
+	
+	return splitPages;
 }
 
 -(NSMutableArray *)retouch:(NSArray *)unretouched
@@ -23,12 +62,22 @@
 	
 	for (SbPage *page in unretouched) {
 		for (NSUInteger i = 0; i < [page.items count]; ++i) {
-			SbFolder *folder = [page.items objectAtIndex:i];
-			if(folder.count > 12) {
-				NSArray *splitted = [self splitFolder:folder];
-				[page.items replaceObjectsAtIndexes:[NSIndexSet indexSetWithIndex:i] withObjects:splitted];
-				i = i + [splitted count] - 1;
+			id item = [page.items objectAtIndex:i];
+			if([item isKindOfClass:[SbFolder class]]) {
+				SbFolder *folder = [page.items objectAtIndex:i];
+				if(folder.count > 12) {
+					NSArray *splittedFolder = [self splitFolder:folder];
+					[page.items replaceObjectsAtIndexes:[NSIndexSet indexSetWithIndex:i] withObjects:splittedFolder];
+					i = i + [splittedFolder count] - 1;
+				}				
 			}
+		}
+		
+		if([page.items count] > 16) {
+			NSArray *splittedPage = [self splitPage:page];
+			[retouched addObjectsFromArray:splittedPage];
+		} else if ([page.items count] > 0) {
+			[retouched addObject:page];
 		}
 	}
 	

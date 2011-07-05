@@ -38,6 +38,8 @@ static NSString *cachePath;
 		self.device = theDevice;
 		plist_t p = [self.device.springBoardService getState];
 		self.state = [SbState newFromPlist:p];
+		SbPage *dock = [self.state.mainContainer.items objectAtIndex:0];
+		dock.state = PageIsExcluded;
     }
     
     return self;
@@ -45,7 +47,8 @@ static NSString *cachePath;
 
 -(void)download
 {
-	NSArray *icons = [self getIconsToSort];
+	NSMutableArray *icons = [[NSMutableArray alloc] init];
+	[Utilities flatten:self.state.mainContainer IntoArray:icons];
 	
 	NSUInteger count = 0;
 	NSUInteger total = [icons count];
@@ -92,6 +95,38 @@ static NSString *cachePath;
 		count = count + 1;
 		[self reportProgress:count max:total];
 	}
+	
+	[icons release];
+}
+
+-(void)reloadState
+{
+	plist_t p = [self.device.springBoardService getState];
+	SbState* newState = [SbState newFromPlist:p];
+	NSMutableArray *newIcons = [[NSMutableArray alloc] init];
+	NSMutableArray *oldIcons = [[NSMutableArray alloc] init];
+	[Utilities flatten:newState.mainContainer IntoArray:newIcons];
+	[Utilities flatten:self.state.mainContainer IntoArray:oldIcons];
+	
+	for (SbIcon *newIcon in newIcons) {
+		for (NSUInteger i = 0; [oldIcons count]; ++i) {
+			SbIcon *oldIcon = [oldIcons objectAtIndex:i];
+			if([newIcon.displayIdentifier isEqualToString:oldIcon.displayIdentifier]) {
+				NSArray *newGenres = [[NSArray alloc] initWithArray:oldIcon.genres copyItems:YES];
+				newIcon.genres = newGenres;
+				[newGenres release];
+				newIcon.icon = oldIcon.icon;
+				[oldIcons removeObjectAtIndex:i];
+				break;
+			}
+		}
+	}
+	
+	[newIcons release];
+	[oldIcons release];
+	SbPage *dock = [newState.mainContainer.items objectAtIndex:0];
+	dock.state = PageIsExcluded;
+	self.state = newState;
 }
 
 -(NSInteger)getVersionRaw:(plist_t)metadata
@@ -136,17 +171,6 @@ static NSString *cachePath;
 	}
 	
 	return image;
-}
-
--(NSArray *)getIconsToSort
-{
-	NSMutableArray *flatten = [NSMutableArray array];
-	
-	for (int i = 1; i < [self.state.mainContainer.items count]; i++) {
-		[Utilities flatten:[self.state.mainContainer.items objectAtIndex:i] IntoArray:flatten];
-	}
-	
-	return flatten;
 }
 
 -(void)writeState

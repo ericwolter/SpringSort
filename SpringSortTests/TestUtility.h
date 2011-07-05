@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <plist/plist.h>
 #import "SbWebIcon.h"
+#import "SbStoreIcon.h"
 
 @interface TestUtility : NSObject {
 @private

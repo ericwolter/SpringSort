@@ -9,7 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "FileStep.h"
 
-@interface OrganizingByGenreFolder : NSObject<FileStep> {
+@interface FileInGenreFolders : NSObject<FileStep> {
 @private
     
 }

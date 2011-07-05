@@ -22,6 +22,4 @@ typedef enum{
 
 @property (nonatomic, assign) PageState state;
 
--(SbPage *)copy;
-
 @end

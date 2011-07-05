@@ -6,12 +6,12 @@
 //  Copyright 2011 private. All rights reserved.
 //
 
-#import "OrganizingByGenreFolder.h"
+#import "FileInGenreFolders.h"
 #import "SbContainer.h"
 #import "SbFolder.h"
 #import "SbIcon.h"
 
-@implementation OrganizingByGenreFolder
+@implementation FileInGenreFolders
 
 -(NSArray *)file:(NSArray *)icons
 {

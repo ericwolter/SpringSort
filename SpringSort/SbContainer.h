@@ -16,6 +16,5 @@
 
 @property (nonatomic, retain) NSMutableArray *items;
 -(void)dealloc;
--(SbContainer *)copy;
 
 @end

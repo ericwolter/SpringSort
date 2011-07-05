@@ -44,9 +44,13 @@
     [super dealloc];
 }
 
--(SbContainer *)copy
+-(id)copy
 {
-	return [SbContainer newFromPlist:[self toPlist]];
+	SbContainer *newContainer = [[SbContainer alloc] init];
+	NSMutableArray *newItems = [[NSMutableArray alloc] initWithArray:self.items copyItems:YES];
+	newContainer.items = newItems;
+	[newItems release];
+	return newContainer;
 }
 
 -(plist_t)toPlist

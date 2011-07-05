@@ -32,6 +32,7 @@
 @property (nonatomic, retain) NSMutableArray *sortingStrategies;
 @property (nonatomic, retain) DeviceCentral *deviceCentral;
 
+- (IBAction)reloadState:(NSButton *)sender;
 - (IBAction)sortByAlphabet:(NSButton *)sender;
 - (IBAction)sortByGenre:(NSButton *)sender;
 

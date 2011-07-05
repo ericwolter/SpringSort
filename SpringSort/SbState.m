@@ -43,9 +43,11 @@
     [super dealloc];
 }
 
--(SbState *)copy
+-(id)copy
 {
-	return [SbState newFromPlist:[self toPlist]];
+	SbState *newState = [[SbState alloc] init];
+	newState.mainContainer = [self.mainContainer copy];
+	return newState;
 }
 
 -(plist_t)toPlist
