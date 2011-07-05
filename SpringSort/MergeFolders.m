@@ -12,6 +12,25 @@
 
 @implementation MergeFolders
 
+-(SbFolder *)mergeFolders:(NSArray *)folders
+{
+	SbFolder *mergedFolder = [[SbFolder alloc] init];
+	mergedFolder.displayName = [[folders objectAtIndex:0] displayName];
+	SbContainer *mergedFolderContent = [[SbContainer alloc] init];
+	[mergedFolder.items addObject:mergedFolderContent];
+	for (SbFolder *folder in folders) {
+		SbContainer *folderContent = [folder.items objectAtIndex:0];
+		[mergedFolderContent.items addObjectsFromArray:folderContent.items];
+	}
+	
+	NSSortDescriptor *sortDescriptor;
+    sortDescriptor = [[[NSSortDescriptor alloc] initWithKey:@"displayName"
+                                                  ascending:YES selector:@selector(localizedCaseInsensitiveCompare:)] autorelease];
+	[mergedFolderContent.items sortUsingDescriptors:[NSArray arrayWithObject:sortDescriptor]];
+	
+	return [mergedFolder autorelease];
+}
+
 -(NSArray *)merge:(NSArray *)items into:(NSArray *)pages
 {
 	NSMutableArray *leftovers = [[NSMutableArray alloc] init];
@@ -19,22 +38,33 @@
 	for (id newItem in items) {
 		if([newItem isKindOfClass:[SbFolder class]]) {
 			SbFolder *newFolder = (SbFolder *)newItem;
-			BOOL matched = NO;
+			SbPage *firstPage = nil;
+			NSUInteger firstIndex = 0;
+			NSMutableArray *matches = [[NSMutableArray alloc] init];
 			for (SbPage *page in pages) {
-				if (matched) {
-					break;
-				} else {
-					for (SbFolder *oldFolder in page.items) {
+				for (NSUInteger i = 0; i < [page.items count]; ++i) {
+					id oldItem = [page.items objectAtIndex:i];
+					if ([oldItem isKindOfClass:[SbFolder class]]) {
+						SbFolder *oldFolder = (SbFolder *)oldItem;
 						if([newFolder.displayName isEqualToString:oldFolder.displayName]) {
-							matched = YES;
-							break;
+							if (firstPage == nil) {
+								firstPage = page;
+								firstIndex = i;
+							}
+							[matches addObject:oldFolder];
+							[page.items removeObjectAtIndex:i];
+							i = i - 1;
 						}
 					}
 				}
 			}
-			if(!matched) {
+			if ([matches count] > 0) {
+				[matches addObject:newFolder];
+				[firstPage.items insertObject:[self mergeFolders:matches] atIndex:firstIndex];
+			} else {
 				[leftovers addObject:newFolder];
 			}
+			[matches release];
 		} else {
 			[leftovers addObject:newItem];
 		}

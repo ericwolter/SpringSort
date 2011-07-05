@@ -17,13 +17,11 @@
 {
 	NSMutableArray *organized = [[NSMutableArray alloc] init];
 	
-	NSString *currentGenre;
+	NSString *currentGenre = @"";
 	SbContainer *currentFolderContent;
 	for(SbIcon *icon in icons)
 	{
-		if([icon.primaryGenre isEqualToString:currentGenre]) {
-			[currentFolderContent.items addObject:icon];
-		} else {
+		if(![icon.primaryGenre isEqualToString:currentGenre]) {
 			currentGenre = icon.primaryGenre;
 			SbFolder *folder = [[SbFolder alloc] init];
 			folder.displayName = currentGenre;
@@ -33,6 +31,9 @@
 			[currentFolderContent release];
 			[folder release];
 		}
+		
+		[currentFolderContent.items addObject:icon];
+
 	}
 	
 	return organized;

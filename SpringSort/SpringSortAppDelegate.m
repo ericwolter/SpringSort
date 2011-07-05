@@ -18,8 +18,11 @@
 #import "SortingWorkflow.h"
 #import	"PrepareFlat.h"
 #import "SortingByDisplayName.h"
+#import "SortingByGenre.h"
 #import "FileNothing.h"
+#import "FileInGenreFolders.h"
 #import "MergeNothing.h"
+#import "MergeFolders.h"
 #import "RetouchDefault.h"
 
 @implementation SpringSortAppDelegate
@@ -86,9 +89,25 @@
 		return;
 	}
 	
-//	SortingByGenre *s = [[SortingByGenre alloc] initWithController:self.springSortController];
-//	springBoardView.state = [s newSortedState:self.springSortController.state];
-//	[s release];
+	id<PrepareStep> prepareStep = [[PrepareFlat alloc] init];
+	id<SortStep> sortStep = [[SortingByGenre alloc] init];
+	id<FileStep> fileStep = [[FileInGenreFolders alloc] init];
+	id<MergeStep> mergeStep = [[MergeFolders alloc] init];
+	id<RetouchStep> retouchStep = [[RetouchDefault alloc] init];
+	
+	NSArray *steps = [[NSArray alloc] initWithObjects:prepareStep,sortStep,fileStep,mergeStep,retouchStep, nil];
+	[prepareStep release];
+	[sortStep release];
+	[fileStep release];
+	[mergeStep release];
+	[retouchStep release];
+	SortingWorkflow *workflow = [[SortingWorkflow alloc] initWithSteps:steps];
+	[steps release];
+	SbState *sortedState = [workflow newSortedState:self.springSortController.state];
+	self.springSortController.state = sortedState;
+	springBoardView.state = sortedState;
+	[sortedState release];
+	[workflow release];
 	
 	[springBoardView setNeedsDisplay:YES];
 }

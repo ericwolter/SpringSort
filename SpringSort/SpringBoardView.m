@@ -39,7 +39,6 @@ static NSColor *pageBackgroundColor, *pageBorderColor, *pageSeperatorColor;
 -(void)drawSbPage:(SbPage *)page inRect:(NSRect)rect;
 -(void)drawSbIcon:(SbIcon *)icon inRect:(NSRect)rect;
 -(void)drawSbFolder:(SbFolder *)folder inRect:(NSRect)rect;
-- (void)drawSpecialPageStateBackground: (NSRect) pageRect;
 @end
 
 @implementation SpringBoardView
@@ -121,14 +120,11 @@ static NSColor *pageBackgroundColor, *pageBorderColor, *pageSeperatorColor;
     [super dealloc];
 }
 
-- (void) drawSpecialPageStateBackground: (NSRect) pageRect
-{
-	[[NSColor colorWithCalibratedWhite:0.0f alpha:0.75f] set];
-	[NSBezierPath fillRect: pageRect];
-}
-
 - (void) drawSpecialPageStateIsTargetOnlyFor: (NSRect)pageRect
 {
+	[[NSColor colorWithCalibratedWhite:0.0f alpha:0.5f] set];
+	[NSBezierPath fillRect: pageRect];
+
 	[[NSColor colorWithCalibratedWhite:1.0f alpha:0.5f] set];
 	NSAffineTransform *centerBox = [NSAffineTransform transform];
 	[centerBox translateXBy:pageRect.origin.x + pageRect.size.width/2.0f - [boxPath bounds].size.width/2.0f yBy:pageRect.origin.y + pageRect.size.height/2.0f - [boxPath bounds].size.height/2.0f - 20];
@@ -147,6 +143,9 @@ static NSColor *pageBackgroundColor, *pageBorderColor, *pageSeperatorColor;
 
 - (void) drawSpecialPageStateIsExcludedFor: (NSRect)pageRect
 {
+	[[NSColor colorWithCalibratedWhite:0.0f alpha:0.75f] set];
+	[NSBezierPath fillRect: pageRect];
+	
 	[[NSColor colorWithCalibratedWhite:1.0f alpha:0.5f] set];
 	
 	NSAffineTransform *centerExcluded = [NSAffineTransform transform];
@@ -205,7 +204,6 @@ static NSColor *pageBackgroundColor, *pageBorderColor, *pageSeperatorColor;
 	}
 	
 	if(page.state != PageIsIncluded) {
-		[self drawSpecialPageStateBackground:rect];
 		switch (page.state) {
 			case PageIsExcluded:
 				[self drawSpecialPageStateIsExcludedFor:rect];

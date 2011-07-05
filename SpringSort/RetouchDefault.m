@@ -33,7 +33,7 @@
 		[splitFolders addObject:newFolder];
 	}
 	
-	return splitFolders;
+	return [splitFolders autorelease];
 }
 
 -(NSArray *)splitPage:(SbPage *)page
@@ -53,7 +53,7 @@
 		[splitPages addObject:newPage];
 	}
 	
-	return splitPages;
+	return [splitPages autorelease];
 }
 
 -(NSMutableArray *)retouch:(NSArray *)unretouched
@@ -64,18 +64,18 @@
 		for (NSUInteger i = 0; i < [page.items count]; ++i) {
 			id item = [page.items objectAtIndex:i];
 			if([item isKindOfClass:[SbFolder class]]) {
-				SbFolder *folder = [page.items objectAtIndex:i];
+				SbFolder *folder = (SbFolder *)item;
 				if(folder.count > 12) {
 					NSArray *splittedFolder = [self splitFolder:folder];
-					[page.items replaceObjectsAtIndexes:[NSIndexSet indexSetWithIndex:i] withObjects:splittedFolder];
+					[page.items replaceObjectsInRange:NSMakeRange(i, 1) withObjectsFromArray:splittedFolder];
 					i = i + [splittedFolder count] - 1;
 				}				
 			}
 		}
 		
 		if([page.items count] > 16) {
-			NSArray *splittedPage = [self splitPage:page];
-			[retouched addObjectsFromArray:splittedPage];
+			NSArray *splittedPages = [self splitPage:page];
+			[retouched addObjectsFromArray:splittedPages];
 		} else if ([page.items count] > 0) {
 			[retouched addObject:page];
 		}

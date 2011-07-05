@@ -20,7 +20,8 @@
 	if(newFolder) {
 		char *val = NULL;
         plist_get_string_val(plist_dict_get_item(thePlist, "displayName"), &val);
-		newFolder.displayName = [NSString stringWithUTF8String:val];
+		newFolder.displayName = [[NSString stringWithUTF8String:val] stringByTrimmingCharactersInSet:
+								 [NSCharacterSet whitespaceAndNewlineCharacterSet]];
 		free(val);
         
         plist_t folderContent = plist_dict_get_item(thePlist, "iconLists");
@@ -43,8 +44,8 @@
 
 -(NSUInteger)count
 {
-	if (items) {
-		return [items count];
+	if (items && [items count] > 0) {
+		return [[items objectAtIndex:0] count];
 	} else {
 		return 0;
 	}		

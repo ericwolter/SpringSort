@@ -63,4 +63,13 @@
     return pContainer;
 }
 
+-(NSUInteger)count
+{
+	if (items) {
+		return [self.items count];
+	} else {
+		return 0;
+	}		
+}
+
 @end

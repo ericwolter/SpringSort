@@ -15,6 +15,8 @@
 }
 
 @property (nonatomic, retain) NSMutableArray *items;
+@property (nonatomic, readonly) NSUInteger count;
+
 -(void)dealloc;
 
 @end

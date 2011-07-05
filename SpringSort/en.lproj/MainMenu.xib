@@ -1357,7 +1357,7 @@
 													<string key="NSFrameSize">{559, 375}</string>
 													<reference key="NSSuperview" ref="659066294"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="658848450"/>
+													<reference key="NSNextKeyView" ref="77244745"/>
 													<int key="NSViewLayerContentsRedrawPolicy">2</int>
 												</object>
 											</object>
@@ -1404,7 +1404,7 @@
 									<string key="NSFrameSize">{559, 390}</string>
 									<reference key="NSSuperview" ref="911891260"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView" ref="659066294"/>
+									<reference key="NSNextKeyView" ref="658848450"/>
 									<int key="NSViewLayerContentsRedrawPolicy">2</int>
 									<int key="NSsFlags">32</int>
 									<reference key="NSVScroller" ref="658848450"/>
@@ -1476,7 +1476,7 @@
 															<string key="NSFrame">{{0, 260}, {319, 59}}</string>
 															<reference key="NSSuperview" ref="875118390"/>
 															<reference key="NSWindow"/>
-															<reference key="NSNextKeyView" ref="380589927"/>
+															<reference key="NSNextKeyView" ref="308322395"/>
 															<bool key="NSEnabled">YES</bool>
 															<object class="NSButtonCell" key="NSCell" id="183464193">
 																<int key="NSCellFlags">67239424</int>
@@ -1501,11 +1501,41 @@
 															<reference key="NSNextKeyView" ref="732085998"/>
 															<string key="NSClassName">MySidebarSeperator</string>
 														</object>
+														<object class="NSButton" id="308322395">
+															<reference key="NSNextResponder" ref="875118390"/>
+															<int key="NSvFlags">268</int>
+															<string key="NSFrame">{{0, 199}, {319, 59}}</string>
+															<reference key="NSSuperview" ref="875118390"/>
+															<reference key="NSWindow"/>
+															<reference key="NSNextKeyView" ref="380589927"/>
+															<bool key="NSEnabled">YES</bool>
+															<object class="NSButtonCell" key="NSCell" id="451272735">
+																<int key="NSCellFlags">67239424</int>
+																<int key="NSCellFlags2">0</int>
+																<string key="NSContents">By Genre</string>
+																<reference key="NSSupport" ref="1014427233"/>
+																<reference key="NSControlView" ref="308322395"/>
+																<int key="NSButtonFlags">-2038152961</int>
+																<int key="NSButtonFlags2">134</int>
+																<string key="NSAlternateContents">Apps are sorted by genre, the genres are sorted by alphabet</string>
+																<string key="NSKeyEquivalent"/>
+																<int key="NSPeriodicDelay">400</int>
+																<int key="NSPeriodicInterval">75</int>
+															</object>
+														</object>
+														<object class="NSCustomView" id="110383842">
+															<reference key="NSNextResponder" ref="875118390"/>
+															<int key="NSvFlags">268</int>
+															<string key="NSFrame">{{0, 197}, {277, 2}}</string>
+															<reference key="NSSuperview" ref="875118390"/>
+															<reference key="NSWindow"/>
+															<string key="NSClassName">MySidebarSeperator</string>
+														</object>
 													</object>
 													<string key="NSFrameSize">{293, 390}</string>
 													<reference key="NSSuperview" ref="225218092"/>
 													<reference key="NSWindow"/>
-													<reference key="NSNextKeyView" ref="729496849"/>
+													<reference key="NSNextKeyView" ref="908000271"/>
 												</object>
 											</object>
 											<string key="NSFrameSize">{293, 390}</string>
@@ -1547,7 +1577,7 @@
 									<string key="NSFrame">{{560, 0}, {293, 390}}</string>
 									<reference key="NSSuperview" ref="911891260"/>
 									<reference key="NSWindow"/>
-									<reference key="NSNextKeyView" ref="225218092"/>
+									<reference key="NSNextKeyView" ref="729496849"/>
 									<int key="NSsFlags">560</int>
 									<reference key="NSVScroller" ref="729496849"/>
 									<reference key="NSHScroller" ref="156620654"/>
@@ -1693,6 +1723,7 @@
 									<string key="NSFrameSize">{880, 12}</string>
 									<reference key="NSSuperview" ref="105087002"/>
 									<reference key="NSWindow"/>
+									<reference key="NSNextKeyView"/>
 									<int key="NSpiFlags">16648</int>
 									<double key="NSMaxValue">100</double>
 								</object>
@@ -2533,6 +2564,14 @@
 						<reference key="destination" ref="236461860"/>
 					</object>
 					<int key="connectionID">867</int>
+				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBActionConnection" key="connection">
+						<string key="label">sortByGenre:</string>
+						<reference key="source" ref="976324537"/>
+						<reference key="destination" ref="308322395"/>
+					</object>
+					<int key="connectionID">871</int>
 				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
@@ -3641,8 +3680,10 @@
 							<reference ref="908000271"/>
 							<reference ref="663101561"/>
 							<reference ref="362107332"/>
-							<reference ref="380589927"/>
 							<reference ref="236461860"/>
+							<reference ref="308322395"/>
+							<reference ref="380589927"/>
+							<reference ref="110383842"/>
 						</object>
 						<reference key="parent" ref="921161848"/>
 					</object>
@@ -3790,6 +3831,25 @@
 						<int key="objectID">861</int>
 						<reference key="object" ref="974636845"/>
 						<reference key="parent" ref="711270196"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">868</int>
+						<reference key="object" ref="308322395"/>
+						<object class="NSMutableArray" key="children">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<reference ref="451272735"/>
+						</object>
+						<reference key="parent" ref="875118390"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">869</int>
+						<reference key="object" ref="451272735"/>
+						<reference key="parent" ref="308322395"/>
+					</object>
+					<object class="IBObjectRecord">
+						<int key="objectID">872</int>
+						<reference key="object" ref="110383842"/>
+						<reference key="parent" ref="875118390"/>
 					</object>
 				</object>
 			</object>
@@ -4080,6 +4140,10 @@
 					<string>859.IBPluginDependency</string>
 					<string>860.IBPluginDependency</string>
 					<string>861.IBPluginDependency</string>
+					<string>868.IBPluginDependency</string>
+					<string>869.CustomClassName</string>
+					<string>869.IBPluginDependency</string>
+					<string>872.IBPluginDependency</string>
 					<string>92.IBPluginDependency</string>
 					<string>92.ImportedFromIB2</string>
 				</object>
@@ -4377,6 +4441,10 @@
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>MySidebarButtonCell</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
+					<string>com.apple.InterfaceBuilder.CocoaPlugin</string>
 					<integer value="1"/>
 				</object>
 			</object>
@@ -4392,7 +4460,7 @@
 				<reference key="dict.values" ref="0"/>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">867</int>
+			<int key="maxID">872</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
