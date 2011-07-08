@@ -166,12 +166,16 @@
 
 -(void)saveImage:(NSImage *)image ForIcon:(NSString *)identifier
 {
-	[self saveImageToFileSystemCache:image toPath:[self getCachePathForIconImage:identifier]];
-	[_icons setObject:image forKey:identifier];
+	if (image) {
+		[self saveImageToFileSystemCache:image toPath:[self getCachePathForIconImage:identifier]];
+		[_icons setObject:image forKey:identifier];
+	}
 }
 -(void)saveMetadata:(plist_t)metadata ForIcon:(NSString *)identifier
 {
-	[self saveMetadataToFileSystemCache:metadata toPath:[self getCachePathForIconMetadata:identifier]];
+	if (metadata) {
+		[self saveMetadataToFileSystemCache:metadata toPath:[self getCachePathForIconMetadata:identifier]];
+	}
 }
 
 

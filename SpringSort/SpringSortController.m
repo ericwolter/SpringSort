@@ -53,7 +53,7 @@ static NSString *cachePath;
 	NSUInteger count = 0;
 	NSUInteger total = [icons count];
 	for(SbIcon *icon in icons) {
-		//NSLog(@"Preloading %@",icon.displayName);
+		NSLog(@"Preloading %@",icon.displayName);
 		if([icon isKindOfClass:[SbWebIcon class]]) {
 			icon.icon = [self getImageForIcon:icon];
 			icon.genres = [NSArray arrayWithObject:@"Bookmarks"];
@@ -64,26 +64,29 @@ static NSString *cachePath;
 			SbStoreIcon *storeIcon = (SbStoreIcon *)icon;
 			
 			BOOL reload = NO;
-//			plist_t deviceMetadata = [self.device.houseArrestService getMetadata:[storeIcon.bundleIdentifier cStringUsingEncoding:NSUTF8StringEncoding]];
-//			NSDictionary *cacheMetadata = [cache getMetadataForIcon:storeIcon];
-//			if(!cacheMetadata) {
-//				[cache saveMetadata:deviceMetadata ForIcon:storeIcon.bundleIdentifier];
-//				reload = YES;
-//			} else {
-//				NSInteger deviceVersion = [self getVersionRaw:deviceMetadata];
-//				NSInteger cacheVersion = [self getVersion:cacheMetadata];
-//				if(deviceVersion > cacheVersion) {
-//					[cache saveMetadata:deviceMetadata ForIcon:storeIcon.bundleIdentifier];
-//					reload = YES;
-//				}
-//			}
-//			
-//			plist_free(deviceMetadata);
+			NSLog(@"   bundleIdentifier: %@",storeIcon.bundleIdentifier);
+			plist_t deviceMetadata = [self.device.houseArrestService getMetadata:[storeIcon.bundleIdentifier cStringUsingEncoding:NSUTF8StringEncoding]];
+			NSDictionary *cacheMetadata = [cache getMetadataForIcon:storeIcon];
+			if(!cacheMetadata) {
+				[cache saveMetadata:deviceMetadata ForIcon:storeIcon.bundleIdentifier];
+				reload = YES;
+			} else {
+				NSInteger deviceVersion = [self getVersionRaw:deviceMetadata];
+				NSInteger cacheVersion = [self getVersion:cacheMetadata];
+				if(deviceVersion > cacheVersion) {
+					[cache saveMetadata:deviceMetadata ForIcon:storeIcon.bundleIdentifier];
+					reload = YES;
+				}
+			}
+			
+			plist_free(deviceMetadata);
 			
 			// set icon
 			if (reload) {
+				NSLog(@"   RELOAD icon");
 				storeIcon.icon = [self getImageForIcon:storeIcon];
 			} else {
+				NSLog(@"   CACHE icon");
 				storeIcon.icon = [cache getImageForIcon:storeIcon];
 			}
 			
@@ -93,6 +96,9 @@ static NSString *cachePath;
 		
 		count = count + 1;
 		[self reportProgress:count max:total];
+		
+		NSLog(@"Loaded %@",icon.displayName);
+		NSLog(@"--------------------");
 	}
 	
 	[icons release];
