@@ -64,22 +64,22 @@ static NSString *cachePath;
 			SbStoreIcon *storeIcon = (SbStoreIcon *)icon;
 			
 			BOOL reload = NO;
-			NSLog(@"   bundleIdentifier: %@",storeIcon.bundleIdentifier);
-			plist_t deviceMetadata = [self.device.houseArrestService getMetadata:[storeIcon.bundleIdentifier cStringUsingEncoding:NSUTF8StringEncoding]];
-			NSDictionary *cacheMetadata = [cache getMetadataForIcon:storeIcon];
-			if(!cacheMetadata) {
-				[cache saveMetadata:deviceMetadata ForIcon:storeIcon.bundleIdentifier];
-				reload = YES;
-			} else {
-				NSInteger deviceVersion = [self getVersionRaw:deviceMetadata];
-				NSInteger cacheVersion = [self getVersion:cacheMetadata];
-				if(deviceVersion > cacheVersion) {
-					[cache saveMetadata:deviceMetadata ForIcon:storeIcon.bundleIdentifier];
-					reload = YES;
-				}
-			}
-			
-			plist_free(deviceMetadata);
+//			NSLog(@"   bundleIdentifier: %@",storeIcon.bundleIdentifier);
+//			plist_t deviceMetadata = [self.device.houseArrestService getMetadata:[storeIcon.bundleIdentifier cStringUsingEncoding:NSUTF8StringEncoding]];
+//			NSDictionary *cacheMetadata = [cache getMetadataForIcon:storeIcon];
+//			if(!cacheMetadata) {
+//				[cache saveMetadata:deviceMetadata ForIcon:storeIcon.bundleIdentifier];
+//				reload = YES;
+//			} else {
+//				NSInteger deviceVersion = [self getVersionRaw:deviceMetadata];
+//				NSInteger cacheVersion = [self getVersion:cacheMetadata];
+//				if(deviceVersion > cacheVersion) {
+//					[cache saveMetadata:deviceMetadata ForIcon:storeIcon.bundleIdentifier];
+//					reload = YES;
+//				}
+//			}
+//			
+//			plist_free(deviceMetadata);
 			
 			// set icon
 			if (reload) {

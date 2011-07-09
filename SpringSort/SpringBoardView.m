@@ -173,8 +173,12 @@ static NSColor *pageBackgroundColor, *pageBorderColor, *pageSeperatorColor;
 	
 	int i = 0;
 	for (i = 1; i < count; i++) {
-		NSRect pageRect = NSMakeRect((i-1) * pageWidth, 0, pageWidth, pageHeight);
+		NSRect pageRect = NSMakeRect((i-1) * (pageWidth + 1), 0, pageWidth, pageHeight);
 		[self drawSbPage:[self.state.mainContainer.items objectAtIndex:i] inRect:pageRect];
+		if(i != 1) {
+			[[NSColor colorWithCalibratedRed:179.0f/255.0f green:179.0f/255.0f blue:179.0f/255.0f alpha:1.0f] set];
+			NSRectFill(NSMakeRect((i-1) * (pageWidth + 1) - 1, 20, 1, pageHeight-40));
+		}
 	}
 }
 
